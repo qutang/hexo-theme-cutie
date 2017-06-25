@@ -24,13 +24,9 @@ _cutie_ is a responsive hexo theme heavily inspired by the clean and user friend
 	* uncategorized
 * Default page, post layout
 
-### Screenshots
+### Demo
 
-**Home page**
-
-**Post page**
-
-**Archive page**
+Visit my [personal website](https://qutang.github.io) for the demo.
 
 ## Installation and usage
 
