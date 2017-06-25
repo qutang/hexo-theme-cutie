@@ -1,0 +1,121 @@
+/* Header */
+/* ------------------------------------------ */
+.header {
+	background-color: white;
+	padding: 0.25em 0;
+}
+
+/* Navigator */
+/* ------------------------------------------ */
+
+#header-menu-container {
+	display: none;
+}
+
+#footer-menu-container {
+	display: flex;
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	width: 100%;
+	text-align: center;
+	background-color: white;
+	height: 3em;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 0px -1px 3px -1px rgba(170, 175, 173, 0.61);
+}
+
+#footer-menu-container nav {
+	flex: 1;
+}
+
+@media (min-width: 1000px) {
+	#header-menu-container {
+		display: block;
+		position: relative;
+		height: auto;
+	}
+	#footer-menu-container {
+		display: none;
+	}
+}
+
+/* Card */
+/* ------------------------------------------ */
+
+.Card {
+	display: flex;
+	align-items: center;
+}
+
+.Card-figure {
+  	margin: 0.5em 1.2em;
+}
+
+.Card-body {
+	flex: 1;
+	margin: 1em;
+}
+
+.Card .Card-excerpt {
+	display: none;
+}
+
+.Card:hover .Card-title{
+	display: none;
+}
+.Card:hover .Card-excerpt{
+	display: block;
+}
+.Card:hover .Card-meta{
+	display: none;
+}
+
+/* Pagination */
+/* ------------------------------------------ */
+
+.pagination {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.pagination-item a, span{
+	border-radius: 50%;
+	box-shadow: 0.5px 1px 3px -1px rgba(170, 175, 173, 0.61);
+	text-align: center;
+	height: 1.7em;
+	width: 1.7em;
+	display: inline-block;
+	vertical-align: middle;
+	padding: 0.25em;
+	margin: 0 4px;
+}
+
+/* Article */
+/* ------------------------------------------ */
+.article {
+	width: 55%;
+	margin: 0 auto;
+}
+
+.article-header {
+	display: flex;
+	align-items: center;
+}
+
+.article-category-logo{
+	margin-right:1em;
+}
+
+.article-title{
+	flex: 1;
+}
+
+@media (max-width: 1000px) {
+	.article {
+		width: 90%;
+		margin: 0 auto;
+	}
+}
