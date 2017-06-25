@@ -12,7 +12,7 @@ InstantClick.on('change', function(isInitialLoad) {
       _hmt.push(['_trackPageview', location.pathname + location.search]);
     if (typeof ga !== 'undefined')  // support google analytics
         ga('send', 'pageview', location.pathname + location.search);
-    disableHoverOnTouch();
+    changeLayoutOnTouchScreen();
   }
 });
 InstantClick.init();
