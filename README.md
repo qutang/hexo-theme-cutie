@@ -53,22 +53,14 @@ menu:
 ```
 
 2. Refer to default icons, refer using path(`images/icon_name.svg`):
-`archive`
-![archive](https://raw.githubusercontent.com/qutang/hexo-theme-cutie/master/source/images/archive.svg)
-`fun`
-![fun](https://raw.githubusercontent.com/qutang/hexo-theme-cutie/master/source/images/fun.svg)
-`home`
-![home](https://raw.githubusercontent.com/qutang/hexo-theme-cutie/master/source/images/home.svg)
-`notes`
-![notes](https://raw.githubusercontent.com/qutang/hexo-theme-cutie/master/source/images/notes.svg)
-`projects`
-![projects](https://raw.githubusercontent.com/qutang/hexo-theme-cutie/master/source/images/projects.svg)
-`resume`
-![resume](https://raw.githubusercontent.com/qutang/hexo-theme-cutie/master/source/images/resume.svg)
-`search`
-![search](https://raw.githubusercontent.com/qutang/hexo-theme-cutie/master/source/images/search.svg)
-`uncategorized`
-![uncategorized](https://raw.githubusercontent.com/qutang/hexo-theme-cutie/master/source/images/uncategorized.svg)
+[archive](source/images/archive.svg)
+,[fun](source/images/fun.svg)
+,[home](source/images/home.svg)
+,[notes](source/images/notes.svg)
+,[projects](source/images/projects.svg)
+,[resume](source/images/resume.svg)
+,[search](source/images/search.svg)
+,[uncategorized](source/images/uncategorized.svg)
 
 3. Customize home page
 Add a new page called `intro` to your website. The information in this page will show up before the card columns in the home page, otherwise it will only show card columns.
