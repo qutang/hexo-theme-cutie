@@ -1,5 +1,6 @@
 {{ js('js/instantclick.min.js') }}
 {{ js('js/social-share.min.js') }}
+{{ js('js/theme.js')}}
 <script data-no-instant>
 InstantClick.on('change', function(isInitialLoad) {
   if (isInitialLoad === false) {
@@ -11,6 +12,7 @@ InstantClick.on('change', function(isInitialLoad) {
       _hmt.push(['_trackPageview', location.pathname + location.search]);
     if (typeof ga !== 'undefined')  // support google analytics
         ga('send', 'pageview', location.pathname + location.search);
+    disableHoverOnTouch();
   }
 });
 InstantClick.init();

@@ -1,5 +1,5 @@
 <div class="col">
-	<div class='Card'>
+	<div class='Card Card-hover'>
 		{% if item.categories && item.categories.length %}
 			{% for cat in item.categories %}
 				{% if loop.first %}
@@ -22,9 +22,18 @@
 			</a>
 		</div>
 		<div class="Card-body">
-			
+
+				<div class='Card-title'>
+					<h2>
+					{% if item.external_link %}
+						<a href="{{ item.external_link }}" rel="noopener noreferrer" target="_blank">
+					{% else %}
+						<a href="{{ url_for(item.path) }}">
+					{% endif %}
+					{{ titlecase(item.title) }}</a></h2>
+					<p class='Card-title-tags'>{{ partial('_partial/article-tags', {item: item}) }}</p>
+				</div>
 				<div class='Card-excerpt'>
-					
 					<p>
 					{% if item.external_link %}
 						<a href="{{ item.external_link }}" rel="noopener noreferrer" target="_blank">
@@ -34,18 +43,6 @@
 					{{ strip_html(truncate(item.content, {length: 180, separator: ' ', omission: '...'}))|default("No content") }} </a></p>
 					<p>{{ partial('_partial/article-tags', {item: item}) }}</p>
 				</div>
-			
-				<div class='Card-title'>
-					<h2>
-					{% if item.external_link %}
-						<a href="{{ item.external_link }}" rel="noopener noreferrer" target="_blank">
-					{% else %}
-						<a href="{{ url_for(item.path) }}">
-					{% endif %}
-					{{ titlecase(item.title) }}</a></h2>
-					<p>{{ partial('_partial/article-tags', {item: item}) }}</p>
-				</div>
-				
 				<div class="Card-meta">
 					<p>{{ item.date.format(config.date_format) }}</p>
 				</div>
