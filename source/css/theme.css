@@ -221,6 +221,10 @@ img {
 	animation-name: fadeInLeft;
 	animation-duration: 0.5s;
     animation-fill-mode: both;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
 
 .footer-logo {
@@ -229,7 +233,11 @@ img {
 	font-size: 3em;
 }
 
-.footer-social div {
+.footer-social {
+	display: flex;
+}
+
+.footer-social-item {
 	margin: 0 1em;
 	font-size: 0.9em;
 }
@@ -238,11 +246,11 @@ img {
 	color: #D63E0A;
 }
 
-.footer-social a {
+.footer-social-item a {
 	color: #333;
 }
 
-.footer-social a:hover {
+.footer-social-item a:hover {
 	color: #D63E0A;
 }
 
