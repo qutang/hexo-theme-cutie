@@ -36,10 +36,12 @@ _cutie_ is a responsive hexo theme heavily inspired by the clean and user friend
 
 1. clone repository into `themes` folder of your hexo website and rename the folder to `cutie`
 1. Change `_config.yml` of your website:
+
 ```
 theme: cutie
 ```
 1. Add following information to `_config.yml` of the downloaded theme to configure the theme, refer to `_config.yml` for a concrete example:
+
 ```
 menu:
 	menuName1:
@@ -52,26 +54,26 @@ menu:
 
 2. Refer to default icons, refer using path(`images/icon_name.svg`):
 `archive`
-![archive](source/images/archive.svg)
+![archive](https://raw.githubusercontent.com/qutang/hexo-theme-cutie/master/source/images/archive.svg)
 `fun`
-![fun](source/images/fun.svg)
+![fun](https://raw.githubusercontent.com/qutang/hexo-theme-cutie/master/source/images/fun.svg)
 `home`
-![home](source/images/home.svg)
+![home](https://raw.githubusercontent.com/qutang/hexo-theme-cutie/master/source/images/home.svg)
 `notes`
-![notes](source/images/notes.svg)
+![notes](https://raw.githubusercontent.com/qutang/hexo-theme-cutie/master/source/images/notes.svg)
 `projects`
-![projects](source/images/projects.svg)
+![projects](https://raw.githubusercontent.com/qutang/hexo-theme-cutie/master/source/images/projects.svg)
 `resume`
-![resume](source/images/resume.svg)
+![resume](https://raw.githubusercontent.com/qutang/hexo-theme-cutie/master/source/images/resume.svg)
 `search`
-![search](source/images/search.svg)
+![search](https://raw.githubusercontent.com/qutang/hexo-theme-cutie/master/source/images/search.svg)
 `uncategorized`
-![uncategorized](source/images/uncategorized.svg)
+![uncategorized](https://raw.githubusercontent.com/qutang/hexo-theme-cutie/master/source/images/uncategorized.svg)
 
 3. Customize home page
 Add a new page called `intro` to your website. The information in this page will show up before the card columns in the home page, otherwise it will only show card columns.
 
-4. Customize website name and signature in `_config` of website
+4. Customize website name and signature in `_config` of website.
 
 ```
 title: your title
