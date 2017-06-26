@@ -4,7 +4,7 @@
     }
 </style>
 
-<section class="article">
+<article class="article">
     <!-- Title -->
 
     {% if item.categories && item.categories.length %}
@@ -45,5 +45,11 @@
     {{ item.content | default("No content") }}
     <hr />
 
+    <h2>Share and comment</h2>
     <div class="social-share"></div>
-</section>
+    {% if comment %}
+        <div id="disqus_thread"></div>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    {% endif %}
+    
+</article>

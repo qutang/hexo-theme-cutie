@@ -9,6 +9,7 @@
   <div style="flex: 1;">
       {{ body }}
   </div>
+
   {{ partial("_partial/footer") }}
 
   <br>
