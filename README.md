@@ -7,22 +7,18 @@ _cutie_ is a responsive hexo theme heavily inspired by the clean and user friend
 ### Features
 
 * Responsive design
-	* single and double column layout on different screens
-	* Alternative display on touch screen when hovering is not available
-	* Stick to bottom navigation menu in one column layout
-* Configurable navigation menu (name, link and icon)
-* Transition **animation** involved
-* **Instant click** involved
-* `Mathjax` involved
-* Google analytics involved
-* Google custom search page and tag cloud involved
-* Customizable home screen top section
-* Four default categories with associated icons:
-	* projects
-	* notes
-	* fun
-	* uncategorized
-* Default page, post layout
+	* Single and dual column layout
+	* Bottom navigation menu
+* Configurable
+	* Navigation menu (name, link and icon)
+	* Disqus comment section
+	* Google analytics
+	* Slogan
+	* Signature
+* Extra
+	* Mathjax
+	* Instant click
+	* Search page template
 
 ### Demo
 
@@ -31,44 +27,77 @@ Visit my [personal website](https://qutang.github.io) for the demo.
 ## Installation and usage
 
 1. clone repository into `themes` folder of your hexo website and rename the folder to `cutie`
-1. Change `_config.yml` of your website:
+1. A sample snippet about the theme in `_config.yml` of the website:
 
-```
+```yaml
+# Be careful about the indent
 theme: cutie
+
+google-analytics: UA-xxxxxxxx-1
+
+cutie:
+  slogan: This is a slogan.
+  signature: SIGNATURE
+
+# Configure navigation menu, provide a relative link and a path to icon (icon should better be square)
+# If menu is absent, only "archive" and "search" menu items will be preserved
+# Configurable menu items should not exeed 4, otherwise the last ones will be ignored
+
+  menu:
+    Resume: 
+      link: /resume/
+      icon: /images/resume.svg
+    Projects: 
+      link: /categories/projects/
+      icon: /images/projects.svg
+    Notes: 
+      link: /categories/notes/
+      icon: /images/notes.svg
+    Fun: 
+      link: /categories/fun/
+      icon: /images/fun.svg
+
+# As long as the name matches the font awesome icon name, you can add even more social links
+# As the tip: the social link can be a QRCODE link
+  social:
+    medium: 
+    skype: 
+    slack: 
+    steam: 
+    tumblr: 
+    whatsapp: 
+    youtube: 
+    snapchat: 
+    instagram: 
+    qq: 
+    google-plus: 
+    twitter: 
+    facebook: 
+    weibo: 
+    weixin: 
+    github: https://github.com/qutang
+    linkedin: https://www.linkedin.com/in/qutang
 ```
-1. Add following information to `_config.yml` of the downloaded theme to configure the theme, refer to `_config.yml` for a concrete example:
 
+2. A set of default icons, referring using path(`images/icon_name.svg`):
+	* [archive](source/images/archive.svg)
+	* [fun](source/images/fun.svg)
+	* [home](source/images/home.svg)
+	* [notes](source/images/notes.svg)
+	* [projects](source/images/projects.svg)
+	* [resume](source/images/resume.svg)
+	* [search](source/images/search.svg)
+	* [uncategorized](source/images/uncategorized.svg)
+
+3. Add search page
+	1. Create a new page called `search`
+	1. Use layout `searching` in the front matter of `search` page
+
+```yaml
+---
+layout: search
+---
 ```
-menu:
-	menuName1:
-		link: yourlink.com
-		icon: path/to/your/icon
-	menuName2:
-		...
-	...
-```
-
-2. Refer to default icons, refer using path(`images/icon_name.svg`):
-[archive](source/images/archive.svg)
-,[fun](source/images/fun.svg)
-,[home](source/images/home.svg)
-,[notes](source/images/notes.svg)
-,[projects](source/images/projects.svg)
-,[resume](source/images/resume.svg)
-,[search](source/images/search.svg)
-,[uncategorized](source/images/uncategorized.svg)
-
-3. Customize home page
-Add a new page called `intro` to your website. The information in this page will show up before the card columns in the home page, otherwise it will only show card columns.
-
-4. Customize website name and signature in `_config` of website.
-
-```
-title: your title
-signature: your signature
-```
-
-Signature will appear at the footer in the same font as title.
 
 ## Contribution
 Post feature request or bugs [here](https://github.com/qutang/hexo-theme-cutie/issues), or send me pull request.
