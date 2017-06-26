@@ -75,8 +75,8 @@ cutie:
     facebook: 
     weibo: 
     weixin: 
-    github: https://github.com/qutang
-    linkedin: https://www.linkedin.com/in/qutang
+    github: https://your/github/profile/link
+    linkedin: https://your/linkedin/profile/link
 ```
 
 2. A set of default icons, referring using path(`images/icon_name.svg`):
@@ -92,6 +92,8 @@ cutie:
 3. Add search page
 	1. Create a new page called `search`
 	1. Use layout `searching` in the front matter of `search` page
+
+4. It is recommended to use the hexo prism js plugin for code highlight.
 
 ```yaml
 ---
