@@ -1,12 +1,7 @@
 <div class="container">
 
 	<div class='index-intro'>
-		{% set intro = get_intro(site) %}
-		{% for model in intro %}
-			{% if loop.first %}
-				{{ model.content }}
-			{% endif %}
-		{% endfor %}
+		{{ config.cutie.slogan }}
 	</div>
 
 	{% block primary %}

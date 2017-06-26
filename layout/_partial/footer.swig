@@ -1,6 +1,6 @@
 <footer class='footer'>
     <div class='footer-logo'>
-        <span>{{ config.signature }}</span>
+        <span>{{ config.cutie.signature }}</span>
     </div>
     <div class='footer-social'>
         {% set social = config.cutie.social %}
