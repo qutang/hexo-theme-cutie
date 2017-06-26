@@ -158,9 +158,29 @@ pre code {
 	margin-top: 0.5em;
 }
 
+figure.highlight {
+	margin: 0;
+}
+
+.highlight table{
+	width: 100%;
+	border: none;
+}
+
+.highlight td{
+	padding: 0;
+	border: none;
+}
+
+.highlight .gutter {
+	width: 2em;
+	text-align: center;
+}
+
 pre {
 	padding: 3px;
 	background-color: #f2f2f2;
+	width: 100%;
 }
 
 /* label */
