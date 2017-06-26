@@ -286,7 +286,7 @@ img {
 
 .footer-social-item {
 	margin: 0 1em;
-	font-size: 0.9em;
+	font-size: 0.7em;
 }
 
 .footer a {
@@ -357,6 +357,22 @@ img {
 	justify-content: space-around;
 }
 
+#header-menu-container .menu-item {
+	margin: 0;
+}
+
+#header-menu-container .menu-item {
+	margin-right: 3em;
+}
+
+#header-menu-container .menu-item:last-child {
+	margin-right: 5em;
+}
+
+#header-menu-container .menu {
+	justify-content: flex-end;
+}
+
 .menu-item {
 	display: flex;
 	flex-direction: column;
@@ -386,7 +402,6 @@ img {
 	#header-menu-container {
 		display: block;
 		flex: 1;
-		flex-grow:1;
 	}
 	#footer-menu-container {
 		display: none;
