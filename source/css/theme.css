@@ -133,6 +133,10 @@ blockquote {
     border-left: 4px solid #ddd;
 }
 
+blockquote cite {
+	margin-left: 0.25em;
+}
+
 a {
   text-decoration: none;
   color: #333;
@@ -160,6 +164,22 @@ pre code {
 
 figure.highlight {
 	margin: 0;
+	width: 100%;
+	background-color: #f2f2f2;
+}
+
+.highlight figcaption {
+	padding-left: 1em;
+	padding-top: 0.5em;
+	font-family: Courier New, Courier, monospace;
+}
+
+.highlight figcaption span {
+	margin-right: 0.5em;
+}
+
+pre .marked {
+	background-color: #D0AFAF;
 }
 
 .highlight table{
@@ -172,13 +192,20 @@ figure.highlight {
 	border: none;
 }
 
+.highlight .line {
+	margin-left: 0.5em;
+	padding-left: 0.25em;
+}
+
 .highlight .gutter {
-	width: 2em;
+	width: 1.5em;
+	padding-right: 0.5em;
 	text-align: center;
+	border-right: 1px solid #999;
 }
 
 pre {
-	padding: 3px;
+	margin: 0.25em;
 	background-color: #f2f2f2;
 	width: 100%;
 }
@@ -578,6 +605,57 @@ img {
 	color: #D63E0A;
 }
 
+/* Video */
+
+.video-container {
+	max-width: 100%;
+	width: auto;
+	height: auto;
+}
+
+/* Gallery */
+
+.article-gallery {
+	width: 95%;
+	display: flex;
+	align-items: flex;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+	margin: 0 auto;
+}
+
+.article-gallery-item {
+	flex-basis: 15%;
+	margin: 0 0.25em;
+	display: block;
+}
+
+.article-gallery-item a {
+  /* set the desired width/height and margin here */
+  position: relative;
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  display: inline-block;
+  border-radius: 5px;
+}
+.article-gallery-item a img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 100%;
+  max-width: none;
+  width: auto;
+  -webkit-transform: translate(-50%,-50%);
+      -ms-transform: translate(-50%,-50%);
+          transform: translate(-50%,-50%);
+  border-radius: 5px;
+}
+.article-gallery-item a img.portrait {
+  width: 100%;
+  height: auto;
+}
+
 /* Article */
 /* ------------------------------------------ */
 .article {
@@ -593,8 +671,9 @@ img {
 }
 
 .article img {
-	width: 30%;
-	text-align: center;
+	width: auto;
+	display: inline-block;
+	max-width:100%; height:auto;
 }
 
 .article-header {

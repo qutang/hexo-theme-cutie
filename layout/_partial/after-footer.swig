@@ -1,6 +1,7 @@
 {{ js('js/instantclick.min.js') }}
 {{ js('js/social-share.min.js') }}
 {{ js('js/theme.js')}}
+{{ js('js/lightbox-plus-jquery.min.js')}}
 <script>
 
 /**
