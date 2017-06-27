@@ -10,6 +10,8 @@ categories:
 	- projects
 photos:
   - cutie.png
+icon:
+  - /images/hexo.svg
 ---
 
 _cutie_ is a responsive hexo theme heavily inspired by the clean and user friendly design of [www.linpx.com](http://www.linpx.com).
