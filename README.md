@@ -19,6 +19,7 @@ _cutie_ is a responsive hexo theme heavily inspired by the clean and user friend
 	* Mathjax
 	* Instant click
 	* Search page template
+	* Lightbox support
 
 ### Demo
 
@@ -100,6 +101,10 @@ cutie:
 layout: search
 ---
 ```
+
+5. Custom post icon
+
+Use `icon: path/to/your/icon` in post front matter to use custom icon when displaying in home page instead of default category icon.
 
 ## Contribution
 Post feature request or bugs [here](https://github.com/qutang/hexo-theme-cutie/issues), or send me pull request.
