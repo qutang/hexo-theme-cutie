@@ -1,8 +1,20 @@
-# HEXO theme: _cutie_
-
-## Intro
+---
+title: 'Hexo theme: cutie'
+date: 2017-06-27 10:31:00
+tags:
+	- hexo
+	- hexo theme
+	- card
+	- blogging
+categories:
+	- projects
+photos:
+  - cutie.png
+---
 
 _cutie_ is a responsive hexo theme heavily inspired by the clean and user friendly design of [www.linpx.com](http://www.linpx.com).
+
+## Intro
 
 ### Features
 
@@ -80,27 +92,27 @@ cutie:
     linkedin: https://your/linkedin/profile/link
 ```
 
-2. A set of default icons, referring using path(`images/icon_name.svg`):
-	* [archive](source/images/archive.svg)
-	* [fun](source/images/fun.svg)
-	* [home](source/images/home.svg)
-	* [notes](source/images/notes.svg)
-	* [projects](source/images/projects.svg)
-	* [resume](source/images/resume.svg)
-	* [search](source/images/search.svg)
-	* [uncategorized](source/images/uncategorized.svg)
+2. A set of default icons, referring using path(`/images/icon_name.svg`):
+	* [archive](https://qutang.github.io/images/archive.svg)
+	* [fun](https://qutang.github.io/images/fun.svg)
+	* [home](https://qutang.github.io/images/home.svg)
+	* [notes](https://qutang.github.io/images/notes.svg)
+	* [projects](https://qutang.github.io/images/projects.svg)
+	* [resume](https://qutang.github.io/images/resume.svg)
+	* [search](https://qutang.github.io/images/search.svg)
+	* [uncategorized](https://qutang.github.io/images/uncategorized.svg)
 
 3. Add search page
 	1. Create a new page called `search`
 	1. Use layout `searching` in the front matter of `search` page
 
-4. It is recommended to use the hexo prism js plugin for code highlight.
+  ```yaml
+  ---
+  layout: search
+  ---
+  ```
 
-```yaml
----
-layout: search
----
-```
+4. It is recommended to use the hexo prism js plugin for code highlight.
 
 5. Custom post icon
 
