@@ -42,6 +42,11 @@ Visit my [personal website](https://qutang.github.io) for the demo.
 ## Installation and usage
 
 1. clone repository into `themes` folder of your hexo website and rename the folder to `cutie`
+
+```bash
+git clone https://github.com/qutang/hexo-theme-cutie.git
+```
+
 1. A sample snippet about the theme in `_config.yml` of the website:
 
 ```yaml
