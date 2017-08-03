@@ -39,6 +39,12 @@ _cutie_ is a responsive hexo theme heavily inspired by the clean and user friend
 
 Visit my [personal website](https://qutang.github.io) for the demo.
 
+## For absolutely first time user who wants to have a demo site ready to go
+
+1. fork repository https://github.com/qutang/theme-cutie-demo
+1. clone to your local machine
+1. run `hexo server`
+
 ## Installation and usage
 
 1. clone repository into `themes` folder of your hexo website and rename the folder to `cutie`
@@ -111,7 +117,7 @@ cutie:
 
 3. Add search page
 	1. Create a new page called `search`
-	1. Use layout `searching` in the front matter of `search` page
+	1. Use layout `search` in the front matter of `search` page
 
   ```yaml
   ---
