@@ -39,8 +39,6 @@ InstantClick.on('change', function(isInitialLoad) {
     s.setAttribute('data-timestamp', +new Date());
     (d.head || d.body).appendChild(s);
     }
-  }
-  
 });
 InstantClick.init();
 </script>
