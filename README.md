@@ -33,7 +33,7 @@ _cutie_ is a responsive hexo theme heavily inspired by the clean and user friend
 	* Mathjax
 	* Instant click
 	* Search page template
-	* Lightbox support
+	* Lightgallery support
 
 ### Demo
 
@@ -50,7 +50,6 @@ Visit my [personal website](https://qutang.github.io) for the demo.
 ### 2017-11-04 
 
 * Change lightbox to light gallery to remove jquery dependency
-* Add support for pinned post, allow up to 4 pinned post
 
 ## Installation and usage
 
@@ -160,3 +159,4 @@ Post feature request or bugs [here](https://github.com/qutang/hexo-theme-cutie/i
 1. [www.linpx.com](http://www.linpx.com)
 1. [Flaticon](http://www.flaticon.com/)
 1. [InstantClick](http://instantclick.io)
+1. [Lightgallery](http://sachinchoolur.github.io/lightGallery/)
