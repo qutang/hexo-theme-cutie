@@ -43,7 +43,10 @@ Visit my [personal website](https://qutang.github.io) for the demo.
 
 1. fork repository https://github.com/qutang/theme-cutie-demo
 1. clone to your local machine
-1. run `hexo server`
+1. go into the `themes` subfolder
+1. clone repository https://github.com/qutang/hexo-theme-cutie
+1. rename folder name `hexo-theme-cutie` to `cutie`
+1. run `hexo serve`
 
 ## Changelog
 
