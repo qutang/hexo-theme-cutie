@@ -22,7 +22,7 @@
 
     <div class='article-header'>
          <div class='article-logo'>
-            <a href="{{ category_link }}">
+            <a href="{{ category_link }}" data-no-instant>
                 <img src="{{ '/images/' + category_name + '.svg' }}" alt="">
             </a>
          </div>
@@ -45,11 +45,11 @@
 
     <!-- Gallery -->
     {% if item.photos && item.photos.length %}
-        <div class='article-gallery'>
+        <div class='article-gallery' id='lightgallery'>
             {% for photo in item.photos %}
-                <div class='article-gallery-item'>
-                    <a href="{{ photo }}" data-lightbox="gallery" data-title="{{ titlecase(item.title) | default("No title") }}"><img src="{{ photo }}" alt="" /></a>
-                </div>
+                <a class='article-gallery-item' href="{{ '/images/' + String(item.path).split('/')[3] + '/' + photo }}" data-no-instant>
+                    <img src="{{ '/images/' + String(item.path).split('/')[3] + '/' + photo }}" alt="" />
+                </a>
             {% endfor %} 
         </div>
         <hr>

@@ -1,7 +1,7 @@
 {{ js('js/instantclick.min.js') }}
 {{ js('js/social-share.min.js') }}
 {{ js('js/theme.js')}}
-{{ js('js/lightbox-plus-jquery.min.js')}}
+{{ js('js/lightgallery.min.js') }}
 <script>
 
 /**
@@ -32,7 +32,7 @@ InstantClick.on('change', function(isInitialLoad) {
     if (typeof ga !== 'undefined')  // support google analytics
         ga('send', 'pageview', location.pathname + location.search);
     changeLayoutOnTouchScreen();
-
+    lightGallery(document.getElementById('lightgallery'));
     //
     var d = document, s = d.createElement('script');
     s.src = 'https://qutang-github-io.disqus.com/embed.js';
@@ -41,4 +41,7 @@ InstantClick.on('change', function(isInitialLoad) {
     }
 });
 InstantClick.init();
+</script>
+<script type='text/javascript'>
+lightGallery(document.getElementById('lightgallery'));
 </script>

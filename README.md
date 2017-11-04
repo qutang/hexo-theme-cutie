@@ -45,15 +45,22 @@ Visit my [personal website](https://qutang.github.io) for the demo.
 1. clone to your local machine
 1. run `hexo server`
 
+## Changelog
+
+### 2017-11-04 
+
+* Change lightbox to light gallery to remove jquery dependency
+* Add support for pinned post, allow up to 4 pinned post
+
 ## Installation and usage
 
-1. clone repository into `themes` folder of your hexo website and rename the folder to `cutie`
+* clone repository into `themes` folder of your hexo website and rename the folder to `cutie`
 
 ```bash
 git clone https://github.com/qutang/hexo-theme-cutie.git
 ```
 
-1. A sample snippet about the theme in `_config.yml` of the website:
+* A sample snippet about the theme in `_config.yml` of the website:
 
 ```yaml
 # Be careful about the indent
@@ -105,7 +112,7 @@ cutie:
     linkedin: https://your/linkedin/profile/link
 ```
 
-2. A set of default icons, referring using path(`/images/icon_name.svg`):
+* A set of default icons, referring using path(`/images/icon_name.svg`):
 	* [archive](https://qutang.github.io/images/archive.svg)
 	* [fun](https://qutang.github.io/images/fun.svg)
 	* [home](https://qutang.github.io/images/home.svg)
@@ -115,7 +122,7 @@ cutie:
 	* [search](https://qutang.github.io/images/search.svg)
 	* [uncategorized](https://qutang.github.io/images/uncategorized.svg)
 
-3. Add search page
+* Add search page
 	1. Create a new page called `search`
 	1. Use layout `search` in the front matter of `search` page
 
@@ -125,11 +132,25 @@ cutie:
   ---
   ```
 
-4. It is recommended to use the hexo prism js plugin for code highlight.
+* It is recommended to use the hexo prism js plugin for code highlight.
 
-5. Custom post icon
+* Custom post icon
 
 Use `icon: path/to/your/icon` in post front matter to use custom icon when displaying in home page instead of default category icon.
+
+* Post gallery photos
+
+You may add photos to a gallery display at the top of the post by adding the filenames of the images to the YAML front matter of a post.
+
+```yaml
+---
+photos:
+  - image1.png
+  - image2.png
+---
+```
+
+Make sure to put these images in the `source/images/[posture-file-name]` folder.
 
 ## Contribution
 Post feature request or bugs [here](https://github.com/qutang/hexo-theme-cutie/issues), or send me pull request.
