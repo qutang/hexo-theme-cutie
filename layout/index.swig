@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" id='{{ url_for(page.path) }}' data-name='index' data-version='{{ theme.version }}'>
 
 	<div class='index-intro'>
 		{{ config.cutie.slogan }}

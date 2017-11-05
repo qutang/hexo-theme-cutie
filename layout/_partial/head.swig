@@ -45,6 +45,8 @@
   </script>
   <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 
+  <!-- include cookie.js -->
+  
   {{ partial('_partial/google_analytics') }}
 
   <!-- Favicon

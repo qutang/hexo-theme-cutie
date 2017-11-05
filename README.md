@@ -12,6 +12,7 @@ photos:
   - cutie.png
 icon:
   - /images/hexo.svg
+version: 2
 ---
 
 _cutie_ is a responsive hexo theme heavily inspired by the clean and user friendly design of [www.linpx.com](http://www.linpx.com).
@@ -29,6 +30,7 @@ _cutie_ is a responsive hexo theme heavily inspired by the clean and user friend
 	* Google analytics
 	* Slogan
 	* Signature
+	* Versioned post and unread notification badge for post
 * Extra
 	* Mathjax
 	* Instant click
@@ -39,7 +41,7 @@ _cutie_ is a responsive hexo theme heavily inspired by the clean and user friend
 
 Visit my [personal website](https://qutang.github.io) for the demo.
 
-## For absolutely first time user who wants to have a demo site ready to go
+## For first time user who wants to have a demo site ready to go
 
 1. fork repository https://github.com/qutang/theme-cutie-demo
 1. clone to your local machine
@@ -48,13 +50,7 @@ Visit my [personal website](https://qutang.github.io) for the demo.
 1. rename folder name `hexo-theme-cutie` to `cutie`
 1. run `hexo serve`
 
-## Changelog
-
-### 2017-11-04 
-
-* Change lightbox to light gallery to remove jquery dependency
-
-## Installation and usage
+## Normal installation
 
 * clone repository into `themes` folder of your hexo website and rename the folder to `cutie`
 
@@ -62,7 +58,31 @@ Visit my [personal website](https://qutang.github.io) for the demo.
 git clone https://github.com/qutang/hexo-theme-cutie.git
 ```
 
-* A sample snippet about the theme in `_config.yml` of the website:
+## Changelog
+
+### 2017-11-05
+
+* Add front matter key word `version: [integer number]` (e.g. `version: 2`), when updating this number, the index page will show unread red dot at the upper right corner of post card and dismiss when user clicks on the post link.
+
+### 2017-11-04 
+
+* Change lightbox to light gallery to remove jquery dependency
+
+## Usage
+
+### Versioned post and unread notification badge
+
+![Badge illustration](unread-badge-illustration.png)
+
+You may add a new front matter keyword `version` to post. 
+
+- If `version: -1` or absent, the unread dot is disabled until the version is updated to a larger number. This is useful if you don't want to make your old posts all become unread.
+- If `version` is greater than previous push's `version` number or if `version` number is new presented, the unread dot will show up on the card corner of index page until the post is visited.
+- If `version` is smaller than previous push's `version` number, the unread dot will not show up.
+
+This feature is implemented with browser cookie.
+
+### A sample snippet about the theme in `_config.yml` of the website:
 
 ```yaml
 # Be careful about the indent
@@ -114,7 +134,7 @@ cutie:
     linkedin: https://your/linkedin/profile/link
 ```
 
-* A set of default icons, referring using path(`/images/icon_name.svg`):
+### A set of default icons, referring using path(`/images/icon_name.svg`):
 	* [archive](https://qutang.github.io/images/archive.svg)
 	* [fun](https://qutang.github.io/images/fun.svg)
 	* [home](https://qutang.github.io/images/home.svg)
@@ -124,7 +144,7 @@ cutie:
 	* [search](https://qutang.github.io/images/search.svg)
 	* [uncategorized](https://qutang.github.io/images/uncategorized.svg)
 
-* Add search page
+### Add search page
 	1. Create a new page called `search`
 	1. Use layout `search` in the front matter of `search` page
 
@@ -134,13 +154,13 @@ cutie:
   ---
   ```
 
-* It is recommended to use the hexo prism js plugin for code highlight.
+### It is recommended to use the hexo prism js plugin for code highlight.
 
-* Custom post icon
+### Custom post icon
 
 Use `icon: path/to/your/icon` in post front matter to use custom icon when displaying in home page instead of default category icon.
 
-* Post gallery photos
+### Post gallery photos
 
 You may add photos to a gallery display at the top of the post by adding the filenames of the images to the YAML front matter of a post.
 
@@ -163,3 +183,4 @@ Post feature request or bugs [here](https://github.com/qutang/hexo-theme-cutie/i
 1. [Flaticon](http://www.flaticon.com/)
 1. [InstantClick](http://instantclick.io)
 1. [Lightgallery](http://sachinchoolur.github.io/lightGallery/)
+1. [Cookie.js](https://github.com/js-cookie/js-cookie)

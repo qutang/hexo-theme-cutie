@@ -1,5 +1,5 @@
 <div class="col">
-	<div class='Card Card-hover'>
+	<div class='Card Card-hover' id='{{ url_for(item.path) }}' data-name='{{ item.title }}' data-version='{{ item.version }}'>
 		{% if item.categories && item.categories.length %}
 			{% for cat in item.categories %}
 				{% if loop.first %}
@@ -11,7 +11,7 @@
 			{% set category_link = url_for(item.path) %}
 			{% set category_name = "uncategorized" %}
 		{% endif %}
-		
+		<mark class='Card-badge' style='{visibility: "hidden"}'></mark>
 		<div class='Card-figure'>
 			{% if item.link || item.external_link %}
 				<a href="{{ item.link | default(item.external_link) }}" rel="noopener noreferrer" target="_blank">
@@ -45,7 +45,7 @@
 						<a href="{{ url_for(item.path) }}">
 					{% endif %}
 					{{ strip_html(truncate(item.content, {length: 180, separator: ' ', omission: '...'}))|default("No content") }} </a></p>
-					<p>{{ partial('_partial/article-tags', {item: item}) }}</p>
+					<p>{{ partial('_partial/article-tags', {item: item, limit: 4}) }}</p>
 				</div>
 				<div class="Card-meta">
 					<p>{{ item.date.format(config.date_format) }}</p>

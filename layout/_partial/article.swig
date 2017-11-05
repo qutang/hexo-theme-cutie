@@ -4,7 +4,7 @@
     }
 </style>
 
-<article class="article">
+<article class="article" id="{{ url_for(item.path) }}" data-name='{{ item.title }}' data-version="{{ item.version }}">
 
     <!-- Title -->
 
@@ -37,6 +37,9 @@
     <p>
        	{{ item.date.format(config.date_format) }}
         by {{ item.author | default(config.author) }}
+        {% if item.version and item.version != -1 %}
+            | Version: {{ item.version }}
+        {% endif %}
     </p>
     <p>
         {{ partial("_partial/article-tags", {item: item}) }}

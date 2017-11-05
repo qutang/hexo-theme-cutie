@@ -1,3 +1,4 @@
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
 {{ js('js/instantclick.min.js') }}
 {{ js('js/social-share.min.js') }}
 {{ js('js/theme.js')}}
@@ -33,6 +34,8 @@ InstantClick.on('change', function(isInitialLoad) {
         ga('send', 'pageview', location.pathname + location.search);
     changeLayoutOnTouchScreen();
     lightGallery(document.getElementById('lightgallery'));
+    setVersionForCurrentPage();
+    setVersionBadgeForIndexPages();
     //
     var d = document, s = d.createElement('script');
     s.src = 'https://qutang-github-io.disqus.com/embed.js';
@@ -41,7 +44,9 @@ InstantClick.on('change', function(isInitialLoad) {
     }
 });
 InstantClick.init();
+setVersionForCurrentPage();
+setVersionBadgeForIndexPages();
 </script>
 <script type='text/javascript'>
-lightGallery(document.getElementById('lightgallery'));
+  lightGallery(document.getElementById('lightgallery'));
 </script>
