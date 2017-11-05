@@ -82,7 +82,7 @@ You may add a new front matter keyword `version` to post.
 
 This feature is implemented with browser cookie.
 
-### A sample snippet about the theme in `_config.yml` of the website:
+### A sample snippet about the theme in `_config.yml` of the website
 
 ```yaml
 # Be careful about the indent
@@ -134,19 +134,21 @@ cutie:
     linkedin: https://your/linkedin/profile/link
 ```
 
-### A set of default icons, referring using path(`/images/icon_name.svg`):
-	* [archive](https://qutang.github.io/images/archive.svg)
-	* [fun](https://qutang.github.io/images/fun.svg)
-	* [home](https://qutang.github.io/images/home.svg)
-	* [notes](https://qutang.github.io/images/notes.svg)
-	* [projects](https://qutang.github.io/images/projects.svg)
-	* [resume](https://qutang.github.io/images/resume.svg)
-	* [search](https://qutang.github.io/images/search.svg)
-	* [uncategorized](https://qutang.github.io/images/uncategorized.svg)
+### A set of default icons, referring using path(`/images/icon_name.svg`)
+
+* [archive](https://qutang.github.io/images/archive.svg)
+* [fun](https://qutang.github.io/images/fun.svg)
+* [home](https://qutang.github.io/images/home.svg)
+* [notes](https://qutang.github.io/images/notes.svg)
+* [projects](https://qutang.github.io/images/projects.svg)
+* [resume](https://qutang.github.io/images/resume.svg)
+* [search](https://qutang.github.io/images/search.svg)
+* [uncategorized](https://qutang.github.io/images/uncategorized.svg)
 
 ### Add search page
-	1. Create a new page called `search`
-	1. Use layout `search` in the front matter of `search` page
+
+1. Create a new page called `search`
+1. Use layout `search` in the front matter of `search` page
 
   ```yaml
   ---
