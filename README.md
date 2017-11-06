@@ -90,6 +90,8 @@ theme: cutie
 
 google-analytics: UA-xxxxxxxx-1
 
+author_link: http://link/to/your/personal/website
+
 cutie:
   slogan: This is a slogan.
   signature: SIGNATURE
@@ -113,7 +115,7 @@ cutie:
       icon: /images/fun.svg
 
 # As long as the name matches the font awesome icon name, you can add even more social links
-# As the tip: the social link can be a QRCODE link
+# Tip: the social link can be a QRCODE link
   social:
     medium: 
     skype: 
@@ -174,7 +176,7 @@ photos:
 ---
 ```
 
-Make sure to put these images in the `source/images/[posture-file-name]` folder.
+Make sure to put these images in the `source/images/[post-file-name]/` folder.
 
 ## Contribution
 Post feature request or bugs [here](https://github.com/qutang/hexo-theme-cutie/issues), or send me pull request.
