@@ -62,7 +62,7 @@ git clone https://github.com/qutang/hexo-theme-cutie.git
 
 ### 2017-11-05
 
-* Add front matter key word `version: [integer number]` (e.g. `version: 2`), when updating this number, the index page will show unread red dot at the upper right corner of post card and dismiss when user clicks on the post link.
+* Add front matter key word `version: [integer number]` (e.g. `version: 2`), when updating this number, the index page will show unread red dot at the upper left corner of post card and dismiss when user clicks on the post link.
 
 ### 2017-11-04 
 

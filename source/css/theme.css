@@ -479,19 +479,20 @@ img {
 	box-shadow: 0.5px 0.5px 3px -0.5px rgba(170, 175, 173, 0.61);
 	margin: 0.5em;
 	min-height: 12em;
+	position:relative;
 }
 
 .Card-badge {
-	-webkit-border-radius: 10px;
-	-moz-border-radius: 10px;
-	border-radius: 10px;   
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;   
 	border: 0px solid #FFF;
 	width: 10px;
 	height: 10px;  
 	background-color: #FF6B6B;
-	position:relative;
+	position:absolute;
 	top:-5px;
-	left:99%;
+	left:-5px;
 }
 
 .Card-archive {
@@ -743,7 +744,7 @@ h1.article-title a{
 	margin-left: -2em;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1023px) {
 	.page {
 		width: 90%;
 		margin: 9em auto;
@@ -758,7 +759,7 @@ h1.article-title a{
 	margin: 0 auto;
 }
 
-@media(max-width: 800px) {
+@media(max-width: 767px) {
 	.tag-cloud {
 		width: 90%;
 		margin: 0 auto;
