@@ -12,7 +12,7 @@ photos:
   - cutie.png
 icon:
   - /images/hexo.svg
-version: 2
+version: 3
 ---
 
 _cutie_ is a responsive hexo theme heavily inspired by the clean and user friendly design of [www.linpx.com](http://www.linpx.com).
@@ -41,7 +41,9 @@ _cutie_ is a responsive hexo theme heavily inspired by the clean and user friend
 
 Visit my [personal website](https://qutang.github.io) for the demo.
 
-## For first time user who wants to have a demo site ready to go
+## Installation
+
+### For first time user who wants to have a demo site ready to go
 
 1. fork repository https://github.com/qutang/theme-cutie-demo
 1. clone to your local machine
@@ -50,7 +52,7 @@ Visit my [personal website](https://qutang.github.io) for the demo.
 1. rename folder name `hexo-theme-cutie` to `cutie`
 1. run `hexo serve`
 
-## Normal installation
+### Normal installation
 
 * clone repository into `themes` folder of your hexo website and rename the folder to `cutie`
 
@@ -58,7 +60,18 @@ Visit my [personal website](https://qutang.github.io) for the demo.
 git clone https://github.com/qutang/hexo-theme-cutie.git
 ```
 
+### Recommended Hexo plugins
+
+Cutie works better with these hexo plugins:
+
+* [hexo-prism](https://github.com/ele828/hexo-prism-plugin)
+* [hexo-lazyload-image](https://www.npmjs.com/package/hexo-lazyload-image)
+
 ## Changelog
+
+### 2017-11-10
+
+* Add front matter key word `meta_info: [string]` (e.g. `meta_info: "<a>external link</a>"`) to page template, the page will show provided meta info at the upper right corner of the header.
 
 ### 2017-11-05
 
@@ -69,6 +82,20 @@ git clone https://github.com/qutang/hexo-theme-cutie.git
 * Change lightbox to light gallery to remove jquery dependency
 
 ## Usage
+
+### Page meta info
+
+![Page meta info](page-meta-info.png)
+
+Use `meta_info: [string]` in page front matter to display meta info at the upper right corner of the page.
+
+This feature is useful when you want to show an external link, last updated time, change log, navigation list and so on. The string supports html tags.
+
+Examples:
+
+  * `meta_info: "Last updated: 2015-01-12"`
+  * `meta_info: "<a href="">中文</a>"`
+  * `meta_info: "<ul><li><a href="#heading1">Heading 1</a></li><li><a href="#heading1">Heading 2</a></li></ul>"`
 
 ### Versioned post and unread notification badge
 

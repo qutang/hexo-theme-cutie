@@ -92,7 +92,7 @@ h1, h2, h3, h4, h5, h6{
     color: #D63E0A;
 }
 
-.article h3:before {
+.article h3:before, .page h3:before{
     position: absolute;
     top: 1px;
     left: -16px;
@@ -691,10 +691,14 @@ img {
 	color: #D63E0A;
 }
 
-.article img {
+.article-content img {
 	width: auto;
 	display: inline-block;
-	max-width:100%; height:auto;
+	max-width:94%; height:auto;
+	padding: 20px;
+	border: #eee 1px solid;
+	border-radius: 5px;
+	box-shadow: 0.5px 0.5px 0.5px -0.5px rgba(170, 175, 173, 0.61);
 }
 
 .article-header {
@@ -736,6 +740,13 @@ h1.article-title a{
 	animation-duration: 0.5s;
 	animation-fill-mode: both;
 	animation-delay: 0.5s;
+}
+
+.page .page-meta{
+	float: right;
+	text-align: right;
+	margin-top: 1em;
+	width: 150px;
 }
 
 .page a {

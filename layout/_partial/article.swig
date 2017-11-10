@@ -60,7 +60,9 @@
     
 
     <!-- Content -->
+    <div class='article-content'>
     {{ item.content | default("No content") }}
+    </div>
     <hr />
 
     <h2>Share and comment</h2>

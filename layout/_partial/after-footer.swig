@@ -1,10 +1,4 @@
-<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
-{{ js('js/instantclick.min.js') }}
-{{ js('js/social-share.min.js') }}
-{{ js('js/theme.js')}}
-{{ js('js/lightgallery.min.js') }}
 <script>
-
 /**
 *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
 *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
