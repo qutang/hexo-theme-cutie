@@ -14,7 +14,7 @@
 		<mark class='Card-badge' style='{visibility: "hidden"}'></mark>
 		<div class='Card-figure'>
 			{% if item.link || item.external_link %}
-				<a href="{{ item.link | default(item.external_link) }}" rel="noopener noreferrer" target="_blank">
+				<a href="{{ item.link | default(item.external_link) }}" rel="noopener noreferrer" target="_blank" onclick="setVisitedVersion('{{ item.title }}', '{{item.version}}' );setVersionBadgeForIndexPages();">
 			{% else %}
 				<a href="{{ url_for(item.path) }}">
 			{% endif %}
@@ -30,7 +30,7 @@
 				<div class='Card-title'>
 					<h2>
 					{% if item.link || item.external_link %}
-						<a href="{{ item.link | default(item.external_link) }}" rel="noopener noreferrer" target="_blank">
+						<a href="{{ item.link | default(item.external_link) }}" rel="noopener noreferrer" target="_blank" onclick="setVisitedVersion('{{ item.title }}', '{{item.version}}' );setVersionBadgeForIndexPages();">
 					{% else %}
 						<a href="{{ url_for(item.path) }}">
 					{% endif %}
@@ -40,7 +40,7 @@
 				<div class='Card-excerpt'>
 					<p>
 					{% if item.link || item.external_link %}
-						<a href="{{ item.link | default(item.external_link) }}" rel="noopener noreferrer" target="_blank">
+						<a href="{{ item.link | default(item.external_link) }}" rel="noopener noreferrer" target="_blank" onclick="setVisitedVersion('{{ item.title }}', '{{item.version}}' );setVersionBadgeForIndexPages();">
 					{% else %}
 						<a href="{{ url_for(item.path) }}">
 					{% endif %}

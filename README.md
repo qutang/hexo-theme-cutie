@@ -12,10 +12,11 @@ photos:
   - cutie.png
 icon:
   - /images/hexo.svg
-version: 3
+version: 4
 ---
-
 _cutie_ is a responsive hexo theme heavily inspired by the clean and user friendly design of [www.linpx.com](http://www.linpx.com).
+
+> Note: if you are using this theme and would like to add your website as a reference link in the end of the post, please send me a note through email or github.
 
 ## Intro
 
@@ -215,3 +216,7 @@ Post feature request or bugs [here](https://github.com/qutang/hexo-theme-cutie/i
 1. [InstantClick](http://instantclick.io)
 1. [Lightgallery](http://sachinchoolur.github.io/lightGallery/)
 1. [Cookie.js](https://github.com/js-cookie/js-cookie)
+
+## Websites that use the theme
+
+_Let me know if you want your website appears here._
