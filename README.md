@@ -70,6 +70,10 @@ Cutie works better with these hexo plugins:
 
 ## Changelog
 
+### 2017-11-28
+
+* Fix bug of badge notification for external link post.
+
 ### 2017-11-10
 
 * Add front matter key word `meta_info: [string]` (e.g. `meta_info: "<a>external link</a>"`) to page template, the page will show provided meta info at the upper right corner of the header.
