@@ -65,7 +65,7 @@ git clone https://github.com/qutang/hexo-theme-cutie.git
 
 Cutie works better with these hexo plugins:
 
-* [hexo-prism](https://github.com/ele828/hexo-prism-plugin)
+* [hexo-prism-plugin](https://github.com/ele828/hexo-prism-plugin)
 * [hexo-lazyload-image](https://www.npmjs.com/package/hexo-lazyload-image)
 
 ## Changelog
@@ -73,6 +73,7 @@ Cutie works better with these hexo plugins:
 ### 2017-11-28
 
 * Fix bug of badge notification for external link post.
+* Fix bug causing conflict with hexo-prism-plugin when displaying line numbers on some themes.
 
 ### 2017-11-10
 

@@ -151,16 +151,12 @@ a:hover {
 /* code */
 code {
 	padding: 3px;
-	background-color: #f2f2f2;
 	border-radius: 2px;
 }
 
 pre code {
-	display: inline-block;
-	overflow: auto;
 	padding: 0;
 	border-radius: 0px;
-	margin-left: 1em;
 	margin-top: 0.5em;
 }
 
