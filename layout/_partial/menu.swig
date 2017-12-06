@@ -4,7 +4,7 @@
 	{% else %}
 		{% set menu = theme.menu %}
 	{% endif %}
-	<div class='menu-item'>
+	<div class='menu-item grow'>
 		<div class='menu-icon'>
 			<a href="/archives/">
 			<img src="{{ '/images/archive.svg' }}" alt="">
@@ -22,7 +22,7 @@
 			{% set count = true %}
 		{% endif %}
 		{% if not count %}
-			<div class='menu-item'>
+			<div class='menu-item grow'>
 			{% if menu_content.icon %}
 				<div class='menu-icon'>
 				<a href="{{ menu_content.link }}">
@@ -39,7 +39,7 @@
 			</div>
 		{% endif %}
 	{% endfor %}
-	<div class='menu-item'>
+	<div class='menu-item grow'>
 		<div class='menu-icon'>
 			<a href="/search/">
 			<img src="{{ '/images/search.svg' }}" alt="">

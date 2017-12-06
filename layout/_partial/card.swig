@@ -19,9 +19,9 @@
 				<a href="{{ url_for(item.path) }}">
 			{% endif %}
 			{% if item.icon %}
-				<img src="{{ item.icon }}" alt="">
+				<img class='grow' src="{{ item.icon }}" alt="">
 			{% else %}
-				<img src="{{ '/images/' + category_name + '.svg' }}" alt="">
+				<img class='grow' src="{{ '/images/' + category_name + '.svg' }}" alt="">
 			{% endif %}
 			</a>
 		</div>

@@ -1,7 +1,7 @@
 <div class='pagination'>
 	{% if page.prev %}
 		<div class="pagination-item">
-			<a href="{{ url_for(page.prev_link) }}" class="prev"><b><</b></a>
+			<a href="{{ url_for(page.prev_link) }}" class="prev grow"><b><</b></a>
 		</div>
 	{% endif %}
 	{% set base_link = page.current_url.split(config.pagination_dir)[0] %}
@@ -12,9 +12,9 @@
 				<span>{{ number }}</span>
 			{% else %}
 				{% if number == 1 %}
-					<a href="{{ url_for(base_link) }}">{{ number }}</a>
+					<a class='grow' href="{{ url_for(base_link) }}">{{ number }}</a>
 				{% else %}
-					<a href="{{ url_for(base_link + config.pagination_dir + '/' + number + '/') }}">{{ number }}</a>
+					<a class='grow' href="{{ url_for(base_link + config.pagination_dir + '/' + number + '/') }}">{{ number }}</a>
 				{% endif %}
 			{% endif %}
 		</div>
@@ -22,7 +22,7 @@
 
 	{% if page.next %}
 		<div class="pagination-item">
-			<a href="{{ url_for(page.next_link) }}" class="next"><b>></b></a>
+			<a href="{{ url_for(page.next_link) }}" class="grow next"><b>></b></a>
 		</div>
 	{% endif %}
 </div>
