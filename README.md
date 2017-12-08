@@ -12,7 +12,7 @@ photos:
   - cutie.png
 icon:
   - /images/hexo.svg
-version: 4
+version: 5
 ---
 _cutie_ is a responsive hexo theme heavily inspired by the clean and user friendly design of [www.linpx.com](http://www.linpx.com).
 
@@ -70,6 +70,23 @@ Cutie works better with these hexo plugins:
 
 ## Changelog
 
+### 2017-12-08
+
+* Adjust heading, inline code, list typography
+
+### 2017-12-05
+
+* Remove bottom border for header (I know it's ugly!). Redesign header.
+* Add support for logo image (can be omitted). See `_config.yml` file field.
+
+```yaml
+cutie:
+  logo: /your/path/to/logo/image
+```
+
+* Add more padding to footer nav menu.
+* Add zooming effect to logo image, post icon (index page), pagination button and nav menu (close issue [#1](https://github.com/qutang/hexo-theme-cutie/issues/1))
+
 ### 2017-11-28
 
 * Fix bug of badge notification for external link post.
@@ -126,6 +143,7 @@ google-analytics: UA-xxxxxxxx-1
 author_link: http://link/to/your/personal/website
 
 cutie:
+  logo: /your/path/to/logo/image
   slogan: This is a slogan.
   signature: SIGNATURE
 
