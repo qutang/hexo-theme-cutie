@@ -117,7 +117,7 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 p {
 	margin: 0;
 	padding: 0;
-	margin-bottom: 1em;
+	/* margin-bottom: 1em; */
 }
 h1 { 
 	font-size: 1.5em;
@@ -790,6 +790,10 @@ h1.article-title a{
 		width: 90%;
 		margin: 9em auto;
 	}
+}
+
+.article p, .page p{
+	margin-bottom: 1em;
 }
 
 /* Page */
