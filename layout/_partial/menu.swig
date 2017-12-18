@@ -1,9 +1,10 @@
+{% if site.data.cutie %}
+	{% set menu = site.data['cutie']['menu'] | default(config.cutie.menu) %}
+{% else %}
+	{% set menu = config.cutie.menu %}
+{% endif %}
+
 <nav class="menu">
-	{% if config.cutie.menu %}
-		{% set menu = config.cutie.menu %}
-	{% else %}
-		{% set menu = theme.menu %}
-	{% endif %}
 	<div class='menu-item grow'>
 		<div class='menu-icon'>
 			<a href="/archives/">

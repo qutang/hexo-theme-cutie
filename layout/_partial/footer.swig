@@ -1,9 +1,15 @@
+{% if site.data.cutie %}
+    {% set signature = site.data['cutie']['signature'] | default(config.cutie.signature) %}
+    {% set social = site.data['cutie']['social'] | default(config.cutie.social) %}
+{% else %}
+    {% set signature = config.cutie.signature %}
+    {% set social = config.cutie.signature %}
+{% endif %}
 <footer class='footer'>
     <div class='footer-logo'>
-        <span>{{ config.cutie.signature }}</span>
+        <span>{{ signature }}</span>
     </div>
     <div class='footer-social'>
-        {% set social = config.cutie.social %}
         {% if social %}
             {% for item_name, item_link in social %}
                 {% if item_link %}

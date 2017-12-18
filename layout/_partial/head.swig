@@ -22,8 +22,8 @@
       <title>{{ page.title | default('No title') + " - " + config.title }}</title>
   {% endif %}
   
-  <meta name="description" content="">
-  <meta name="author" content="">
+  <meta name="description" content="{{ config.description }}">
+  <meta name="author" content="{{ config.author }}">
 
   <!-- Mobile Specific Metas
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
