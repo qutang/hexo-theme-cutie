@@ -159,7 +159,7 @@ a:hover {
 }
 
 /* code */
-code {
+/* code {
 	padding: 3px;
 	border-radius: 2px;
 	background-color: #E1E1E1;
@@ -217,7 +217,7 @@ pre .marked {
 pre {
 	margin: 0.25em;
 	background-color: #f2f2f2;
-}
+} */
 
 /* label */
 label {

@@ -2,7 +2,7 @@
 <html lang="en">
 {{ partial("_partial/head") }}
 <body style="display: flex; flex-direction: column; min-height: 100vh;">
-  {{ partial("_partial/header") }}
+{{ partial("_partial/header") }}
 
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->

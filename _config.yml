@@ -1,1 +1,15 @@
 version: 1
+logo:
+slogan:  
+# Configure navigation menu, provide a relative link and a path to icon (icon should better be square)
+# If menu is absent, only "archive" and "search" menu items will be preserved
+# Configurable menu items should not exeed 4, otherwise the last ones will be ignored
+menu:
+  Sample Menu:
+    link: /your/link
+    icon: /your/link/to/menu/icon
+# As long as the name matches the font awesome icon name, you can add even more social links
+# As the tip: the social link can be a QRCODE link
+social:
+  github: https://github.com/qutang
+  linkedin: https://www.linkedin.com/in/qutang

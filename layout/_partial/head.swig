@@ -22,8 +22,8 @@
       <title>{{ page.title | default('No title') + " - " + config.title }}</title>
   {% endif %}
   
-  <meta name="description" content="">
-  <meta name="author" content="">
+  <meta name="description" content="{{ config.description }}">
+  <meta name="author" content="{{ config.author }}">
 
   <!-- Mobile Specific Metas
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -36,7 +36,7 @@
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
-  {{ css(['css/normalize.css', 'css/font-awesome.min.css', 'css/gridlex.min.css', 'css/skeleton.css', 'css/theme.css', 'css/share.min.css', 'css/lightgallery.css']) }}
+  {{ css(['css/normalize.css', 'css/font-awesome.min.css', 'css/gridlex.min.css', 'css/skeleton.css', 'css/theme.css', 'css/share.min.css', 'css/lightgallery.css', 'css/highlight']) }}
 
   <script type="text/x-mathjax-config">
   MathJax.Hub.Config({

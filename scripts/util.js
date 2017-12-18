@@ -1,8 +1,8 @@
-hexo.extend.helper.register("get_posts_by_year", function(posts, year,limit = 10){
+hexo.extend.helper.register("get_posts_by_year", function(posts, year){
 	var result = posts.filter(function(post){
 		if(post.date.year() === year) return true;
 		else return false;
-	}).slice(0, limit);
+	});
 	return result;
 });
 
