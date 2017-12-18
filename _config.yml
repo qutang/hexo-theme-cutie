@@ -1,7 +1,6 @@
 version: 1
 logo:
-slogan: 
-signature: 
+slogan:  
 # Configure navigation menu, provide a relative link and a path to icon (icon should better be square)
 # If menu is absent, only "archive" and "search" menu items will be preserved
 # Configurable menu items should not exeed 4, otherwise the last ones will be ignored

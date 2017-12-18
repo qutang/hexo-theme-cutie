@@ -36,9 +36,9 @@
     <!-- Date and Author -->
     <p>
        	{{ item.date.format(config.date_format) }}
-        by {{ item.author | default(config.author) }}
+        {{ __('post.by') }} {{ item.author | default(config.author) }}
         {% if item.version and item.version != -1 %}
-            | Version: {{ item.version }}
+            | {{ __('post.version') }}: {{ item.version }}
         {% endif %}
     </p>
     <p>
@@ -65,9 +65,10 @@
     </div>
     <hr />
 
-    <h2>Share and comment</h2>
+    <h2>{{ __('post.share') }}</h2>
     <div class="social-share"></div>
     {% if comment %}
+        <h2>{{ __('post.comment') }}</h2>
         <div id="disqus_thread"></div>
         <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     {% endif %}

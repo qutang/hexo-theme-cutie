@@ -13,7 +13,7 @@
 		</div>
 		<div class="menu-name">
 			<a class='menu-link' href="/archives/">
-				<span>Archives</span>
+				<span>{{ __('menu.archives') }}</span>
 			</a>
 		</div>
 	</div>
@@ -48,7 +48,7 @@
 		</div>
 		<div class="menu-name">
 			<a class='menu-link' href="/search/">
-				<span>Search</span>
+				<span>{{ __('menu.search') }}</span>
 			</a>
 		</div>
 	</div>
