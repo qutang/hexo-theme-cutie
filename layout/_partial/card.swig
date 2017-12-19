@@ -44,7 +44,7 @@
 					{% else %}
 						<a href="{{ url_for(item.path) }}">
 					{% endif %}
-					{% set exerpt = trim(truncate(strip_html(item.content), {length: 180, separator: ' ', omission: '...'})) %}
+					{% set exerpt = trim(truncate(strip_html(item.content), {length: 150, separator: ' ', omission: '...'})) %}
 					{% if exerpt and exerpt !== '' %}
 						{{ exerpt }}
 					{% else %}
