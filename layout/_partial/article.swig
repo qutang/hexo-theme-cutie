@@ -21,16 +21,28 @@
     {% endif %}
 
     <div class='article-header'>
+         {% if item.icon %}
          <div class='article-logo'>
-            <a href="{{ category_link }}" data-no-instant>
-                <img src="{{ '/images/' + category_name + '.svg' }}" alt="">
+            <a href="#" data-no-instant>
+                <img src="{{ item.icon }}" alt="">
             </a>
          </div>
+         {% endif %}
          <h1 class='article-title'>
             <a href="{{ url_for(item.path) }}">
                 {{ titlecase(item.title) | default("No title") }}
             </a>
         </h1>
+        {% if item.categories && item.categories.length %}
+        <ul class='article-categories'>
+            {% for cat in item.categories %}
+            {% set category_link = url_for(cat.path) %}
+                <li><a href="{{ category_link }}" data-no-instant>
+                    <img src="{{ '/images/' + cat.name + '.svg' }}" alt="{{ cat.name }}" />
+                </a></li>
+            {% endfor %}
+        </ul>
+        {% endif %}
     </div>
    
     <!-- Date and Author -->

@@ -44,7 +44,13 @@
 					{% else %}
 						<a href="{{ url_for(item.path) }}">
 					{% endif %}
-					{{ strip_html(truncate(item.content, {length: 180, separator: ' ', omission: '...'}))|default("No content") }} </a></p>
+					{% set exerpt = trim(truncate(strip_html(item.content), {length: 150, separator: ' ', omission: '...'})) %}
+					{% if exerpt and exerpt !== '' %}
+						{{ exerpt }}
+					{% else %}
+						{{ "No content" }} 
+					{% endif %}
+					</a></p>
 					<p>{{ partial('_partial/article-tags', {item: item, limit: 4}) }}</p>
 				</div>
 				<div class="Card-meta">

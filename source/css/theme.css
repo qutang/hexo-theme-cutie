@@ -586,7 +586,9 @@ img {
 }
 
 .Card-figure img {
-  	width: 3em;
+	width: 3em;
+	height: 3em;
+	object-fit: cover;
 }
 
 .Card-body {
@@ -774,6 +776,8 @@ img {
 
 .article-logo img {
 	width: 2.5em;
+	height: 2.5em;
+	object-fit: cover;
 }
 
 .article-title{
@@ -781,8 +785,24 @@ img {
 	font-family: Palatino,"Palatino Linotype","Palatino LT STD","Book Antiqua",Georgia,serif;
 }
 
-h1.article-title a{
+h1.article-title{
+	margin-bottom: 1.2em;
+}
+
+.article-title a{
 	color: #333;
+}
+
+.article-categories li{
+	display: block;
+	float:left;
+	padding-left: 0.5em;
+}
+
+.article-categories img{
+	width: 2.5em;
+	height: auto;
+	object-fit: cover;
 }
 
 @media (max-width: 1000px) {
