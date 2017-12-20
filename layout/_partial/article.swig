@@ -69,7 +69,6 @@
         </div>
         <hr>
     {% endif %}
-    
 
     <!-- Content -->
     <div class='article-content'>
@@ -81,10 +80,6 @@
     <div class="social-share"></div>
     {% if comment %}
         <h2>{{ __('post.comment') }}</h2>
-        <div id="disqus_thread"></div>
-        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        {{ partial('_partial/comment-html') }}
     {% endif %}
-
-    
-    
 </article>

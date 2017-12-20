@@ -1,3 +1,10 @@
+{% if site.data.cutie %}
+    {% set comment_system = site.data.cutie['global']['comment_system'] %}
+{% else %}
+    {% set comment_system = config.cutie['global']['comment_system'] %}
+{% endif %}
+
+
 <head>
 
   <!-- Basic Page Needs
@@ -53,6 +60,12 @@
   
   {{ partial('_partial/google_analytics') }}
 
+  <!-- include comment system code -->
+  {% if comment_system === 'valine' %}
+    {{ partial('_third_party/valine_head') }}
+  {% elseif comment_system === 'gitment' %}
+    {{ partial('_third_party/gitment_head') }}
+  {% endif %}
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="icon" type="image/png" href="/images/favicon.png">

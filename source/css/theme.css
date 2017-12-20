@@ -219,6 +219,12 @@ pre {
 	background-color: #f2f2f2;
 } */
 
+/* valine */
+#valine .vsubmit:hover {
+	border-color:#D63E0A;
+	color:#D63E0A;
+}
+
 /* label */
 label {
 	display: inline-block;

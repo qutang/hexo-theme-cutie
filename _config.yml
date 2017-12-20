@@ -13,3 +13,20 @@ menu:
 social:
   github: https://github.com/qutang
   linkedin: https://www.linkedin.com/in/qutang
+
+global:
+  comment_system: valine # disqus, valine, gitment
+
+valine:
+  appId:
+  appKey:
+  placeholder:
+
+disqus:
+  shortname:
+
+gitment:
+  owner:
+  repo:
+  client_id:
+  client_secret:
