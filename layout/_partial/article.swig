@@ -79,7 +79,6 @@
     <h2>{{ __('post.share') }}</h2>
     <div class="social-share"></div>
     {% if comment %}
-        <h2>{{ __('post.comment') }}</h2>
         {{ partial('_partial/comment-html') }}
     {% endif %}
 </article>
