@@ -1,4 +1,5 @@
-version: 1
+version: 2.0-dev
+url: 
 logo:
 slogan:  
 # Configure navigation menu, provide a relative link and a path to icon (icon should better be square)

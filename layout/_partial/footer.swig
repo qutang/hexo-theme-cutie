@@ -15,5 +15,5 @@
     </div>
     <p> {{ __('footer.copyright') }} <a href="{{ config.author_link }}">@{{ config.author }}</a> {{ date(Date.now(), 'YYYY') }}</p>
     <p> Icons by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">Flaticon</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0</a></p>
-    <p>{{ __('footer.theme') }} <a href="http://qutang.github.io/2017/06/27/Hexo-theme-cutie/">Cutie</a> | {{ __('footer.powered', '<a href="http://hexo.io">Hexo.</a>') }}</p>
+    <p>{{ __('footer.theme') }} <a href="{{ theme.url }}">Cutie {{ theme.version }}</a> | {{ __('footer.powered', '<a href="http://hexo.io">Hexo.</a>') }}</p>
 </footer>
