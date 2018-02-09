@@ -61,6 +61,8 @@ footer:
   powered: "Powered by %s"
   theme: Theme
   copyright: Copyright by
+  design: Designed by
+  and: and
 
 counter:
   tag_cloud:

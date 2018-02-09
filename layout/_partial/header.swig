@@ -1,28 +1,35 @@
-{% if site.data.cutie %}
-	{% set logo = site.data['cutie']['logo'] | default(config.cutie.logo) %}
-{% else %}
-	{% set logo = config.cutie.logo %}
+{% if site.data.cutie %} 
+	{% set logo = site.data['cutie']['logo'] %} 
+{% else %} 
+	{% set logo = config.cutie.logo %} 
 {% endif %}
 
-<header class="header">
+<header id="header">
 	<div class="header-title">
 		{% if logo %}
-			<div class='header-logo'><a href='/'>
-				<img class='grow' src='{{ logo }}' />
-			</a></div>
-			<div class='header-text' >
-			    <h1>{{ config.title }}</h1>
-				<p><small>{{ truncate(config.subtitle, {length: 40, separator: ' ', omission: '...'}) }}</small></p>
-			</div>
+		<div class='header-logo'>
+			<a href='/'>
+				<img src='{{ logo }}' />
+			</a>
+		</div>
+		<div class='header-text'>
+			<h1>
+				<a href="/">{{ config.title }}</a>
+			</h1>
+			<subtitle>
+				{{ truncate(config.subtitle, {length: 40, separator: ' ', omission: '...'}) }}
+			</subtitle>
+		</div>
 		{% else %}
-			<div class='header-text-no-image'>
-				<h1><a href="/">{{ config.title }}</a></h1>
-				<p><small>{{ truncate(config.subtitle, {length: 40, separator: ' ', omission: '...'}) }}</small></p>
-			</div>
-			
+		<div class='header-text-no-image'>
+			<h1>
+				<a href="/">{{ config.title }}</a>
+			</h1>
+			<subtitle>{{ truncate(config.subtitle, {length: 40, separator: ' ', omission: '...'}) }}</subtitle>
+		</div>
 		{% endif %}
 	</div>
-	<div id="header-menu-container">
-		{{ partial('_partial/menu') }}
+	<div id='header-nav'>
+		{{ partial('_partial/nav', {position: 'header'}) }}
 	</div>
 </header>

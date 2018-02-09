@@ -3,17 +3,21 @@
 {% else %}
     {% set social = config.cutie.signature %}
 {% endif %}
-<footer class='footer'>
+<footer id='footer'>
+    <div class='footer-copyright'>
+        <div>
+            <p> {{ __('footer.copyright') }} <a href="{{ config.author_link }}">{{ config.author }}</a> {{ date(Date.now(), 'YYYY') }}</p>
+            <p>{{ __('footer.design') }}: 🌱<a href="https://moober.cn">Moober</a> {{ __('footer.and') }} 👓<a href="https://moober.cn">Qu Tang</a> ◽ {{ __('footer.theme') }}: <a href="{{ theme.url }}">Cutie {{ theme.version }}</a> ◽ {{ __('footer.powered', '<a href="http://hexo.io">Hexo.</a>') }}</p>
+        </div>
+    </div>
+    
     <div class='footer-social'>
         {% if social %}
             {% for item_name, item_link in social %}
                 {% if item_link %}
-                    <div class='footer-social-item'><a href='{{ item_link }}' target='_blank' ><i class="fa fa-{{ item_name }} fa-2x" aria-hidden="true"></i></a></div>
+                    <div class='footer-social-item'><a href='{{ item_link }}' target='_blank' ><i class="fab fa-{{ item_name }} fa-2x" aria-hidden="true"></i></a></div>
                 {% endif %}
             {% endfor %}
         {% endif %}
     </div>
-    <p> {{ __('footer.copyright') }} <a href="{{ config.author_link }}">@{{ config.author }}</a> {{ date(Date.now(), 'YYYY') }}</p>
-    <p> Icons by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">Flaticon</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0</a></p>
-    <p>{{ __('footer.theme') }} <a href="{{ theme.url }}">Cutie {{ theme.version }}</a> | {{ __('footer.powered', '<a href="http://hexo.io">Hexo.</a>') }}</p>
 </footer>

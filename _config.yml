@@ -1,4 +1,4 @@
-version: 2.0-dev
+version: 2.0-alpha
 url: 
 logo:
 slogan:  
@@ -17,6 +17,7 @@ social:
 
 global:
   comment_system: valine # disqus, valine, gitment
+  scheme: Taurus #moober
 
 valine:
   appId:

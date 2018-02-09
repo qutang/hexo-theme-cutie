@@ -61,6 +61,8 @@ footer:
   powered: "由 %s 强力驱动"
   theme: 主题
   copyright: "版权所有"
+  design: 设计
+  and: 和
 
 counter:
   tag_cloud:

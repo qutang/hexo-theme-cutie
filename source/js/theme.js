@@ -5,10 +5,33 @@ function disableHoverOnTouch() {
 	});
 }
 
+function onClickMenuIcon(event) {
+		if('ontouchstart' in document.documentElement){
+			event.preventDefault();
+			event.stopPropagation();
+			
+			ele = document.getElementById('nav-item-more');
+			if(ele.classList.contains('active_dot'))
+				ele.classList.remove('active_dot');
+			else
+				ele.classList.add('active_dot');
+			var elems = document.getElementsByClassName('nav-more-menu');
+			console.log(elems.length);
+			[].forEach.call(elems, function(el) {
+				console.log(el.style.display);
+				if(!el.style.display || el.style.display == 'none')
+					el.style.display = "block";
+				else
+					el.style.display = 'none';
+			});
+		}
+}
+
 function changeLayoutOnTouchScreen() {
 	if('ontouchstart' in window        // works on most browsers 
       || navigator.maxTouchPoints){
 		// remove all Card-hover class
+		console.log('trigger change layout')
 		var elems = document.querySelectorAll(".Card-hover");
 		[].forEach.call(elems, function(el) {
 			el.classList.remove("Card-hover");
@@ -82,10 +105,26 @@ function setVersionBadgeForIndexPages(){
 			console.log('Set unread post title bold: ' + cards[i].dataset['name']);
 		  }else{
 			cards[i].querySelector('mark.Card-badge').style.visibility = 'hidden';
-			cards[i].querySelector('h2 a').style.fontWeight = 'normal';
+			// cards[i].querySelector('h2 a').style.fontWeight = 'normal';
 		  }
 		}
 	  }
+}
+
+function fixCodeBlockForHighlightJs(){
+	document.querySelectorAll('pre code').forEach(function(el){
+		var classes = el.classList;
+		var foundClassName;
+		for(var cl in classes){
+			console.log(classes.item(cl))
+			if(classes.item(cl) != null && classes.item(cl).includes('language')){
+				foundClassName = classes.item(cl).replace('language-', '');
+				break;
+			}
+		}
+		el.classList.add(foundClassName)
+		hljs.highlightBlock(el);
+	});
 }
 
 disableHoverOnTouch();

@@ -1,0 +1,95 @@
+{% if site.data.cutie %}
+	{% set menu = site.data['cutie']['menu'] | default(config.cutie.menu) %}
+{% else %}
+	{% set menu = config.cutie.menu %}
+{% endif %}
+
+{% if site.data.cutie %}
+{% set icon_set = site.data['cutie']['global']['icon_set'] | default(config.cutie.global.icon_set) %}
+{% else %}
+{% set icon_set = site.data['cutie']['global']['icon_set'] | default(config.cutie.global.icon_set) %}
+{% endif %}
+
+<nav id="nav">
+	{% set count = false %}
+	{% for menu_name, menu_content in menu %}
+		{% if position === 'footer' %}
+			{% if loop.index == 1 %}
+				{% set count = true %}
+			{% endif %}
+		{% else %}
+			{% if loop.index == 5 %}
+				{% set count = true %}
+			{% endif %}
+		{% endif %}
+		{% if not count %}
+			<div class='nav-item'>
+			{% if position === 'footer' %}
+				<!-- {% if url.indexOf(menu_content.link) !== -1 %}
+				<div class='nav-icon active_dot'>
+				{% else %}
+				<div class='nav-icon'>
+				{% endif %}
+				<a href="{{ menu_content.link }}">
+					{% if menu_content.icon %}
+					<img src="{{ menu_content.icon }}" alt="">
+					{% else %}
+					{% endif %}
+					</a>
+					</div> -->
+			{% endif %}
+					{% if url.indexOf(menu_content.link) !== -1 %}
+						<div class="nav-name active_page">
+					{% else %}
+						<div class="nav-name">
+					{% endif %}
+						<a class='nav-link' href="{{ menu_content.link }}">
+							<span>{{ menu_name }} </span>
+						</a>
+					</div>
+				</a>
+			</div>
+		{% endif %}
+	{% endfor %}
+	<div class='nav-item' id='nav-item-archive'>
+		{% if url.indexOf('/archives/') !== -1 %}
+				<div class='nav-icon active_dot'>
+				{% else %}
+				<div class='nav-icon'>
+				{% endif %}
+			<a href="/archives/" title='{{ __("menu.archives") }}'>
+			<img src="{{ '/images/icons/' + icon_set + '/archive.svg' }}" alt="">
+			</a>
+		</div>
+	</div>
+	<div class='nav-item' id='nav-item-search'>
+		{% if url.indexOf('/search/') !== -1 %}
+		<div class='nav-icon active_dot'>
+		{% else %}
+		<div class='nav-icon'>
+		{% endif %}
+			<a href="/search/" title='{{ __("menu.search") }}'>
+			<img src="{{ '/images/icons/' + icon_set + '/search.svg' }}" alt="">
+			</a>
+		</div>
+	</div>
+	<div class="nav-item" id='nav-item-more'>
+		<div class="nav-icon">
+				<a href='#' onclick='onClickMenuIcon(event);' ontouchstart='onClickMenuIcon(event);'>
+				<img src="{{ '/images/icons/' + icon_set + '/menu.svg' }}" alt="">
+				</a>
+		</div>
+		<div class="nav-more-menu">
+		{% for menu_name, menu_content in menu %}
+		<div class='nav-more-item'>
+				<div class="nav-name">
+					<a class='nav-link' href="{{ menu_content.link }}">
+						<span>{{ menu_name | capitalize }}</span>
+					</a>
+				</div>
+			</a>
+		</div>
+		{% endfor %}
+	</div>
+	</div>
+</nav>

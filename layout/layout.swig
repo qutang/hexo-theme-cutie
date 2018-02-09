@@ -14,8 +14,8 @@
 
   <br>
 
-  <div id="footer-menu-container">
-		{{ partial('_partial/menu') }}
+  <div id="footer-nav">
+		{{ partial('_partial/nav', {position: 'footer'}) }}
 	</div>
 
   {{ partial("_partial/after-footer") }}

@@ -1,0 +1,24 @@
+.index-container
+  margin: 0 auto
+  margin-top: 9em
+  text-align: center
+  margin-bottom: 5em
+
+.index-cards
+  margin: 0 auto
+  margin-top: 3em
+  max-width: 960px
+  +for_breakpoint(tablet)
+    width: 90vw
+    justify-content: center
+    padding: 0
+  +for_breakpoint(mobile)
+    width: 90vw
+    justify-content: center
+    padding: 0
+  display: flex
+  align-items: center
+  justify-content: space-between
+  flex-direction: row
+  flex-wrap: wrap
+  padding: 0 2.5em

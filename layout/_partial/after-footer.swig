@@ -21,4 +21,5 @@
 changeLayoutOnTouchScreen();
 setVersionForCurrentPage();
 setVersionBadgeForIndexPages();
+fixCodeBlockForHighlightJs();
 </script>

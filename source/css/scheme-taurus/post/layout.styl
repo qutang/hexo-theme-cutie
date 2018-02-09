@@ -1,0 +1,34 @@
+.article
+.page
+  max-width: 960px
+  +for_breakpoint(tablet)
+    width: 70vw
+  +for_breakpoint(mobile)
+    width: 75vw
+  margin: 0 auto
+  padding: 0 5em 0 2em
+  margin-top: 10em
+  .article-cards
+    margin: 0 auto
+    margin-top: 1.5em
+    width: 100%
+    +for_breakpoint(tablet)
+      width: 100%
+      justify-content: center
+      padding: 0
+    +for_breakpoint(mobile)
+      width: 100%
+      justify-content: center
+      padding: 0
+    display: flex
+    align-items: center
+    justify-content: space-between
+    flex-direction: row
+    flex-wrap: wrap
+
+.page
+  max-width: 800px
+  .page-meta
+    float:right
+    p
+      margin: 0

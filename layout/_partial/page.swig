@@ -16,13 +16,10 @@
             </a>
         </h1>
     </div>
-	<hr />
     <!-- Content -->
     <div class='article-content'>
     {{ item.content | default("No content") }}
     </div>
-    <hr />
-    <div class="social-share"></div>
     {% if comment %}
         {{ partial('_partial/comment-html') }}
     {% endif %}
