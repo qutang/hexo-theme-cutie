@@ -1,0 +1,157 @@
+// https://github.com/chriskempson/tomorrow-theme
+highlight-background = #2d2d2d
+highlight-current-line = #393939
+highlight-selection = #515151
+highlight-foreground = #cccccc
+highlight-comment = #999999
+highlight-red = #f2777a
+highlight-orange = #f99157
+highlight-yellow = #ffcc66
+highlight-green = #99cc99
+highlight-aqua = #66cccc
+highlight-blue = #6699cc
+highlight-purple = #cc99cc
+
+$code-block
+  background: white
+  margin: 1.5em 0
+  padding: 15px 15px
+  border-style: solid
+  border-width: 1px
+  border-color: #ccc
+  overflow: hidden
+  border-radius: 5px
+  color: highlight-foreground
+  
+
+$line-numbers
+  color: #666
+  font-size: 0.85em
+
+.article-content
+  pre, code
+    font-family: Courier New, Courier, monospace
+    font-weight: bold
+  code
+    background: white
+    text-shadow: 0 1px #fff
+    padding: 0 0.3em
+  pre
+    @extend $code-block
+    code
+      background: none
+      text-shadow: none
+      padding: 0
+  .highlight
+    @extend $code-block
+    pre
+      border: none
+      margin: 0
+      padding: 0
+    table
+      margin: 0
+      width: auto
+    td
+      border: none
+      padding: 0
+    figcaption
+      font-size: 0.85em
+      color: highlight-comment
+      line-height: 1em
+      margin-bottom: 1em
+      a
+        float: right
+      span
+        font: monospace
+    .gutter pre
+      @extend $line-numbers
+      text-align: right
+      padding-right: 20px
+    .line
+    .line.marked
+      background: white;
+  .gist
+    margin: 0 0
+    border-style: solid
+    border-color: gray
+    border-width: 1px 0
+    background: highlight-background
+    padding: 15px 0 15px 0
+    .gist-file
+      border: none
+      margin: 0
+      .gist-data
+        background: none
+        border: none
+        .line-numbers
+          @extend $line-numbers
+          background: none
+          border: none
+          padding: 0 20px 0 0
+        .line-data
+          padding: 0 !important
+      .highlight
+        margin: 0
+        padding: 0
+        border: none
+      .gist-meta
+        background: highlight-background
+        color: highlight-comment
+        font: 0.85em 
+        text-shadow: 0 0
+        padding: 0
+        margin-top: 1em
+        margin-left: 0
+        a
+          font-weight: normal
+          &:hover
+            text-decoration: underline
+
+pre
+  .comment
+    color: highlight-comment
+  .variable
+  .attr
+  .tag
+  .regexp
+  .ruby .constant
+  .xml .tag .title
+  .xml .pi
+  .xml .doctype
+  .html .doctype
+  .css .id
+  .css .class
+  .css .pseudo
+    color: highlight-red
+  .number
+  .preprocessor
+  .built_in
+  .literal
+  .params
+  .constant
+    color: highlight-orange
+  .class
+  .ruby .class .title
+  .css .rules .attr
+    color: highlight-green
+  .string
+  .value
+  .inheritance
+  .header
+  .ruby .symbol
+  .xml .cdata
+    color: highlight-green
+  .css .hexcolor
+    color: highlight-aqua
+  .function
+  .python .decorator
+  .python .title
+  .ruby .function .title
+  .ruby .title .keyword
+  .perl .sub
+  .javascript .title
+  .coffeescript .title
+    color: highlight-blue
+  .keyword
+  .javascript .function
+    color: highlight-purple
