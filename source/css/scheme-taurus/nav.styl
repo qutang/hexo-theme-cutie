@@ -54,7 +54,7 @@ right_dot($offset)
 
 #nav
   .active_dot
-    top_dot_circle(-0.7em, 0)
+    top_dot_circle(-1em, 0)
 
 #nav
   display: flex
@@ -74,6 +74,7 @@ right_dot($offset)
       &:link
         color: #222
     .nav-icon
+    .toc-button
       text-align: center
       vertical-align: text-top
       width: 1.8em
@@ -83,6 +84,8 @@ right_dot($offset)
         width: 2em
         height: 2em
         object-fit: cover
+      &:hover
+        top_dot_circle(-1em, 0)
     .nav-name:hover
       shorter_underline_on_hover(30%, -0.5em)
       +for_breakpoint(mobile)
@@ -92,6 +95,8 @@ right_dot($offset)
       +for_breakpoint(mobile)
         &:hover
           shorter_underline_on_hover(0%, 0px)
+  .toc
+    fixed_bl(5em, 0)
   .nav-more-menu
     background-color: transparent
     position: absolute
@@ -106,9 +111,10 @@ right_dot($offset)
       top: 2em
     +for_breakpoint(mobile)
       bottom: 4em
-      right: 0
+      right: 0.5em
       padding-top: 0
-      box-shadow: 0px -5px 10px 1px #ddd
+      box-shadow: -5px 5px 10px 1px #ddd
+      border-radius: 10px
     .nav-more-item
       width: 100%
       padding: 1em 2em
@@ -128,4 +134,4 @@ right_dot($offset)
   display: block
 
 #nav-item-more:hover
-  top_dot_circle(-0.7em, 0)
+  top_dot_circle(-1em, 0)

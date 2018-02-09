@@ -4,6 +4,11 @@
     }
 </style>
 
+{% if site.data.cutie %}
+{% set icon_set = site.data['cutie']['global']['icon_set'] | default(config.cutie.global.icon_set) %}
+{% else %}
+{% set icon_set = site.data['cutie']['global']['icon_set'] | default(config.cutie.global.icon_set) %}
+{% endif %}
 
 {% if config.language[0] === 'zh-cn' || config.language[0] === 'zh-tw' %}
 	{% set year = item.date.format('YYYY') %}
@@ -131,6 +136,9 @@
 
     <!-- Content -->
     <!-- TODO: support table of content -->
+    <div class="article-toc" id='article-toc'>
+        {{ partial('_partial/toc', {item: item}) }}
+    </div>
     <div class='article-content'>
     {{ item.content | default("No content") }}
     </div>

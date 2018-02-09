@@ -51,6 +51,11 @@
 			</div>
 		{% endif %}
 	{% endfor %}
+	{% if is_post() %}
+	<div class='nav-item' id='nav-item-toc'>
+		{{ partial('_partial/toc') }}
+	</div>
+	{% endif %}
 	<div class='nav-item' id='nav-item-archive'>
 		{% if url.indexOf('/archives/') !== -1 %}
 				<div class='nav-icon active_dot'>
@@ -81,10 +86,28 @@
 		</div>
 		<div class="nav-more-menu">
 		{% for menu_name, menu_content in menu %}
+			{% set use_item = true %}
+			{% for cat in site.categories %}
+				{% if url_for(menu_content.link) == url_for('/categories/' + cat.name + '/') %}
+					{% set use_item = false %}
+				{% endif %}
+			{% endfor %}
+		{% if use_item == true %}
+			<div class='nav-more-item'>
+					<div class="nav-name">
+						<a class='nav-link' href="{{ menu_content.link }}">
+							<span>{{ menu_name | capitalize }}</span>
+						</a>
+					</div>
+				</a>
+			</div>
+		{% endif %}
+		{% endfor %}
+		{% for cat in site.categories %}
 		<div class='nav-more-item'>
 				<div class="nav-name">
-					<a class='nav-link' href="{{ menu_content.link }}">
-						<span>{{ menu_name | capitalize }}</span>
+					<a class='nav-link' href="{{'/categories/' + cat.name + '/'}}">
+						<span>{{ cat.name | capitalize }}</span>
 					</a>
 				</div>
 			</a>

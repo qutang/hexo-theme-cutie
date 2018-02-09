@@ -27,6 +27,26 @@ function onClickMenuIcon(event) {
 		}
 }
 
+function toggleTOC(event) {
+	event.preventDefault();
+	event.stopPropagation();
+	
+	ele = document.getElementById('nav-item-toc');
+	if(ele.classList.contains('active_dot'))
+		ele.classList.remove('active_dot');
+	else
+		ele.classList.add('active_dot');
+	var elems = document.querySelectorAll('#footer-nav .toc');
+	console.log(elems.length);
+	[].forEach.call(elems, function(el) {
+		console.log(el.style.display);
+		if(!el.style.display || el.style.display == 'none')
+			el.style.display = "block";
+		else
+			el.style.display = 'none';
+	});
+}
+
 function changeLayoutOnTouchScreen() {
 	if('ontouchstart' in window        // works on most browsers 
       || navigator.maxTouchPoints){

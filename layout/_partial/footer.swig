@@ -6,8 +6,8 @@
 <footer id='footer'>
     <div class='footer-copyright'>
         <div>
-            <p> {{ __('footer.copyright') }} <a href="{{ config.author_link }}">{{ config.author }}</a> {{ date(Date.now(), 'YYYY') }}</p>
-            <p>{{ __('footer.design') }}: 🌱<a href="https://moober.cn">Moober</a> {{ __('footer.and') }} 👓<a href="https://moober.cn">Qu Tang</a> ◽ {{ __('footer.theme') }}: <a href="{{ theme.url }}">Cutie {{ theme.version }}</a> ◽ {{ __('footer.powered', '<a href="http://hexo.io">Hexo.</a>') }}</p>
+            <p> {{ __('footer.copyright') }} <a href="{{ config.author_link }}">{{ config.author }} @</a> {{ date(Date.now(), 'YYYY') }}</p>
+            <p>{{ __('footer.design') }}: <i class="fas fa-paint-brush"></i> <a href="https://moober.cn">Moober</a> {{ __('footer.and') }} <i class="fas fa-graduation-cap"></i> <a href="https://moober.cn">Qu Tang</a> &bull; {{ __('footer.theme') }}: <a href="{{ theme.url }}">Cutie {{ theme.version }}</a> &bull; {{ __('footer.powered', '<a href="http://hexo.io">Hexo.</a>') }}</p>
         </div>
     </div>
     
