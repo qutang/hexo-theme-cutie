@@ -99,7 +99,6 @@
 							<span>{{ menu_name | capitalize }}</span>
 						</a>
 					</div>
-				</a>
 			</div>
 		{% endif %}
 		{% endfor %}
@@ -110,7 +109,6 @@
 						<span>{{ cat.name | capitalize }}</span>
 					</a>
 				</div>
-			</a>
 		</div>
 		{% endfor %}
 	</div>
