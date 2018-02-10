@@ -62,8 +62,8 @@
     {% if item.photos && item.photos.length %}
         <div class='article-gallery' id='lightgallery'>
             {% for photo in item.photos %}
-                <a class='article-gallery-item' href="{{ '/images/' + String(item.path).split('/')[3] + '/' + photo }}" data-no-instant>
-                    <img src="{{ '/images/' + String(item.path).split('/')[3] + '/' + photo }}" alt="" />
+                <a class='article-gallery-item' href="{{ photo }}" data-no-instant>
+                    <img src="{{ photo }}" alt="" />
                 </a>
             {% endfor %} 
         </div>
