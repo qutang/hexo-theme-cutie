@@ -31,6 +31,23 @@
     {% set category_name = 'uncategorized' %}
 {% endif %}
 
+{% if item.allow_share == true %}
+    {% set license = 'BY' %}
+    {% if item.allow_commercial %}
+    {% else %}
+        {% set license = license + '-' + 'NC' %}
+    {% endif %}
+
+    {% if item.allow_modification %}
+        {% set license = license + '-' + 'SA' %}
+    {% else %}
+        {% set license = license + '-' + 'ND' %}
+    {% endif %}
+{% else %}
+    {% set license = __('post.no_share') %}
+{% endif %}
+
+
 {% set excerpt = trim(truncate(strip_html(item.content), {length: 300, separator: ' ', omission: '...'})) %}
 
 <article class="article" id="{{ url_for(item.path) }}" data-name='{{ item.title }}' data-version="{{ item.version }}">
@@ -71,6 +88,13 @@
             <li><i class="fa fa-eye"></i> 0</li>
             <li><i class="fa fa-user"></i> {{ item.author.name | default(config.author) }}</li>
             <li><i class="fas fa-pen-square"></i> {{ item.version }}</li>
+            <li><i class="fas fa-copyright"></i>
+            {% if config.language[0] == 'zh-cn' %}
+                <a href={{('https://creativecommons.org/licenses/' + license + '/4.0/deed.zh') | lower }}>{{ 'CC ' + license + ' 4.0' }}</a>
+            {% else %}
+                <a href={{('https://creativecommons.org/licenses/' + license + '/4.0/') | lower }}>{{ 'CC ' + license + ' 4.0' }}</a>
+            {% endif %}
+            </li>
     </ul>
     {{ partial("_partial/article-tags", {item: item}) }}
     </div>

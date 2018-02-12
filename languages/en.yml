@@ -46,6 +46,11 @@ post:
   wordcount: Words count in article
   min2read: Reading time
   totalcount: Site words total count
+  no_share: Reproduction prohibited
+  attribution: Attribution
+  no_commercial: NoCommercial
+  allow_commercial: Commercial
+  no_modification: ShareAlike
   copyright:
     author: Post author
     link: Post link
