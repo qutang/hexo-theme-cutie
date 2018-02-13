@@ -1,15 +1,7 @@
-{% if site.data.cutie %}
-	{% set menu = site.data['cutie']['menu'] | default(config.cutie.menu) %}
-{% else %}
-	{% set menu = config.cutie.menu %}
-{% endif %}
 
-{% if site.data.cutie %}
-{% set icon_set = site.data['cutie']['global']['icon_set'] | default(config.cutie.global.icon_set) %}
-{% else %}
-{% set icon_set = site.data['cutie']['global']['icon_set'] | default(config.cutie.global.icon_set) %}
-{% endif %}
+{% set menu = site.data.cutie.menu | default(theme.menu) %}
 
+{% set icon_set = site.data.cutie.global.icon_set | default(theme.global.icon_set) %}
 <nav id="nav">
 	{% set count = false %}
 	{% for menu_name, menu_content in menu %}
@@ -24,30 +16,15 @@
 		{% endif %}
 		{% if not count %}
 			<div class='nav-item'>
-			{% if position === 'footer' %}
-				<!-- {% if url.indexOf(menu_content.link) !== -1 %}
-				<div class='nav-icon active_dot'>
+				{% if url.indexOf(menu_content.link) !== -1 %}
+					<div class="nav-name active_page">
 				{% else %}
-				<div class='nav-icon'>
+					<div class="nav-name">
 				{% endif %}
-				<a href="{{ menu_content.link }}">
-					{% if menu_content.icon %}
-					<img src="{{ menu_content.icon }}" alt="">
-					{% else %}
-					{% endif %}
+					<a class='nav-link' href="{{ menu_content.link }}">
+						<span>{{ menu_name }} </span>
 					</a>
-					</div> -->
-			{% endif %}
-					{% if url.indexOf(menu_content.link) !== -1 %}
-						<div class="nav-name active_page">
-					{% else %}
-						<div class="nav-name">
-					{% endif %}
-						<a class='nav-link' href="{{ menu_content.link }}">
-							<span>{{ menu_name }} </span>
-						</a>
-					</div>
-				</a>
+				</div>
 			</div>
 		{% endif %}
 	{% endfor %}

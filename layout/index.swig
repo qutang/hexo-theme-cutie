@@ -1,8 +1,5 @@
-{% if site.data.cutie %}
-	{% set slogan = site.data['cutie']['slogan'] | default(config.cutie.slogan) %}
-{% else %}
-	{% set slogan = config.cutie.slogan %}
-{% endif %}
+
+{% set slogan = site.data.cutie.slogan | default(theme.slogan) %}
 
 <div class="index-container" id='{{ url_for(page.path) }}' data-name='index' data-version='{{ theme.version }}'>
 	<div class='index-intro'>

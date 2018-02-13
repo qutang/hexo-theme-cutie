@@ -1,8 +1,5 @@
-{% if site.data.cutie %}
-    {% set comment_system = site.data.cutie['global']['comment_system'] %}
-{% else %}
-    {% set comment_system = config.cutie['global']['comment_system'] %}
-{% endif %}
+
+{% set comment_system = site.data.cutie.global.comment_system | default(theme.global.comment_system) %}
 
 
 <head>

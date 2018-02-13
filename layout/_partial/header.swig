@@ -1,8 +1,5 @@
-{% if site.data.cutie %} 
-	{% set logo = site.data['cutie']['logo'] %} 
-{% else %} 
-	{% set logo = config.cutie.logo %} 
-{% endif %}
+
+{% set logo = site.data.cutie.logo | default(theme.logo) %} 
 
 <header id="header">
 	<div class="header-title">

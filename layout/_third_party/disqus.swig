@@ -1,8 +1,6 @@
-{% if site.data.cutie %}
-    {% set disqus_shortname = site.data.cutie['disqus']['shortname'] %}
-{% else %}
-    {% set disqus_shortname = config.cutie['disqus']['shortname'] %}
-{% endif %}
+
+{% set disqus_shortname = site.data.cutie.disqus.shortname %}
+{% if disqus_shortname %}
 <script>
 /**
 *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
@@ -20,3 +18,4 @@ s.setAttribute('data-timestamp', +new Date());
 (d.head || d.body).appendChild(s);
 })();
 </script>
+{% endif %}

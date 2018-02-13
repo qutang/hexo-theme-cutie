@@ -4,11 +4,8 @@
     }
 </style>
 
-{% if site.data.cutie %}
-{% set icon_set = site.data['cutie']['global']['icon_set'] | default(config.cutie.global.icon_set) %}
-{% else %}
-{% set icon_set = site.data['cutie']['global']['icon_set'] | default(config.cutie.global.icon_set) %}
-{% endif %}
+
+{% set icon_set = site.data.cutie.global.icon_set | default(theme.global.icon_set) %}
 
 {% if config.language[0] === 'zh-cn' || config.language[0] === 'zh-tw' %}
 	{% set year = item.date.format('YYYY') %}
@@ -31,14 +28,20 @@
     {% set category_name = 'uncategorized' %}
 {% endif %}
 
-{% if item.allow_share == true %}
+{% set default_allow_share = site.data.cutie.post.allow_share | default(theme.post.allow_share) %}
+{% set default_allow_modification = site.data.cutie.post.allow_modification | default(theme.post.allow_modification) %}
+{% set default_allow_commercial = site.data.cutie.post.allow_commercial | default(theme.post.allow_commercial) %}
+{% set allow_share = item.allow_share | default(default_allow_share) %}
+{% set allow_modification = item.allow_modification | default(default_allow_modification) %}
+{% set allow_commercial = item.allow_commercial | default(default_allow_commercial) %}
+{% if allow_share == true %}
     {% set license = 'BY' %}
-    {% if item.allow_commercial %}
+    {% if allow_commercial %}
     {% else %}
         {% set license = license + '-' + 'NC' %}
     {% endif %}
 
-    {% if item.allow_modification %}
+    {% if allow_modification %}
         {% set license = license + '-' + 'SA' %}
     {% else %}
         {% set license = license + '-' + 'ND' %}
@@ -46,7 +49,6 @@
 {% else %}
     {% set license = __('post.no_share') %}
 {% endif %}
-
 
 {% set excerpt = trim(truncate(strip_html(item.content), {length: 300, separator: ' ', omission: '...'})) %}
 
@@ -78,7 +80,6 @@
         </ul>
         {% endif %}
     </div>
-
     
     <!-- Date and Author -->
     <div class='article-meta'>
@@ -87,12 +88,24 @@
             <li><i class='fa fa-comments'></i> 0</li>
             <li><i class="fa fa-eye"></i> 0</li>
             <li><i class="fa fa-user"></i> {{ item.author.name | default(config.author) }}</li>
-            <li><i class="fas fa-pen-square"></i> {{ item.version }}</li>
+            {% if item.version && item.version > 0 %}
+                <li><i class="fas fa-pen-square"></i> {{ item.version }}</li>
+            {% endif %}
             <li><i class="fas fa-copyright"></i>
-            {% if config.language[0] == 'zh-cn' %}
-                <a href={{('https://creativecommons.org/licenses/' + license + '/4.0/deed.zh') | lower }}>{{ 'CC ' + license + ' 4.0' }}</a>
+            {% if license !==  __('post.no_share') %}
+                {% set license_name = 'CC ' + license + ' 4.0' %}
+                {% set license_url = 'https://creativecommons.org/licenses/' + license + '/4.0/' %}
             {% else %}
-                <a href={{('https://creativecommons.org/licenses/' + license + '/4.0/') | lower }}>{{ 'CC ' + license + ' 4.0' }}</a>
+                {% set license_name = license %}
+                {% set license_url = 'mailto:' + site.data.cutie.maintainer.email %}
+            {% endif %}
+            {% if config.language[0] == 'zh-cn' %}
+                {% if license !==  __('post.no_share') %}
+                    {% set license_url = license_url + 'deed.zh' %}
+                {% endif %}
+                <a href={{license_url | lower }}>{{ license_name }}</a>
+            {% else %}
+                <a href={{license_url | lower }}>{{ license_name }}</a>
             {% endif %}
             </li>
     </ul>

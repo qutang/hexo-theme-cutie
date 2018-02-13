@@ -1,8 +1,5 @@
-{% if site.data.cutie %}
-    {% set scheme = site.data.cutie['global']['scheme'] %}
-{% else %}
-    {% set scheme = confg.cutie['global']['scheme'] %}
-{% endif %}
+
+{% set scheme = site.data.cutie.global.scheme | default(theme.global.scheme) %}
 
 {% if scheme === 'Taurus' %}
     {{ css('css/taurus') }}
