@@ -22,7 +22,7 @@
 					<div class="nav-name">
 				{% endif %}
 					<a class='nav-link' href="{{ menu_content.link }}">
-						<span>{{ menu_name }} </span>
+						<span>{{ __(menu_name) }} </span>
 					</a>
 				</div>
 			</div>

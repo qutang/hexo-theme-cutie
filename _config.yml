@@ -11,6 +11,7 @@ global:
   comment_system: valine # disqus, valine, gitment
   scheme: Taurus
   icon_set: blue-line
+  use_animation: true
 
 post:
   allow_share: true

@@ -1,8 +1,8 @@
 
 {% set comment_system = site.data.cutie.global.comment_system | default(theme.global.comment_system) %}
-
+<h1>{{ __('post.comment') }}</h1>
 {% if comment_system === 'valine' %}
-  <h2>{{ __('post.comment') }}</h2>
+  
   {% if site.data.cutie.valine.appId %}
     <div id='valine'></div>
   {% else %}
@@ -12,7 +12,6 @@
     </div>
   {% endif %}
 {% elseif comment_system === 'disqus' %}
-  <h2>{{ __('post.comment') }}</h2>
   {% if site.data.cutie.disqus.shortname %}
     <div id='disqus_thread'></div>
     <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
@@ -23,7 +22,6 @@
     </div>
   {% endif %}
 {% elseif comment_system === 'gitment' %}
-  <h2>{{ __('post.comment') }}</h2>
   {% if site.data.cutie.gitment.client_secret %}
     <div id='gitment'></div>
   {% else %}

@@ -54,7 +54,9 @@ right_dot($offset)
 
 #nav
   .active_dot
-    top_dot_circle(-1em, 0)
+    top_dot_circle(-0.8em, 0)
+    +for_breakpoint(mobile)
+      top_dot_circle(-0.8em, 0.1em)
 
 #nav
   display: flex
@@ -85,7 +87,9 @@ right_dot($offset)
         height: 2em
         object-fit: cover
       &:hover
-        top_dot_circle(-1em, 0)
+        top_dot_circle(-0.8em, 0)
+        +for_breakpoint(mobile)
+          top_dot_circle(-0.8em, 0.1em)
     .nav-name:hover
       shorter_underline_on_hover(30%, -0.5em)
       +for_breakpoint(mobile)
@@ -133,5 +137,5 @@ right_dot($offset)
 #nav-item-more:hover .nav-more-menu
   display: block
 
-#nav-item-more:hover
-  top_dot_circle(-1em, 0)
+// #nav-item-more:hover
+  // top_dot_circle(-0.8em, 10%)

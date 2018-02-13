@@ -8,7 +8,7 @@
 	{% block primary %}
 		<div class="grid-2_md-1 grid-equalHeight index-cards">
 		{% for post in page.posts %}
-			{{ partial('_partial/card', {index:true, item: post}) }}
+			{{ partial('_partial/card', {index:true, item: post, index:loop.index}) }}
 		{% endfor %}
 		</div>
 	{% endblock %}

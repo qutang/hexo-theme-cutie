@@ -178,10 +178,11 @@
     </div>
     <div class='article-content'>
     {{ item.content | default("No content") }}
-    </div>
-    <!-- <h2>{{ __('post.share') }}</h2>
-    <div class="social-share"></div> -->
     {% if comment %}
         {{ partial('_partial/comment-html') }}
     {% endif %}
+    </div>
+    <!-- <h2>{{ __('post.share') }}</h2>
+    <div class="social-share"></div> -->
+    
 </article>
