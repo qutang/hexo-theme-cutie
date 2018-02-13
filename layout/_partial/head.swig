@@ -33,27 +33,9 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- FONT
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
-
-  <!-- CSS
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-
-  <!-- {{ css(['css/normalize.css', 'css/font-awesome.min.css', 'css/gridlex.min.css', 'css/skeleton.css', 'css/theme.css', 'css/share.min.css', 'css/lightgallery.css', 'css/code-highlight/tomorrow-light']) }} -->
-
   <!-- Load scheme css -->
-  <!--{{ css('css/gridlex.min.css') }}-->
   {{ css('css/lightgallery.css') }}
   {{ partial('_partial/scheme-css') }}
-
-  <!-- highlight js -->
-  <!-- {% if site.data.cutie.global.highlightjs %}
-  <link rel="stylesheet"
-  href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
-  {% endif %} -->
 
   <!-- load font awesome 5 -->
   <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>

@@ -12,7 +12,8 @@ global:
   scheme: Taurus
   icon_set: blue-line
 
-  post:
+post:
   allow_share: true
   allow_modification: false
   allow_commercial: false
+  use_lightgallery: true
