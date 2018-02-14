@@ -17,49 +17,96 @@
 {{ partial('_third_party/lightgallery') }}
 {% endif %}
 
+{% if site.data.cutie.valine.appKey %}
+{% set use_post_stats = 1 %}
+{% else %}
+{% set use_post_stats = 0 %}
+{% endif %}
+
+{% if use_post_stats %}
 <script type="text/javascript">
   var userip;
 </script>
 <script type="text/javascript" src="https://l2.io/ip.js?var=userip"></script>
+{% endif %}
 
 {{ js('js/post.js') }}
+
 <script data-no-instant type='text/javascript'>
 changeLayoutOnTouchScreen();
-setVersionForCurrentPage();
-setVersionBadgeForIndexPages();
-fixCodeBlockForHighlightJs();
 
 {% if is_post() %}
-var post = Post('{{ site.data.cutie.valine.appId }}', '{{ site.data.cutie.valine.appKey }}');post.getCommentCount(window.location.pathname, function(count){
-    $('#article-comment-count').text(count);
-});
-post.addVisitRecord(window.location.pathname, userip);
-post.getVisitCount(window.location.pathname, function(count){
-    $('#article-visit-count').text(count);
-})
+var post = new Post('{{ site.data.cutie.valine.appId }}', '{{ site.data.cutie.valine.appKey }}');
+        post.getCommentCount(window.location.pathname, function(count){
+            $('#article-comment-count').text(count);
+        });
+        post.addVisitRecord(window.location.pathname, userip);
+        post.getVisitCount(window.location.pathname, function(count){
+            $('#article-visit-count').text(count);
+        });
+post.updatePostVersion(window.location.pathname);
+
 {% elseif is_home() %}
-var post = Post('{{ site.data.cutie.valine.appId }}', '{{ site.data.cutie.valine.appKey }}');
+var post = new Post('{{ site.data.cutie.valine.appId }}', '{{ site.data.cutie.valine.appKey }}');
+console.log(post);
 $('.Card').each(function(){
     var post_url = $(this).attr('id');
+    var true_url = $(this).find('.Card-title a').first().attr('href');
     var card = this;
-    post.getCommentCount(post_url, function(count){
-        $(card).find('.card-comment-count').first().text(count);
+    if(true_url.startsWith('http')){ //external link
+        $(card).find('.Card-title a').first().click(function(e){
+            post.updatePostVersion(post_url); 
+        });
+        $(card).find('.Card-excerpt a').first().click(function(e){
+            post.updatePostVersion(post_url); 
+        });
+        $(card).find('.Card-figure a').first().click(function(e){
+            post.updatePostVersion(post_url); 
+        });
+    }
+
+    post.checkUpdate(post_url, function(post_url, hasUpdate){
+        if(hasUpdate){
+            $(card).find('mark.Card-badge').show();
+        }else{
+            $(card).find('mark.Card-badge').hide();
+        } 
     });
-    post.getVisitCount(post_url, function(count){
-        $(card).find('.card-visit-count').first().text(count);
-    });
+        post.getCommentCount(post_url, function(count){
+            $(card).find('.card-comment-count').first().text(count);
+        });
+        post.getVisitCount(post_url, function(count){
+            $(card).find('.card-visit-count').first().text(count);
+        });
+    
 });
+
 {% elseif is_archive() || is_tag() || is_category() %}
-var post = Post('{{ site.data.cutie.valine.appId }}', '{{ site.data.cutie.valine.appKey }}');
+var post = new Post('{{ site.data.cutie.valine.appId }}', '{{ site.data.cutie.valine.appKey }}');
 $('.Card-archive').each(function(){
-    var post_url = $(this).find('.Card-title a').attr('href');
+    var post_url = $(this).attr('id');
+    var true_url = $(this).find('.Card-title a').first().attr('href');
     var card = this;
+    if(true_url.startsWith('http')){ //external link
+        $(card).find('.Card-title a').first().click(function(e){
+            post.updatePostVersion(post_url); 
+        });
+    }
+
+    post.checkUpdate(post_url, function(post_url, hasUpdate){
+        if(hasUpdate){
+            $(card).find('mark.Card-badge').show();
+        }else{
+            $(card).find('mark.Card-badge').hide();
+        }
+    });
     post.getCommentCount(post_url, function(count){
         $(card).find('.card-comment-count').first().text(count);
     });
     post.getVisitCount(post_url, function(count){
         $(card).find('.card-visit-count').first().text(count);
     });
+    
 });
 {% endif %}
 </script>

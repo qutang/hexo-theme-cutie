@@ -99,26 +99,27 @@ animate($name, $duration, $delay)
   animation-fill-mode: both
   animation-delay: $delay
 
-$delay = 0.5s
+$delay = 0.3s
 $current_start = 0s
+$duration = 1s
 
 // initial animation
 #header
-  animate(fadeInDown, 1.5s, $current_start)
+  animate(fadeInDown, $duration, $current_start)
 
 $current_start = $current_start + $delay
 #header .header-logo
-  animate(fadeInLeft, 1.5s, $current_start)
+  animate(fadeInLeft, $duration, $current_start)
   img
     transition: all .2s ease-in-out
     &:hover
       transform: scale(1.1)
 
 #footer
-  animate(fadeInUp, 1.5s, $current_start)
+  animate(fadeInUp, $duration, $current_start)
 
 #footer-nav
-  animate(fadeInUp, 1.5s, $current_start)
+  animate(fadeInUp, $duration, $current_start)
 
 .Card
 .archive-container
@@ -126,10 +127,10 @@ $current_start = $current_start + $delay
 
 $current_start = $current_start + $delay
 #header .header-text
-  animate(fadeInDown, 1.5s, $current_start)
+  animate(fadeInDown, $duration, $current_start)
 
 .index-intro
-  animate(fadeInDown, 1.5s, $current_start + 0.2s)
+  animate(fadeInDown, $duration, $current_start + 0.1s)
 
 $current_start = $current_start + $delay
 #header-nav
@@ -138,22 +139,23 @@ $current_start = $current_start + $delay
 .article-title
 .article-logo
 .article-categories
-  animate(fadeInDown, 1.5s, $current_start + 0.3s)
+  animate(fadeInDown, $duration, $current_start + 0.1s)
 
 $current_start = $current_start + $delay
 .article-meta
-  animate(fadeInDown, 1.5s, $current_start)
+  animate(fadeInDown, $duration, $current_start)
 
 .article-toc
 .page-meta
-  animate(fadeInRight, 1.2s, $current_start + 0.2s)
+  animate(fadeInRight, 1.2s, $current_start + 0.1s)
 
 $current_start = $current_start + $delay
 .article-gallery
   animate(fadeInLittleDown, 1s, $current_start)
 
 .article-content
-  animate(fadeInLittleLeft, 1s, $current_start + 0.3s)
+.article-comment
+  animate(fadeInLittleLeft, 1s, $current_start + 0.1s)
 
 .Card-title
     animate(fadeInLittleLeft, 0.5s, 0)

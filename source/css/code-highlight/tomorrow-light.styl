@@ -12,6 +12,8 @@ highlight-aqua = #66cccc
 highlight-blue = #6699cc
 highlight-purple = #cc99cc
 
+@import '../fonts.styl'
+
 $code-block
   background: white
   margin: 1.5em 0
@@ -30,7 +32,7 @@ $line-numbers
 
 .article-content
   pre, code
-    font-family: Courier New, Courier, monospace
+    code_font()
   code
     background: white
     text-shadow: 0 1px #fff

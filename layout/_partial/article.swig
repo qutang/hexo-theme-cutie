@@ -52,6 +52,13 @@
 
 {% set excerpt = trim(truncate(strip_html(item.content), {length: 300, separator: ' ', omission: '...'})) %}
 
+
+{% if site.data.cutie.valine.appKey %}
+{% set use_post_stats = true %}
+{% else %}
+{% set use_post_stats = false %}
+{% endif %}
+
 <article class="article" id="{{ url_for(item.path) }}" data-name='{{ item.title }}' data-version="{{ item.version }}">
 
     <!-- Title -->
@@ -85,8 +92,10 @@
     <div class='article-meta'>
     <ul>
             <li><i class='fa fa-calendar'></i> {{ meta_date }}</li>
+            {% if use_post_stats %}
             <li><i class='fa fa-comments'></i> <a href='#article-comment'><span id='article-comment-count'>0</span></a></li>
             <li><i class="fa fa-eye"></i> <span id='article-visit-count'>0</span></li>
+            {% endif %}
             <li><i class="fa fa-user"></i> {{ item.author.name | default(config.author) }}</li>
             {% if item.version && item.version > 0 %}
                 <li><i class="fas fa-pen-square"></i> {{ item.version }}</li>

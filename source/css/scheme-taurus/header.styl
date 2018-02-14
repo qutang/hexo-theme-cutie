@@ -3,6 +3,7 @@
 
 @import 'util'
 @import 'nav'
+@import 'fonts'
 
 shorter_underline($width, $offset)
   position: relative
@@ -113,7 +114,7 @@ shorter_underline($width, $offset)
     .header-text
       text-align: left
       margin-top: 2.5em
-      font-family: Palatino,"Palatino Linotype","Palatino LT STD","Book Antiqua",Georgia,serif
+      serif()
       +for_breakpoint(mobile)
         display: none
       h1

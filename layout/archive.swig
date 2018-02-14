@@ -6,7 +6,7 @@
 	{% set years = get_years(page.posts) %}
 	<div class='archive-container'>
 		{% for year in years %}
-			<h1>{{ year }}</h1>
+			<h1 class='archive-title'>{{ year }}</h1>
 			{% set year_posts = get_posts_by_year(page.posts, year) %}
 			{% set num_year_posts = get_posts_by_year_count(page.posts, year) %}
 			{% if num_year_posts > 16 %}

@@ -7,7 +7,7 @@
 				</div><h2 class='archive-title'>{{ title | capitalize }}</h2>
 	</div>
 	{% else %}
-		<h2>{{ prefix }}{{ title }}</h2>
+		<h2 class='archive-title'>{{ prefix }}{{ title }}</h2>
 	{% endif %}
 	<div class="archive-cards">
 	{% for post in items.sort("date", "desc") %}

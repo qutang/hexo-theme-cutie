@@ -3,6 +3,9 @@
 Topography of post for scheme taurus
 
  */
+
+@import '../fonts'
+
 .page
 .article
   +for_breakpoint(mobile)
@@ -55,7 +58,7 @@ Topography of post for scheme taurus
       cursor: pointer
     code
       color: $secondary_color
-      font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace
+      code_font()
       font-size: 0.7em
       font-weight: 600
       vertical-align: middle
@@ -65,7 +68,7 @@ Topography of post for scheme taurus
       margin: 0 2px
       border-radius: 0.4em
     pre
-      font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace
+      code_font()
       padding: 12px 15px
       margin: 0
       border: 1px solid #ccc
@@ -82,7 +85,7 @@ Topography of post for scheme taurus
       padding: 0.8em
       border-radius: 8px
       font-size: 0.8em
-      font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace
+      code_font()
       table
       tbody
       tr

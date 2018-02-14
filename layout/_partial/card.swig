@@ -8,6 +8,12 @@
 {% set meta_date = item.date.format(config.date_format) %}
 {% endif %}
 
+{% if site.data.cutie.valine.appKey %}
+{% set use_post_stats = true %}
+{% else %}
+{% set use_post_stats = false %}
+{% endif %}
+
 <div class='Card Card-hover Card-index-{{ index }}' id='{{ url_for(item.path) }}' data-name='{{ item.title }}' data-version='{{ item.version }}'>
 	{% if item.categories && item.categories.length %}
 		{% for cat in item.categories %}
@@ -23,7 +29,7 @@
 	<mark class='Card-badge' style='{visibility: "hidden"}'></mark>
 	<div class='Card-figure'>
 		{% if item.link || item.external_link %}
-			<a href="{{ item.link | default(item.external_link) }}" rel="noopener noreferrer" target="_blank" onclick="setVisitedVersion('{{ item.title }}', '{{item.version}}' );setVersionBadgeForIndexPages();">
+			<a href="{{ item.link | default(item.external_link) }}" rel="noopener noreferrer" target="_blank">
 		{% else %}
 			<a href="{{ url_for(item.path) }}">
 		{% endif %}
@@ -39,7 +45,7 @@
 			<div class='Card-title'>
 				<h2>
 				{% if item.link || item.external_link %}
-					<a href="{{ item.link | default(item.external_link) }}" rel="noopener noreferrer" target="_blank" onclick="setVisitedVersion('{{ item.title }}', '{{item.version}}' );setVersionBadgeForIndexPages();">
+					<a href="{{ item.link | default(item.external_link) }}" rel="noopener noreferrer" target="_blank">
 				{% else %}
 					<a href="{{ url_for(item.path) }}">
 				{% endif %}
@@ -48,7 +54,7 @@
 			<div class='Card-excerpt'>
 				<p>
 				{% if item.link || item.external_link %}
-					<a href="{{ item.link | default(item.external_link) }}" rel="noopener noreferrer" target="_blank" onclick="setVisitedVersion('{{ item.title }}', '{{item.version}}' );setVersionBadgeForIndexPages();">
+					<a href="{{ item.link | default(item.external_link) }}" rel="noopener noreferrer" target="_blank">
 				{% else %}
 					<a href="{{ url_for(item.path) }}">
 				{% endif %}
@@ -68,8 +74,10 @@
 						{% if item.external_link %}
 							<li>{{ __('external_link') }}</li>
 						{% else %}
+						{% if use_post_stats %}
 						<li><i class='fa fa-comments'></i> <span class='card-comment-count'>0</span></li>
 						<li><i class="fa fa-eye"></i> <span class='card-visit-count'>0</span></li>
+						{% endif %}
 						{% endif %}
 				</ul>
 			</div>
