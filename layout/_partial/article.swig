@@ -85,8 +85,8 @@
     <div class='article-meta'>
     <ul>
             <li><i class='fa fa-calendar'></i> {{ meta_date }}</li>
-            <li><i class='fa fa-comments'></i> 0</li>
-            <li><i class="fa fa-eye"></i> 0</li>
+            <li><i class='fa fa-comments'></i> <a href='#article-comment'><span id='article-comment-count'>0</span></a></li>
+            <li><i class="fa fa-eye"></i> <span id='article-visit-count'>0</span></li>
             <li><i class="fa fa-user"></i> {{ item.author.name | default(config.author) }}</li>
             {% if item.version && item.version > 0 %}
                 <li><i class="fas fa-pen-square"></i> {{ item.version }}</li>
@@ -178,10 +178,13 @@
     </div>
     <div class='article-content'>
     {{ item.content | default("No content") }}
-    {% if comment %}
-        {{ partial('_partial/comment-html') }}
-    {% endif %}
+    
     </div>
+    {% if comment %}
+        <div class="article-comment" id='article-comment'>
+            {{ partial('_partial/comment-html') }}
+        </div>
+    {% endif %}
     <!-- <h2>{{ __('post.share') }}</h2>
     <div class="social-share"></div> -->
     

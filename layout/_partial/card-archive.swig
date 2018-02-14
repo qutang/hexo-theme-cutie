@@ -12,8 +12,8 @@
 			<div class='Card-tags'>{{ partial('_partial/article-tags', {item: item, limit: 4}) }}</div>
 			<ul>
 					<li><i class='fa fa-calendar'></i> {{ item.date.format(config.date_format) }}</li>
-					<li><i class='fa fa-comments'></i> 0</li>
-					<li><i class="fa fa-users"></i> 0</li>
+					<li><i class='fa fa-comments'></i> <span class='card-comment-count'>0</span></li>
+					<li><i class="fa fa-eye"></i> <span class='card-visit-count'>0</span></li>
 			</ul>
 		</div>
 	</div>

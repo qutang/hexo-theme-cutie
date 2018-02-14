@@ -65,8 +65,12 @@
 				<div class='Card-tags'>{{ partial('_partial/article-tags', {item: item, limit: 4}) }}</div>
 				<ul>
 						<li><i class='fa fa-calendar'></i> {{ meta_date }}</li>
-						<li><i class='fa fa-comments'></i> 0</li>
-						<li><i class="fa fa-eye"></i> 0</li>
+						{% if item.external_link %}
+							<li>{{ __('external_link') }}</li>
+						{% else %}
+						<li><i class='fa fa-comments'></i> <span class='card-comment-count'>0</span></li>
+						<li><i class="fa fa-eye"></i> <span class='card-visit-count'>0</span></li>
+						{% endif %}
 				</ul>
 			</div>
 		</a>

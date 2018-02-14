@@ -111,7 +111,9 @@ function setVersionForCurrentPage(){
 	  setVisitedVersion('index_page', element.dataset['version']);
 	}else{
 	  var element = document.getElementById(window.location.pathname);
-	  setVisitedVersion(element.dataset['name'], element.dataset['version']);
+	  if(element){
+		setVisitedVersion(element.dataset['name'], element.dataset['version']);
+	  }
 	}
 }
 
