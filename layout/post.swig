@@ -1,4 +1,1 @@
----
-comment: true
----
 {{ partial('_partial/article', {item: page}) }}

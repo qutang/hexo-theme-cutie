@@ -184,15 +184,68 @@ Topography of post for scheme taurus
         left: 75%
         top:-1rem
         position: absolute
+    dt
+      display: block
+      width: 100%
+      text-decoration: underline
+      margin: 0.5em 0
+    dd
+      color:#666
+      margin-top: 0.5em
+      pre
+        code
+          border: 0
+          background: 0
+          color: #666
     dl
+      display: flex
+      flex-direction: row
+      flex-wrap: wrap
+      align-items: flex-start
       dt
         display: block
-        width: 100%
-        text-decoration: underline
-        margin: 0.5em 0
+        width: 20%
+        +for_breakpoint(mobile)
+          width: 100%
+        text-align: center
+        color: white
+        text-decoration: none
+        // margin: 0.5em 0
+        // float: left
+        // clear: left
+        line-height: 1.2
+        padding: 0.5em
+        border-radius: 5px
+        &:nth-of-type(1)
+          background-color: $hue5
+        &:nth-of-type(2)
+          background-color: $hue2
+        &:nth-of-type(3)
+          background-color: $hue3
+        &:nth-of-type(4)
+          background-color: $hue4
+        &:nth-of-type(5)
+          background-color: $hue6
+        &:nth-of-type(6)
+          background-color: $hue7
       dd
+        margin-left: 2em
+        width: 70%
+        +for_breakpoint(mobile)
+          width: 100%
+          margin-left: 0
+        ol
+        ul
+          padding-left: 1em
+        *
+          margin-top: 0
+          margin-left: 0
         color:#666
-        margin-top: 0.5em
+        // padding-top: 0.5em
+        // margin-left: 12em
+        figure
+        figure.highlight
+          margin: 0
         pre
           code
             border: 0
