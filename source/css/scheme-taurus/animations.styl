@@ -1,0 +1,174 @@
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -50%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fadeInLittleDown {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -5%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fadeInLittleLeft {
+  from {
+    opacity: 0;
+    transform: translate3d(-5%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fadeOutLittleLeft {
+  to {
+    opacity: 0;
+    transform: translate3d(-5%, 0, 0);
+  }
+
+  from {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fadeInLittleRight {
+  from {
+    opacity: 0;
+    transform: translate3d(5%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translate3d(-20%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translate3d(50%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+	transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+animate($name, $duration, $delay)
+  animation-name: $name
+  animation-duration: $duration
+  animation-fill-mode: both
+  animation-delay: $delay
+
+$delay = 0.3s
+$current_start = 0s
+$duration = 1s
+
+// initial animation
+#header
+  animate(fadeInDown, $duration, $current_start)
+
+$current_start = $current_start + $delay
+#header .header-logo
+  animate(fadeInLeft, $duration, $current_start)
+  img
+    transition: all .2s ease-in-out
+    &:hover
+      transform: scale(1.1)
+
+#footer
+  animate(fadeInUp, $duration, $current_start)
+
+#footer-nav
+  animate(fadeInUp, $duration, $current_start)
+
+.Card
+.archive-container
+  animate(fadeInLittleLeft, 1s, $current_start)
+
+$current_start = $current_start + $delay
+#header .header-text
+  animate(fadeInDown, $duration, $current_start)
+
+.index-intro
+  animate(fadeInDown, $duration, $current_start + 0.1s)
+
+$current_start = $current_start + $delay
+#header-nav
+  animate(fadeInDown, 2s, $current_start)
+
+.article-title
+.article-logo
+.article-categories
+  animate(fadeInDown, $duration, $current_start + 0.1s)
+
+$current_start = $current_start + $delay
+.article-meta
+  animate(fadeInDown, $duration, $current_start)
+
+.article-toc
+.page-meta
+  animate(fadeInRight, 1.2s, $current_start + 0.1s)
+
+$current_start = $current_start + $delay
+.article-gallery
+  animate(fadeInLittleDown, 1s, $current_start)
+
+.article-content
+.article-comment
+  animate(fadeInLittleLeft, 1s, $current_start + 0.1s)
+
+.Card-title
+    animate(fadeInLittleLeft, 0.5s, 0)
+
+// interaction animations
+.Card-hover:hover 
+  .Card-excerpt
+    animate(fadeInLittleLeft, 0.5s, 0)
+
+.nav-more-menu
+  animate(fadeInLittleDown, 0.5s, 0)
+
+.toc
+  animate(fadeInLittleRight, 0.5s, 0)
+
+

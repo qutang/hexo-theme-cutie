@@ -1,8 +1,13 @@
+<<<<<<< HEAD
 {% if site.data.cutie %}
     {% set comment_system = site.data.cutie['global']['comment_system'] %}
 {% else %}
     {% set comment_system = config.cutie['global']['comment_system'] %}
 {% endif %}
+=======
+
+{% set comment_system = site.data.cutie.global.comment_system | default(theme.global.comment_system) %}
+>>>>>>> v2.0-beta
 
 
 <head>
@@ -29,21 +34,26 @@
       <title>{{ page.title | default('No title') + " - " + config.title }}</title>
   {% endif %}
   
-  <meta name="description" content="">
-  <meta name="author" content="">
+  <meta name="description" content="{{ config.description }}">
+  <meta name="author" content="{{ config.author }}">
 
   <!-- Mobile Specific Metas
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- FONT
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+  <!-- Load scheme css -->
+  {{ css('css/lightgallery.css') }}
+  {{ partial('_partial/scheme-css') }}
 
+<<<<<<< HEAD
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
   {{ css(['css/normalize.css', 'css/font-awesome.min.css', 'css/gridlex.min.css', 'css/skeleton.css', 'css/theme.css', 'css/share.min.css', 'css/lightgallery.css', 'css/highlight.css']) }}
+=======
+  <!-- load font awesome 5 -->
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+>>>>>>> v2.0-beta
 
   <script type="text/x-mathjax-config">
   MathJax.Hub.Config({

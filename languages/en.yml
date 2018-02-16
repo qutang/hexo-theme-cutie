@@ -1,0 +1,133 @@
+title:
+  archive: Archive
+  category: Category
+  tag: Tag
+  schedule: Schedule
+
+author: Author
+
+date:
+  Jan: January
+  Feb: February
+  Mar: March
+  Apr: April
+  May: May
+  Jun: June
+  Jul: Jul
+  Aug: Auguest
+  Sep: September
+  Oct: October
+  Nov: November
+  Dec: December
+
+
+external_link: External link
+
+social:
+  wechat: Wechat
+  github: Github
+  youtube: Youtube
+  linkedin: Linkedin
+  weibo: Weibo
+
+menu:
+  home: Home
+  archives: Archives
+  categories: Categories
+  tags: Tags
+  about: About
+  search: Search
+  schedule: Schedule
+  sitemap: Sitemap
+  commonweal: Commonweal 404
+
+sidebar:
+  overview: Overview
+  toc: Table of Contents
+
+post:
+  share: Share
+  comment: Comment
+  created: Post created
+  modified: Post modified
+  sticky: Sticky
+  posted: Posted on
+  in: In
+  by: by
+  more: more
+  version: Version
+  read_more: Read more
+  untitled: Untitled
+  toc_empty: This post does not have a Table of Contents
+  visitors: Visitors
+  wordcount: Words count in article
+  min2read: Reading time
+  totalcount: Site words total count
+  no_share: Reproduction prohibited
+  attribution: Attribution
+  no_commercial: NoCommercial
+  allow_commercial: Commercial
+  no_modification: ShareAlike
+  copyright:
+    author: Post author
+    link: Post link
+    license_title: Copyright Notice
+    license_content: 'All articles in this blog are licensed under
+      <a href="%s" rel="external nofollow" target="_blank">%s</a> unless stating additionally.'
+
+page:
+  totally: Totally
+  tags: tags
+
+footer:
+  powered: "Powered by %s"
+  theme: Theme
+  copyright: Copyright by
+  design: Designed by
+  and: and
+
+counter:
+  tag_cloud:
+    zero: No tags
+    one: 1 tag in total
+    other: "%d tags in total"
+
+  categories:
+    zero: No categories
+    one: 1 category in total
+    other: "%d categories in total"
+
+  archive_posts:
+    zero: No posts.
+    one: 1 post.
+    other: "%d posts in total."
+
+state:
+  posts: posts
+  pages: pages
+  tags: tags
+  categories: categories
+
+search:
+  placeholder: Searching...
+
+cheers:
+  um: Um..
+  ok: OK
+  nice: Nice
+  good: Good
+  great: Great
+  excellent: Excellent
+
+keep_on: Keep on posting.
+
+symbol:
+  comma: ', '
+  period: '. '
+  colon: ':'
+
+reward:
+  donate: Donate
+  wechatpay: WeChat Pay
+  alipay: Alipay
+  bitcoin: Bitcoin

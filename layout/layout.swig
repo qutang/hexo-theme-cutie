@@ -2,7 +2,7 @@
 <html lang="en">
 {{ partial("_partial/head") }}
 <body style="display: flex; flex-direction: column; min-height: 100vh;">
-  {{ partial("_partial/header") }}
+{{ partial("_partial/header") }}
 
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -14,8 +14,8 @@
 
   <br>
 
-  <div id="footer-menu-container">
-		{{ partial('_partial/menu') }}
+  <div id="footer-nav">
+		{{ partial('_partial/nav', {position: 'footer'}) }}
 	</div>
 
   {{ partial("_partial/after-footer") }}

@@ -1,0 +1,122 @@
+@import '../fonts'
+.article
+.page
+  max-width: 70vw
+  +for_breakpoint(tablet)
+    width: 70vw
+  +for_breakpoint(mobile)
+    width: 80vw
+  margin: 0 auto
+  padding: 0
+  margin-top: 10em
+  +for_breakpoint(mobile)
+    margin-top: 12em
+  .article-title
+    display: inline-block
+    margin: 0
+    serif()
+  .article-logo
+    display: inline-block
+    +for_breakpoint(mobile)
+      display: none
+    height: inherit
+    img
+      width: auto
+      height: 3em
+      margin-right: 0.5em
+      margin-bottom: -0.8em
+  .article-categories
+    vertical-align: top
+    display: inline-block
+    margin: 0
+    padding: 0
+    margin-left: 0.1em
+    padding-right: 0.3em
+    +for_breakpoint(mobile)
+      display: block
+      margin-top: 0.5em
+    li
+      list-style-type: none
+    img
+      width: 1.5em
+      height: auto
+  .article-meta
+    clear:both
+    color: #666
+    margin-left: 2.7em
+    +for_breakpoint(mobile)
+      margin-left: 0.1em
+      margin-top: 2.5em
+    margin-top: 3em
+    font-size: 0.8em
+    width: 100%
+    ul
+      display: block
+      padding: 0
+      text-align: center
+      li
+        display: inline-block
+        list-style-type: none
+        margin-right: 1em
+    .tags
+        clear: both
+        justify-content: center
+  .article-cards
+    margin: 0 auto
+    margin-top: 1.5em
+    width: 100%
+    +for_breakpoint(tablet)
+      width: 100%
+      justify-content: center
+      padding: 0
+    +for_breakpoint(mobile)
+      width: 100%
+      justify-content: center
+      padding: 0
+    display: flex
+    align-items: center
+    justify-content: space-between
+    flex-direction: row
+    flex-wrap: wrap
+  .article-toc
+    fixed_tr(10em, 4em)
+    z-index: 100
+    +for_breakpoint(mobile)
+      display: none
+    .toc-button
+      img
+        width: 2em
+        height: auto
+        object-fit: cover
+.page
+  max-width: 800px
+  .page-meta
+    float:right
+    p
+      margin: 0
+
+#article-toc:hover .toc
+  display: block
+
+#article-toc:hover .toc-button
+  display: none
+
+.toc
+  display: none
+  padding: 1em
+  margin-left: 0.75em
+  +for_breakpoint(mobile)
+    width: 80%
+  box-shadow: 0px 0px 10px 5px #ddd
+  background-color: white
+  border-radius: 10px
+  margin-bottom: 0
+  max-height: 50vh
+  overflow: auto
+  ol
+    background-color: white
+  li
+    list-style-type: none
+    line-height: 1.5
+    background-color: white
+    padding: 0

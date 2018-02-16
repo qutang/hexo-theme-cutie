@@ -1,0 +1,48 @@
+.search-container
+  margin: 0 auto
+  margin-top: 14em
+  margin-bottom: 4em
+  width: 60%
+  +for_breakpoint(tablet)
+    width: 90%
+  +for_breakpoint(mobile)
+    width: 100%
+  +for_breakpoint(half-desktop)
+    width: 70% 
+  text-align: center
+  .search-input
+    border: none
+    width: 80%
+    +for_breakpoint(mobile)
+      width: 60%
+    padding: 0.5em
+    margin: 0.5em
+    border-radius: 5px
+  .search-submit
+    margin: 0.5em
+    padding: 0.5em
+    border: none
+    background-color: #999
+    &:hover
+      background-color: #666
+    color: white
+    border-radius: 5px
+  .tag-cloud
+    margin: 0 auto
+    margin-top: 3em
+    width:80%
+    a
+      &:link
+        text-decoration: none
+      &:hover
+        text-decoration: underline
+  .cat-list
+    margin: 0 auto
+    margin-top: 3em
+    width: 80%
+    li
+      display: inline-block
+      margin: 0 0.5em
+      img
+        width: 3em
+        height: auto
