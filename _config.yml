@@ -1,40 +1,3 @@
-<<<<<<< HEAD
-
-version: 1.0.1
-url: http://qutang.github.io/2017/06/27/Hexo-theme-cutie/
-logo: cutie.png
-subtitle: A personal website for Qu Tang
-slogan:  
-# Configure navigation menu, provide a relative link and a path to icon (icon should better be square)
-# If menu is absent, only "archive" and "search" menu items will be preserved
-# Configurable menu items should not exeed 4, otherwise the last ones will be ignored
-menu:
-  Sample Menu:
-    link: /your/link
-    icon: /your/link/to/menu/icon
-# As long as the name matches the font awesome icon name, you can add even more social links
-# As the tip: the social link can be a QRCODE link
-social:
-  github: https://github.com/qutang
-  linkedin: https://www.linkedin.com/in/qutang
-
-global:
-  comment_system: valine # disqus, valine, gitment
-
-valine:
-  appId:
-  appKey:
-  placeholder:
-
-disqus:
-  shortname:
-
-gitment:
-  owner:
-  repo:
-  client_id:
-  client_secret:
-=======
 version: 2.0.5-beta
 url: 
 logo: /images/theme-icon.svg
@@ -57,4 +20,3 @@ post:
   use_lightgallery: true
   allow_comment: true
   toc_level: 2
->>>>>>> v2.0-beta

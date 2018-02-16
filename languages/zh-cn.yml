@@ -5,9 +5,6 @@ title:
   schedule: 日程表
 
 author: 博主
-
-<<<<<<< HEAD
-=======
 external_link: 外部链接
 
 date:
@@ -24,7 +21,6 @@ date:
   Nov: 十一月
   Dec: 十二月
 
->>>>>>> v2.0-beta
 social:
   wechat: 微信
   github: Github
