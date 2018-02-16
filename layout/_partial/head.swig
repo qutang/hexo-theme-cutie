@@ -45,15 +45,8 @@
   {{ css('css/lightgallery.css') }}
   {{ partial('_partial/scheme-css') }}
 
-<<<<<<< HEAD
-  <!-- CSS
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-
-  {{ css(['css/normalize.css', 'css/font-awesome.min.css', 'css/gridlex.min.css', 'css/skeleton.css', 'css/theme.css', 'css/share.min.css', 'css/lightgallery.css', 'css/highlight.css']) }}
-=======
   <!-- load font awesome 5 -->
   <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
->>>>>>> v2.0-beta
 
   <script type="text/x-mathjax-config">
   MathJax.Hub.Config({

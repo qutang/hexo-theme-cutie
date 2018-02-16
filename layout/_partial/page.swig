@@ -20,11 +20,6 @@
     <div class='article-content'>
     {{ item.content | default("No content") }}
     </div>
-<<<<<<< HEAD
-    <hr />
-    <div class="social-share"></div>
-=======
->>>>>>> v2.0-beta
     {% if comment %}
         {{ partial('_partial/comment-html') }}
     {% endif %}

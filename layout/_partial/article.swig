@@ -187,16 +187,6 @@
     </div>
     <div class='article-content'>
     {{ item.content | default("No content") }}
-<<<<<<< HEAD
-    </div>
-    <hr />
-
-    <h2>Share and comment</h2>
-    <div class="social-share"></div>
-    {% if comment %}
-        {{ partial('_partial/comment-html') }}
-    {% endif %}
-=======
     
     </div>
     {% set allow_comment = site.data.cutie.post.allow_comment | default(theme.post.allow_comment) %}
@@ -206,5 +196,4 @@
             {{ partial('_partial/comment-html') }}
         </div>
     {% endif %}    
->>>>>>> v2.0-beta
 </article>
