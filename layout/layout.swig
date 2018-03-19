@@ -10,6 +10,8 @@
       {{ body }}
   </div>
 
+  {{ partial("_partial/anouncement") }}
+
   {{ partial("_partial/footer") }}
 
   <br>
