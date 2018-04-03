@@ -54,4 +54,21 @@ function changeLayoutOnTouchScreen() {
 	}
 }
 
+function initHeadroom() {
+	var myElement = document.querySelector("header");
+	// construct an instance of Headroom, passing the element
+	var headroom  = new Headroom(myElement, {offset: 40, tolerance: 30});
+	// initialise
+	headroom.init(); 
+	
+
+	var annoucement = document.querySelector('#anouncement');
+	var headroom2 = new Headroom(annoucement, {offset: 40, tolerance: 30});
+	headroom2.init();
+
+	var footernav = document.querySelector('#footer-nav');
+	var headroom3 = new Headroom(footernav, {offset: 40, tolerance: 30});
+	headroom3.init();
+}
+
 disableHoverOnTouch();

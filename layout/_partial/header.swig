@@ -1,7 +1,7 @@
 
 {% set logo = site.data.cutie.logo | default(theme.logo) %} 
 
-<header id="header">
+<header id="header" class='header'>
 	<div class="header-title">
 		{% if logo %}
 		<div class='header-logo'>

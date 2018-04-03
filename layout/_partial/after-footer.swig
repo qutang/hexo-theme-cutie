@@ -32,7 +32,12 @@
 
 {{ js('js/post.js') }}
 
+{{ js('js/headroom.min.js') }}
+
 <script data-no-instant type='text/javascript'>
+
+initHeadroom();
+
 changeLayoutOnTouchScreen();
 
 {% if is_post() %}

@@ -16,7 +16,7 @@
 
   <br>
 
-  <div id="footer-nav">
+  <div id="footer-nav" class='footer-nav'>
 		{{ partial('_partial/nav', {position: 'footer'}) }}
 	</div>
 

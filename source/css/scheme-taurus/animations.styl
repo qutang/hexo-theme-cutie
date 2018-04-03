@@ -10,6 +10,18 @@
   }
 }
 
+@keyframes fadeOutDown {
+  to {
+    opacity: 0;
+    transform: translate3d(0, 50%, 0);
+  }
+
+  from {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 @keyframes fadeInLittleDown {
   from {
     opacity: 0;
@@ -46,6 +58,18 @@
   }
 }
 
+@keyframes fadeOutUp {
+  to {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+
+  from {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 @keyframes fadeInLittleRight {
   from {
     opacity: 0;
@@ -57,6 +81,7 @@
     transform: none;
   }
 }
+
 
 @keyframes fadeInLeft {
   from {
@@ -85,11 +110,44 @@
 @keyframes fadeInUp {
   from {
     opacity: 0;
-	transform: translate3d(0, 100%, 0);
+	  transform: translate3d(0, 100%, 0);
   }
 
   to {
     opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes translateUpAnouncement {
+  to {
+    opacity: 1
+    transform: translateY(-6.9em)
+    width: 100%
+    left: 0
+    margin-top: -2px
+    margin-left: -2px
+    border-radius: 0
+  }
+  from {
+    opacity: 1
+    width: 60%
+    left: 20%
+  }
+}
+
+
+@keyframes translateDownAnouncement {
+  to {
+    opacity: 1
+    width: 60%
+    left: 20%
+  }
+  from {
+    opacity: 1
+    transform: translateY(-6.9em)
+    width: 100%
+    left: 0
   }
 }
 
@@ -104,11 +162,11 @@ $current_start = 0s
 $duration = 1s
 
 // initial animation
-#header
-  animate(fadeInDown, $duration, $current_start)
+// .header
+//   animate(fadeInDown, $duration, $current_start)
 
 $current_start = $current_start + $delay
-#header .header-logo
+.header .header-logo
   animate(fadeInLeft, $duration, $current_start)
   img
     transition: all .2s ease-in-out
@@ -118,15 +176,12 @@ $current_start = $current_start + $delay
 #footer
   animate(fadeInUp, $duration, $current_start)
 
-#footer-nav
-  animate(fadeInUp, $duration, $current_start)
-
 .Card
 .archive-container
   animate(fadeInLittleLeft, 1s, $current_start)
 
 $current_start = $current_start + $delay
-#header .header-text
+.header .header-text
   animate(fadeInDown, $duration, $current_start)
 
 .index-intro
@@ -137,8 +192,8 @@ $current_start = $current_start + $delay
   animate(fadeInDown, 2s, $current_start)
 
 $current_start = $current_start + $delay
-#anouncement
-  animate(fadeInDown, 2s, $current_start)
+// #anouncement
+//   animate(fadeInDown, 2s, $current_start)
 
 .article-title
 .article-logo
