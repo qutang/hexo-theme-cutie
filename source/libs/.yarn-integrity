@@ -1,0 +1,27 @@
+{
+  "systemParams": "darwin-x64-59",
+  "modulesFolders": [
+    "source/libs"
+  ],
+  "flags": [],
+  "linkedModules": [],
+  "topLevelPatterns": [
+    "gitment@^0.0.3",
+    "headroom.js@^0.9.4",
+    "lg-zoom@^1.1.0",
+    "noty@^3.2.0-beta",
+    "tippy.js@^2.5.0"
+  ],
+  "lockfileEntries": {
+    "gitment@^0.0.3": "https://registry.yarnpkg.com/gitment/-/gitment-0.0.3.tgz#dbccbad7480b1345b656913bd70eff792a7b38b8",
+    "headroom.js@^0.9.4": "https://registry.yarnpkg.com/headroom.js/-/headroom.js-0.9.4.tgz#0c4e6b4563bb69df55aecdefaba3227566f2df5a",
+    "jquery@>=1.7.0": "https://registry.yarnpkg.com/jquery/-/jquery-3.3.1.tgz#958ce29e81c9790f31be7792df5d4d95fc57fbca",
+    "lg-zoom@^1.1.0": "https://registry.yarnpkg.com/lg-zoom/-/lg-zoom-1.1.0.tgz#726cdc34748dbd7c1372feedb3017be509e10951",
+    "mobx@^3.1.7": "https://registry.yarnpkg.com/mobx/-/mobx-3.6.2.tgz#fb9f5ff5090539a1ad54e75dc4c098b602693320",
+    "noty@^3.2.0-beta": "https://registry.yarnpkg.com/noty/-/noty-3.2.0-beta.tgz#cd1117277a1b83c9b08dfc78f968c6c5960d3cfa",
+    "popper.js@^1.14.2": "https://registry.yarnpkg.com/popper.js/-/popper.js-1.14.2.tgz#066e8e1613e65e69ba050f4b78e7bd4c8d54e443",
+    "tippy.js@^2.5.0": "https://registry.yarnpkg.com/tippy.js/-/tippy.js-2.5.0.tgz#393826b42aa1750268e0d2a4d6f047abe4c96d50"
+  },
+  "files": [],
+  "artifacts": {}
+}

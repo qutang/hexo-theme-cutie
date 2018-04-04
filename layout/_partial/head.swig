@@ -33,21 +33,31 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Load scheme css -->
-  {{ css('css/lightgallery.css') }}
-  {{ partial('_partial/scheme-css') }}
+  <!-- load lightgallery -->
+<!-- {{ css(theme.libs.lightgallery.css_min) }} -->
+{{ css(theme.libs.noty.css) }}
+<script
+src="https://code.jquery.com/jquery-3.3.1.min.js"
+integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+crossorigin="anonymous"></script>
+  
+{{ partial('_partial/scheme-css') }}
+
+ 
 
   <!-- load font awesome 5 -->
-  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+  <script defer src="{{ theme.libs.fontawesome.js_cdn }}"></script>
 
   <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
   tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
   });
   </script>
-  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+  <!-- load mathjax -->
+  <script type="text/javascript" async src="{{ theme.libs.mathjax.js_cdn }}"></script>
 
-  <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+  <!-- load js-cookie -->
+  <script src="{{ theme.libs.jscookie.js_cdn }}"></script>
     {{ js('js/social-share.min.js') }}
     {{ js('js/theme.js')}}
 

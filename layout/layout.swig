@@ -4,13 +4,13 @@
 <body style="display: flex; flex-direction: column; min-height: 100vh;">
 {{ partial("_partial/header") }}
 
+ {{ partial("_partial/anouncement", {item: page}) }}
+
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <div style="flex: 1;">
       {{ body }}
   </div>
-
-  {{ partial("_partial/anouncement") }}
 
   {{ partial("_partial/footer") }}
 
