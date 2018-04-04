@@ -1,5 +1,5 @@
 {{ js('js/lightgallery.min.js') }}
-{{ js(theme.libs.lgzoom.js_min) }}
+{{ js('js/lg-zoom.min.js') }}
 <script type='text/javascript'>
     $(document).ready(function() {
         $("#lightgallery").lightGallery(); 

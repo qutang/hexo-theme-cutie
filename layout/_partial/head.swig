@@ -34,7 +34,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- load lightgallery -->
-<!-- {{ css(theme.libs.lightgallery.css_min) }} -->
+{{ css('css/lightgallery.css') }}
 {{ css(theme.libs.noty.css) }}
 <script
 src="https://code.jquery.com/jquery-3.3.1.min.js"
