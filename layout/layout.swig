@@ -4,7 +4,7 @@
 <body style="display: flex; flex-direction: column; min-height: 100vh;">
 {{ partial("_partial/header") }}
 
- {{ partial("_partial/anouncement", {item: page}) }}
+ {{ partial("_partial/announcement", {item: page}) }}
 
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
