@@ -6,6 +6,22 @@ hexo.extend.helper.register("get_posts_by_year", function(posts, year){
 	return result;
 });
 
+hexo.extend.helper.register("get_posts_in_json", function(posts){
+	post_list = []
+	for(var i in posts.data){
+		var tag_names = posts.data[i].tags.map(function(tag){return tag.name});
+		post_list.push({
+			"title": posts.data[i].title.replace(/["']/g, ''),
+			"date": posts.data[i].date,
+			"content": posts.data[i].content.replace(/["']/g, '').replace(/<[^>]+>/g, ''),
+			"author": posts.data[i].author,
+			"tags": tag_names,
+			"path": posts.data[i].path
+		})
+	}
+	return JSON.stringify(post_list)
+})
+
 hexo.extend.helper.register("get_posts_by_year_count", function(posts, year){
 	var result = posts.filter(function(post){
 		if(post.date.year() === year) return true;
@@ -66,3 +82,19 @@ hexo.extend.helper.register("get_intro", function(site){
 	});
 	return result;
 });
+
+hexo.extend.generator.register('search', function(locals){
+	return {
+	  path: 'search/index.html',
+	  data: locals,
+	  layout: ['search', 'layout']
+	}
+  });
+
+hexo.extend.generator.register('404', function(locals){
+	return {
+	  path: '404.html',
+	  data: locals,
+	  layout: ['404', 'layout']
+	}
+})

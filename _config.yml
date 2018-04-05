@@ -13,6 +13,9 @@ global:
   icon_set: blue-line
   use_animation: true
 
+page_404:
+  tencent_404: false
+
 post:
   allow_share: true
   allow_modification: false
@@ -25,6 +28,15 @@ changelog:
   v2.0.7:
     - Auto hide/show of header and fotter during scrolling
     - Redesign of announcement, supporting both post annoucement and site announcement
+  v2.0.6-beta:
+    - Bug fixes
+  v2.0.5-beta:
+    - Support animation
+    - Support post copyright
+    - Support light gallery zooming
+    - Support post comment and visit counting
+    - Support light gallery for all images in a post
+    - Group posts by month adaptively in archive page
 
 libs:
   noty:
@@ -62,6 +74,9 @@ libs:
     js_cdn: https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js
   fontawesome:
     js_cdn: https://use.fontawesome.com/releases/v5.0.6/js/all.js
+  fuse:
+    js_min: /libs/fuse.js/dist/fuse.min.js
+    js: /libs/fuse.js/dist/fuse.js
   
   
   

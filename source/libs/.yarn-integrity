@@ -6,6 +6,7 @@
   "flags": [],
   "linkedModules": [],
   "topLevelPatterns": [
+    "fuse.js@^3.2.0",
     "gitment@^0.0.3",
     "headroom.js@^0.9.4",
     "lg-zoom@^1.1.0",
@@ -13,6 +14,7 @@
     "tippy.js@^2.5.0"
   ],
   "lockfileEntries": {
+    "fuse.js@^3.2.0": "https://registry.yarnpkg.com/fuse.js/-/fuse.js-3.2.0.tgz#f0448e8069855bf2a3e683cdc1d320e7e2a07ef4",
     "gitment@^0.0.3": "https://registry.yarnpkg.com/gitment/-/gitment-0.0.3.tgz#dbccbad7480b1345b656913bd70eff792a7b38b8",
     "headroom.js@^0.9.4": "https://registry.yarnpkg.com/headroom.js/-/headroom.js-0.9.4.tgz#0c4e6b4563bb69df55aecdefaba3227566f2df5a",
     "jquery@>=1.7.0": "https://registry.yarnpkg.com/jquery/-/jquery-3.3.1.tgz#958ce29e81c9790f31be7792df5d4d95fc57fbca",
