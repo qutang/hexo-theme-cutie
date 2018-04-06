@@ -29,10 +29,7 @@ changelog:
   v2.0.8:
     - Bug fixes
     - Announcement will only be shown when visitor first sees it
-    - Simplify unread badge
-      - now use `post.enable_unread_badge` (true or false) in `source/_data/cutie.yml` to enable/disable unread badge for all posts. 
-      - now use `enable_unread_badge` (true or false) in post's front matter to enable/disable unread badge for a single post (this variable has the highest priority)
-      - Discard variable `version` in post's front matter. Everything is automated now.
+    - Automate unread badge and post version management. No need to manually update <code>version</code> variable, set variable <code>enable_unread_badge</code> to <code>true</code> or <code>false</code> instead.
   v2.0.7:
     - Auto hide/show of header and fotter during scrolling
     - Redesign of announcement, supporting both post annoucement and site announcement
