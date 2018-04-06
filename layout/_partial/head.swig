@@ -36,6 +36,9 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <!-- load loadjs.js -->
+  {{ js(theme.libs.loadjs.js_min) }}
+
   <!-- load lightgallery -->
 {{ css('css/lightgallery.css') }}
 {{ css(theme.libs.noty.css) }}

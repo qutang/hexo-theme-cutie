@@ -1,25 +1,28 @@
 Arguments: 
-  /usr/local/Cellar/node/9.10.1/bin/node /usr/local/Cellar/yarn/1.5.1_1/libexec/bin/yarn.js remove lightgallery
+  C:\Program Files\nodejs\node.exe C:\Users\tqshe\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add js-cookie
 
 PATH: 
-  /Users/qutang/miniconda3/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Users/qutang/miniconda3/bin
+  C:\Program Files\ConEmu\ConEmu\Scripts;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\ProgramData\chocolatey\bin;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\bin;C:\ProgramData\Miniconda3\Scripts;C:\Program Files (x86)\Gow\bin;C:\Program Files\R\R-3.4.3\bin\x64;C:\Program Files\Java\jdk-9.0.1\bin;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;C:\Program Files\Amazon\AWSCLI\;C:\Users\tqshe\.windows-build-tools\python27\;C:\Program Files\nodejs\node_modules\npm\bin\node-gyp-bin;C:\Users\tqshe\AppData\Roaming\npm\node_modules\windows-build-tools\node_modules\.bin;C:\Users\tqshe\AppData\Roaming\npm\node_modules\.bin;C:\Program Files\ConEmu\ConEmu\Scripts;C:\Program Files\ConEmu;C:\Program Files\ConEmu\ConEmu;C:\Users\tqshe\AppData\Local\Microsoft\WindowsApps;C:\Users\tqshe\AppData\Roaming\npm;C:\Program Files\Microsoft VS Code Insiders\bin;C:\Users\tqshe\bin
 
 Yarn version: 
-  1.5.1
+  1.3.2
 
 Node version: 
-  9.10.1
+  9.2.0
 
 Platform: 
-  darwin x64
+  win32 x64
 
 npm manifest: 
   {
     "dependencies": {
-      "gitment": "^0.0.3",
+      "fuse.js": "^3.2.0",
+      "gitment": "0.0.3",
       "headroom.js": "^0.9.4",
+      "js-cookie": "^2.2.0",
+      "jshashes": "^1.0.7",
       "lg-zoom": "^1.1.0",
-      "lightgallery.js": "^1.0.2",
+      "loadjs": "^3.5.4",
       "noty": "^3.2.0-beta",
       "tippy.js": "^2.5.0"
     }
@@ -33,7 +36,11 @@ Lockfile:
   # yarn lockfile v1
   
   
-  gitment@^0.0.3:
+  fuse.js@^3.2.0:
+    version "3.2.0"
+    resolved "https://registry.yarnpkg.com/fuse.js/-/fuse.js-3.2.0.tgz#f0448e8069855bf2a3e683cdc1d320e7e2a07ef4"
+  
+  gitment@0.0.3:
     version "0.0.3"
     resolved "https://registry.yarnpkg.com/gitment/-/gitment-0.0.3.tgz#dbccbad7480b1345b656913bd70eff792a7b38b8"
     dependencies:
@@ -47,15 +54,23 @@ Lockfile:
     version "3.3.1"
     resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.3.1.tgz#958ce29e81c9790f31be7792df5d4d95fc57fbca"
   
+  js-cookie@^2.2.0:
+    version "2.2.0"
+    resolved "https://registry.yarnpkg.com/js-cookie/-/js-cookie-2.2.0.tgz#1b2c279a6eece380a12168b92485265b35b1effb"
+  
+  jshashes@^1.0.7:
+    version "1.0.7"
+    resolved "https://registry.yarnpkg.com/jshashes/-/jshashes-1.0.7.tgz#bed8c97a0e9632fd0513916f55f76dd5486be59f"
+  
   lg-zoom@^1.1.0:
     version "1.1.0"
     resolved "https://registry.yarnpkg.com/lg-zoom/-/lg-zoom-1.1.0.tgz#726cdc34748dbd7c1372feedb3017be509e10951"
     dependencies:
       jquery ">=1.7.0"
   
-  lightgallery.js@^1.0.2:
-    version "1.0.2"
-    resolved "https://registry.yarnpkg.com/lightgallery.js/-/lightgallery.js-1.0.2.tgz#554ebc12515a277862e771fcd9bf8e99e4ad1ec6"
+  loadjs@^3.5.4:
+    version "3.5.4"
+    resolved "https://registry.yarnpkg.com/loadjs/-/loadjs-3.5.4.tgz#ef0f4eb5a6ac2b86c7597a3d4de97b83816e36b8"
   
   mobx@^3.1.7:
     version "3.6.2"
@@ -76,10 +91,4 @@ Lockfile:
       popper.js "^1.14.2"
 
 Trace: 
-  Error: This module isn't specified in a manifest.
-      at new MessageError (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:186:110)
-      at Object.<anonymous> (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:60445:15)
-      at Generator.next (<anonymous>)
-      at step (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:98:30)
-      at /usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:109:13
-      at <anonymous>
+  Error: EPERM: operation not permitted, mkdir 'C:\Users\tqshe\Projects\hexo\cutie\node_modules\.bin'

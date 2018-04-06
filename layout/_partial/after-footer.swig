@@ -9,10 +9,6 @@
     {{ partial('_third_party/gitment') }}
 {% endif %}
 
-{% if config.cutie.instantclick %}
-  {{ partial('_third_party/instantclick') }}
-{% endif %}
-
 {% set use_lightgallery = site.data.cutie.post.use_lightgallery | default(theme.post.use_lightgallery) %}
 
 {% if use_lightgallery %}
@@ -44,14 +40,13 @@ changeLayoutOnTouchScreen();
 
 {% if is_post() %}
 var post = new Post('{{ site.data.cutie.valine.appId }}', '{{ site.data.cutie.valine.appKey }}');
-        post.getCommentCount(window.location.pathname, function(count){
-            $('#article-comment-count').text(count);
-        });
-        post.addVisitRecord(window.location.pathname, userip);
-        post.getVisitCount(window.location.pathname, function(count){
-            $('#article-visit-count').text(count);
-        });
-post.updatePostVersion(window.location.pathname);
+post.getCommentCount(window.location.pathname, function(count){
+    $('#article-comment-count').text(count);
+});
+post.addVisitRecord(window.location.pathname, userip);
+post.getVisitCount(window.location.pathname, function(count){
+    $('#article-visit-count').text(count);
+});
 
 {% elseif is_home() %}
 var post = new Post('{{ site.data.cutie.valine.appId }}', '{{ site.data.cutie.valine.appKey }}');
@@ -60,31 +55,12 @@ $('.Card').each(function(){
     var post_url = $(this).attr('id');
     var true_url = $(this).find('.Card-title a').first().attr('href');
     var card = this;
-    if(true_url.startsWith('http')){ //external link
-        $(card).find('.Card-title a').first().click(function(e){
-            post.updatePostVersion(post_url); 
-        });
-        $(card).find('.Card-excerpt a').first().click(function(e){
-            post.updatePostVersion(post_url); 
-        });
-        $(card).find('.Card-figure a').first().click(function(e){
-            post.updatePostVersion(post_url); 
-        });
-    }
-
-    post.checkUpdate(post_url, function(post_url, hasUpdate){
-        if(hasUpdate){
-            $(card).find('mark.Card-badge').show();
-        }else{
-            $(card).find('mark.Card-badge').hide();
-        } 
+    post.getCommentCount(post_url, function(count){
+        $(card).find('.card-comment-count').first().text(count);
     });
-        post.getCommentCount(post_url, function(count){
-            $(card).find('.card-comment-count').first().text(count);
-        });
-        post.getVisitCount(post_url, function(count){
-            $(card).find('.card-visit-count').first().text(count);
-        });
+    post.getVisitCount(post_url, function(count){
+        $(card).find('.card-visit-count').first().text(count);
+    });
     
 });
 
@@ -94,19 +70,6 @@ $('.Card-archive').each(function(){
     var post_url = $(this).attr('id');
     var true_url = $(this).find('.Card-title a').first().attr('href');
     var card = this;
-    if(true_url.startsWith('http')){ //external link
-        $(card).find('.Card-title a').first().click(function(e){
-            post.updatePostVersion(post_url); 
-        });
-    }
-
-    post.checkUpdate(post_url, function(post_url, hasUpdate){
-        if(hasUpdate){
-            $(card).find('mark.Card-badge').show();
-        }else{
-            $(card).find('mark.Card-badge').hide();
-        }
-    });
     post.getCommentCount(post_url, function(count){
         $(card).find('.card-comment-count').first().text(count);
     });
@@ -117,3 +80,5 @@ $('.Card-archive').each(function(){
 });
 {% endif %}
 </script>
+
+{{ partial('post-version-js') }}

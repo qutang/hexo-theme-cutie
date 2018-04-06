@@ -5,8 +5,8 @@
 {% set use_post_stats = false %}
 {% endif %}
 
-<div class='Card-archive' id='{{ url_for(item.path) }}' data-name='{{ item.title }}' data-version='{{ item.version }}'>
-	<mark class='Card-badge' style='{visibility: "hidden"}'></mark>
+<div class='Card-archive' id='{{ hashit(url_for(item.path)) }}' data-name='{{ item.title }}' data-version='{{ item.version }}'>
+	<mark class='Card-badge'></mark>
 	<div class="Card-body">
 		<h3 class='Card-title'>
 			{% if item.link || item.external_link %}

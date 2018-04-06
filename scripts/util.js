@@ -1,3 +1,5 @@
+var Hashes = require('../source/libs/jshashes/hashes');
+
 hexo.extend.helper.register("get_posts_by_year", function(posts, year){
 	var result = posts.filter(function(post){
 		if(post.date.year() === year) return true;
@@ -30,6 +32,10 @@ hexo.extend.helper.register("get_posts_in_json", function(posts){
 	return JSON.stringify(post_list)
 })
 
+hexo.extend.helper.register("strip_html_and_whitespaces", function(text){
+	return text.replace(/["']/g, '').replace(/<[^>]+>/g, '').replace(/\r?\n|\r/g, ' ');
+})
+
 hexo.extend.helper.register("get_posts_by_year_count", function(posts, year){
 	var result = posts.filter(function(post){
 		if(post.date.year() === year) return true;
@@ -52,6 +58,10 @@ hexo.extend.helper.register("get_posts_by_year_and_month", function(posts, year,
 		else return false;
 	});
 	return result;
+});
+
+hexo.extend.helper.register('hashit', function(text){
+	return 'hashit_' + new Hashes.SHA256().hex(text);
 });
 
 hexo.extend.helper.register("get_years", function(posts){

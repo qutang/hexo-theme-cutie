@@ -23,6 +23,7 @@ post:
   use_lightgallery: true
   allow_comment: true
   toc_level: 2
+  enable_unread_badge: false
 
 changelog:
   v2.0.8:
@@ -97,18 +98,29 @@ libs:
     url: https://www.mathjax.org/
     js_cdn: https://cdnjs.cloudflare.com/ajax//libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML
   jscookie:
-    name: js-cookie library
+    name: "js-cookie.js: A javascript cookie manipulation library"
     url: https://github.com/js-cookie/js-cookie
     js_cdn: https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js
+    js: /libs/js-cookie/src/js.cookie.js
   fontawesome:
     name: fontawesome
     url: https://fontawesome.com/
     js_cdn: https://use.fontawesome.com/releases/v5.0.6/js/all.js
   fuse:
-    name: fuse.js fuzzy search library
+    name: "fuse.js: A javascript fuzzy search library"
     url: http://fusejs.io/
     js_min: /libs/fuse.js/dist/fuse.min.js
     js: /libs/fuse.js/dist/fuse.js
+  jshashes:
+    name: "hashes.js: A javascript hashing library"
+    url: https://github.com/h2non/jshashes
+    js_min: /libs/jshashes/hashes.min.js
+    js: /libs/jshashes/hashes.js
+  loadjs:
+    name: "loadjs.js: A javascript dependency management library"
+    url: https://github.com/muicss/loadjs
+    js_min: /libs/loadjs/dist/loadjs.min.js
+    js: /libs/loadjs/dist/loadjs.js
   
   
   

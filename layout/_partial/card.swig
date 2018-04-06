@@ -14,7 +14,7 @@
 {% set use_post_stats = false %}
 {% endif %}
 
-<div class='Card Card-hover Card-index-{{ index }}' id='{{ url_for(item.path) }}' data-name='{{ item.title }}' data-version='{{ item.version }}'>
+<div class='Card Card-hover Card-index-{{ index }}' id='{{ hashit(url_for(item.path)) }}' data-name='{{ item.title }}' data-version='{{ item.version }}'>
 	{% if item.categories && item.categories.length %}
 		{% for cat in item.categories %}
 			{% if loop.first %}

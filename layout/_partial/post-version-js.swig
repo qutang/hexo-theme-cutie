@@ -1,0 +1,45 @@
+<script type='text/javascript'>
+{% set enable_unread_badge_all = site.data.cutie.post.enable_unread_badge | default(theme.post.enable_unread_badge) %}
+  {% if is_home() || is_archive() || is_tag() || is_category() %}
+    loadjs(['{{ theme.libs.jshashes.js_min }}', '{{ theme.libs.jscookie.js }}', '/js/post.v2.js'], 'post-version');
+    loadjs.ready('post-version', {
+      success: function(){
+        {% for post in page.posts %}
+          {% set id = hashit(url_for(post.path)) %}
+          {% if post.enable_unread_badge | default(enable_unread_badge_all) %}
+          // show/hide post unread badage
+          var postLinks = document.querySelectorAll('#{{ id }} .Card-title a, #{{ id }} .Card-excerpt a, #{{ id }} .Card-figure a');
+          new Postv2('{{ id }}').showUnreadNotification('{{ hashit(trim(strip_html_and_whitespaces(post.content))) }}', function(){
+            var postBadge = document.querySelector('#{{ id }} mark.Card-badge');
+            $(postBadge).show();
+          }, function(){
+            var postBadge = document.querySelector('#{{ id }} mark.Card-badge');
+            $(postBadge).hide();
+          }); 
+          // update cookie upon click the post and hide badge immediately
+          for(var i = 0;i < postLinks.length; i++){
+            postLinks[i].onclick = function(){
+              new Postv2('{{ id }}').update('{{ hashit(trim(strip_html_and_whitespaces(post.content))) }}', function(){
+                console.log('called');
+                var postBadge = document.querySelector('#{{ id }} mark.Card-badge');
+                $(postBadge).hide();
+              });
+            }
+          }
+          {% else %}
+            var postBadge = document.querySelector('#{{ id }} mark.Card-badge');
+            $(postBadge).hide();
+            
+          {% endif %}
+        {% endfor %}
+      }
+    })
+  {% elif is_post() %}
+  // update cookie if this page is opened (directly)
+  loadjs(['{{ theme.libs.jshashes.js_min }}', '{{ theme.libs.jscookie.js }}', '/js/post.v2.js'], 'post-version');
+  loadjs.ready('post-version', function(){
+    {% set id = hashit(url_for(page.path)) %}
+    new Postv2('{{ id }}').update('{{ hashit(trim(strip_html_and_whitespaces(page.content))) }}', function(){});
+  });
+  {% endif %}
+</script>
