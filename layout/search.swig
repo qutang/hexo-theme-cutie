@@ -74,7 +74,14 @@
 			var anotherBox = newBox.clone();
 			var dateStr = new Date(result[i].date);
 			anotherBox.css('display','flex');
-			anotherBox.find('.Card-title a').text(result[i].title).attr('href', '/' + result[i].path);
+			var url = "";
+			if(result[i].external_link !== ""){
+				url = result[i].external_link;
+			}else{
+				url = '/' + result[i].path;
+			}
+			
+			anotherBox.find('.Card-title a').text(result[i].title).attr('href', url);
 			anotherBox.find('.Card-date').text(dateStr.toDateString());
 			anotherBox.appendTo('.archive-cards');
 		}

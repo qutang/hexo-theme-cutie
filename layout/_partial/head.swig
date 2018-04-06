@@ -9,22 +9,25 @@
   <meta charset="utf-8">
   {% if is_home() %}
       <title>{{ config.title }}</title>
-  {% endif %}
-  {% if is_year() %}
+  {% elif is_year() %}
       <title>{{ page.year + " - Archive - " + config.title }}</title>
-  {% endif %}
-  {% if is_archive() %}
+  {% elif is_archive() %}
       <title>{{ "Archive - " + config.title }}</title>
-  {% endif %}
-  {% if is_category() %}
+  {% elif is_category() %}
       <title>{{ page.category + " - Category - " + config.title }}</title>
-  {% endif %}
-    {% if is_tag() %}
+  {% elif is_tag() %}
       <title>{{ page.tag + " - Tag - " + config.title }}</title>
-  {% endif %}
-  {% if is_post() %}
+  {% elif is_post() %}
       <title>{{ page.title | default('No title') + " - " + config.title }}</title>
+  {% elif is_page() %}
+      <title>{{ page.title | default('No title') + " - " + config.title }}</title>
+  {% elif path.indexOf('search') !== -1 %}
+      <title>{{ "Search" + " - " + config.title }}</title>
+  {% elif path.indexOf('404') !== -1 %}
+      <title>{{ "Not Found" + " - " + config.title }}</title>
   {% endif %}
+
+  
   
   <meta name="description" content="{{ config.description }}">
   <meta name="author" content="{{ config.author }}">
@@ -74,5 +77,4 @@ crossorigin="anonymous"></script>
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="icon" type="image/png" href="/images/favicon.png">
-
 </head>
