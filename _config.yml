@@ -30,6 +30,7 @@ changelog:
     - Bug fixes
     - Announcement will only be shown when visitor first sees it
     - Automate unread badge and post version management. No need to manually update <code>version</code> variable, set variable <code>enable_unread_badge</code> to <code>true</code> or <code>false</code> instead.
+    - Optimize post visit and comment counts (reduce network requests)
   v2.0.7:
     - Auto hide/show of header and fotter during scrolling
     - Redesign of announcement, supporting both post annoucement and site announcement
