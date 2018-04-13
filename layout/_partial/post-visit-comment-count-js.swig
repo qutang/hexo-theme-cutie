@@ -1,6 +1,6 @@
 <script type="text/javascript" src="https://l2.io/ip.js?var=user_ip"></script>
 <script type='text/javascript'>
-  {% if is_home() %}
+  {% if is_home() || is_archive() || is_tag() || is_category() %}
     loadjs(['{{ theme.libs.jshashes.js_min }}', '{{ theme.libs.jscookie.js }}', '/js/leancloud.js'], 'post-visit-comment-count');
     loadjs.ready('post-visit-comment-count', {
       success: function(){
