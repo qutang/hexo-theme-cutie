@@ -1,0 +1,26 @@
+@import 'animations'
+.header.headroom
+    animate(fadeInDown, 1s, 0.3s)
+.header.headroom--pinned
+    animate(fadeInDown, 0.7s, 0.1s)
+
+.header.headroom--unpinned
+    animate(fadeOutUp, 0.7s, 0.1s)
+
+.announcement.headroom
+    animate(fadeInDown, 2s, 1s)
+
+.announcement.headroom--pinned
+    animate(translateDownAnouncement, 0.7s, 0.1s)
+
+.announcement.headroom--unpinned
+    animate(translateUpAnouncement, 0.7s, 0.1s)
+
+.footer-nav.headroom
+  animate(fadeInUp, 1s, 0.3s)
+
+.footer-nav.headroom--pinned
+    animate(fadeInUp, 0.7s, 0.1s)
+
+.footer-nav.headroom--unpinned
+    animate(fadeOutDown, 0.7s, 0.1s)

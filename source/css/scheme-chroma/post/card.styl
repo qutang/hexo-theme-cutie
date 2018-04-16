@@ -1,0 +1,54 @@
+.Card-article
+  text-align: left
+  width: 44%
+  +for_breakpoint(tablet)
+    width: 95%
+  +for_breakpoint(mobile)
+    width: 95%
+  background-color: white
+  border-radius: 5px
+  // border: 1px solid rgba(170, 175, 173, 0.61)
+  box-shadow: 0.5px 0.5px 3px -1px rgba(70, 75, 73, 0.81)
+  margin: 0.5em 0
+  height: 10em
+  overflow-y: auto
+  padding: 2%
+  position: relative
+  .card-title
+    h3
+      font-size: 1em
+      margin: 0
+  .card-content
+    display: flex
+    align-items: flex-start
+    flex-direction: row
+    justify-content: space-between
+    .author-meta
+      display: flex
+      flex-direction: column
+      justify-content: space-between
+      align-items: center
+      .author-figure
+        width: 5em
+        height: 5em
+        border-radius: 50%
+        border: 1px solid black
+      .author-name
+        margin-top:0.8em
+    .author-ai
+      margin: 0 0 0 1em
+      font-size: 0.9em
+      display: flex
+      flex-direction: column
+      justify-content: flex-start
+      align-items: flex-start
+      overflow-y: auto
+      max-height: 10em
+      .author-articles
+        // border: 1px solid black
+        width: 100%
+        overflow-y: auto
+
+    
+
+    
