@@ -1,0 +1,68 @@
+.Card-archive
+  font-size: 14px
+  text-align: left
+  background-color: white
+  min-width: 20%
+  max-width: 27%
+  +for_breakpoint(mobile)
+    max-width: 90vw
+    width: 90vw
+  margin: 1em 1%
+  display: flex
+  flex-wrap: wrap
+  border-radius: 10px
+  box-shadow: 0.5px 0.5px 3px -0.5px rgba(170, 175, 173, 0.61)
+  // min-height: 8em
+  position: relative
+  +for_breakpoint(tablet)
+    width: 90%
+  +for_breakpoint(mobile)
+    width: 90%
+  .Card-meta
+      a
+        &:link
+          text-decoration: none
+      margin-top: 0.5em
+      font-size: 0.8em
+      color: #aaa
+      .Card-tags
+        margin-bottom: 1em
+      ul
+        padding: 0
+        display: block
+        clear: both
+        margin-left: 0.3em
+      li
+        display: inline-block
+        margin-left: 0.2em
+  .Card-title
+    flex-grow: 1
+    padding-top: 0
+    font-weight: normal
+    margin: 0
+    font-size: 1em
+    margin-bottom: 2em
+    a
+      &:link
+      &:visited
+        text-decoration: none
+        color: #444
+      &:hover
+        color: $primary_color
+  .Card-badge
+    border-radius: 10px
+    border: 0px solid #FFF
+    width: 100%
+    height: 3px 
+    background-color: #FF6B6B
+    position:absolute
+    top: 4%
+    left: 0
+    overflow: hidden
+.Card-archive .Card-body 
+  margin: 1em
+
+
+  
+
+  

@@ -1,0 +1,68 @@
+@import 'colors.styl'
+
+banner-shadow()
+  box-shadow: 0px 1px 10px 1px #ddd
+
+fixed_tl($top, $left)
+  position: fixed
+  top: $top
+  left: $left
+
+fixed_tr($top, $right)
+  position: fixed
+  top: $top
+  right: $right
+
+fixed_bl($bottom, $left)
+  position: fixed
+  bottom: $bottom
+  left: $left
+
+fixed_br($bottom, $right)
+  position: fixed
+  bottom: $bottom
+  right: $right
+
+rotate_text($degree)
+  -webkit-transform: rotate($degree)
+  -moz-transform: rotate($degree)
+  -ms-transform: rotate($degree)
+  -o-transform: rotate($degree)
+  transform: rotate($degree)
+  -webkit-transition: transform 0.5s; /* Safari */
+  transition: transform 0.5s;
+
+shorter_underline_on_hover($width, $offset)
+  position: relative
+  &:after
+    width: 0%
+  &:hover:after
+    position: absolute
+    height: 2px
+    background-color: #444
+    content: ""
+    display:block
+    width: $width
+    margin: 0 auto
+    bottom: $offset
+    left: 0
+    right: 0
+    transition: width 1s
+  
+// media query
+
+media_queries = {
+  small-mobile  : "only screen and (max-width: 350px)",
+  mobile  : "only screen and (max-width: 600px)",
+  tablet  : "only screen and (min-width: 601px) and (max-width: 800px)",
+  half-desktop: "only screen and (min-width: 801px) and (max-width: 1024px)"
+  desktop : "only screen and (min-width: 1024px)"
+}
+
+for_breakpoint(breakpoints)
+  conditions = ()
+  for breakpoint in breakpoints
+    push(conditions, media_queries[breakpoint])
+  conditions = join(", ", conditions)
+  @media conditions
+    {block}
