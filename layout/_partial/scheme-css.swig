@@ -8,6 +8,11 @@
     {% if use_animation %}
         {{css('css/scheme-taurus/animations.css')}}
     {% endif %}
+{% elif scheme === 'Chroma' %}
+    {{ css('css/chroma') }}
+    {% if use_animation %}
+        {{css('css/scheme-chroma/animations.css')}}
+    {% endif %}
 {% else %}
     {{ css('css/taurus') }}
     {% if use_animation %}
