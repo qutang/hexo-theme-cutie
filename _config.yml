@@ -29,6 +29,7 @@ changelog:
   v2.0.9:
     - Change primary font to Segoe UI
     - Optimize animation
+    - Adjust appearance
     - Bug fix
   v2.0.8:
     - Bug fixes
