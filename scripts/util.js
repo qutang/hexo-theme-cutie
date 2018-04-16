@@ -22,7 +22,7 @@ hexo.extend.helper.register("get_posts_in_json", function(posts){
 		post_list.push({
 			"title": posts.data[i].title.replace(/["']/g, ''),
 			"date": posts.data[i].date,
-			"content": posts.data[i].content.replace(/["']/g, '').replace(/<[^>]+>/g, ''),
+			"content": posts.data[i].content.replace(/["']/g, '').replace(/\$.*\$/g, "").replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, "").replace(/<[^>]+>/g, ''),
 			"author": posts.data[i].author,
 			"tags": tag_names,
 			"path": posts.data[i].path,
@@ -33,7 +33,7 @@ hexo.extend.helper.register("get_posts_in_json", function(posts){
 })
 
 hexo.extend.helper.register("strip_html_and_whitespaces", function(text){
-	return text.replace(/["']/g, '').replace(/<[^>]+>/g, '').replace(/\r?\n|\r/g, ' ');
+	return text.replace(/["']/g, '').replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, "").replace(/<[^>]+>/g, '').replace(/\r?\n|\r/g, ' ');
 })
 
 hexo.extend.helper.register("get_posts_by_year_count", function(posts, year){

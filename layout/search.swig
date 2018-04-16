@@ -59,7 +59,7 @@
                .replace(/\\r/g, "\\r")
                .replace(/\\t/g, "\\t")
                .replace(/\\b/g, "\\b")
-               .replace(/\\f/g, "\\f");
+               .replace(/\\f/g, "\\f")
 // remove non-printable and other non-valid JSON chars
 	s = s.replace(/[\u0000-\u0019]+/g,""); 
 	var list = JSON.parse(s);
