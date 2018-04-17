@@ -72,12 +72,12 @@
 				
 			</div>
 
-			{% if scheme == 'Chroma' %}
+			{% if scheme.name == 'Chroma' %}
 			<div class='Card-tags'>{{ partial('_partial/article-tags', {item: item, limit: 4}) }}</div>
 			{% endif %}
 			
 			<div class="Card-meta">
-				{% if scheme == 'Taurus' %}
+				{% if scheme.name == 'Taurus' %}
 				<div class='Card-tags'>{{ partial('_partial/article-tags', {item: item, limit: 4}) }}</div>
 				{% endif %}
 				<ul>

@@ -2,7 +2,7 @@
 .Card
   font-size:14px
   text-align: left
-  width: 45%
+  width: 50%
   +for_breakpoint(tablet)
     width: 90%
   +for_breakpoint(mobile)
@@ -10,11 +10,11 @@
   display: flex
   align-items: flex-start
   background-color: white
-  border-radius: 5px
-  box-shadow: 0.5px 0.5px 3px -0.5px rgba(170, 175, 173, 0.61)
-  margin: 1em 0
+  // border-radius: 5px
+  box-shadow: 0px 5px 6px -4px rgba(170, 175, 173, 0.61)
+  // margin: 1em 0
   min-height: 16em
-  padding: 0 2%
+  // padding: 0
   position: relative
   .Card-body
     a
@@ -85,7 +85,7 @@
         margin: 0 1em 0 0
 
   .Card-figure
-    margin: 1.5em 1.5em 1.5em 0.5em
+    margin: 1.5em 1.5em 1.5em 1.5em
     +for_breakpoint(mobile)
       margin-left: 1em
     +for_breakpoint(tablet)
@@ -97,14 +97,14 @@
   
   .Card-tags
     position:absolute
-    bottom: 1em
-    right: 1em
+    bottom: 2em
+    right: 1.5em
  
 for i in (1..10)
   if i % 2
     .Card-index-{i+1}
     .Card-index-{i}
-      background-image: linear-gradient(to top, $sunset[i] 0%, $sunset[i+1] 100%)
+      background-image: linear-gradient(to bottom, $chroma[i] 0%, $chroma[i+1] 100%)
 
 .Card 
   .Card-body 
@@ -116,17 +116,31 @@ for i in (1..10)
       &:visited
         color: white
 
+// .Card-badge
+//   -webkit-border-radius: 50%
+//   -moz-border-radius: 50%
+//   border-radius: 50%   
+//   border: 0px solid #FFF
+//   width: 10px
+//   height: 10px  
+//   background-color: #FF6B6B
+//   position:absolute
+//   top:-5px
+//   right:-5px
+
 .Card-badge
-  -webkit-border-radius: 50%
-  -moz-border-radius: 50%
-  border-radius: 50%   
-  border: 0px solid #FFF
-  width: 10px
-  height: 10px  
-  background-color: #FF6B6B
+  // -webkit-border-radius: 50%
+  // -moz-border-radius: 50%
+  // border-radius: 50%   
+  border-top: 25px solid white
+  border-left: 25px solid transparent
+  width: 0
+  height: 0
+  background: lighten($chroma[1], 50%)
+  // background-color: #FF6B6B
   position:absolute
-  top:-5px
-  right:-5px
+  top:0
+  right:0
 
 .Card-hover:hover
   .Card-title

@@ -13,5 +13,6 @@
 		</div>
 	{% endblock %}
 	<br>
+	
 	{{ partial('_partial/pagination') }}
 </div>

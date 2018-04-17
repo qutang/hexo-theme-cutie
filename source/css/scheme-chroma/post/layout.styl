@@ -15,6 +15,14 @@
     display: inline-block
     margin: 0
     serif()
+    a
+      &:link
+      &:hover
+      &:visited
+        color: transparent
+        background-clip: text
+        background-image: linear-gradient(60deg, $chroma[1] 0%, $chroma[11] 100%)
+        -webkit-background-clip: text
   .article-logo
     display: inline-block
     +for_breakpoint(mobile)

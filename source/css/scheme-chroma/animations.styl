@@ -160,12 +160,12 @@ $duration = 1s
 $current_start = $current_start + $delay
 .header .header-logo
   animate(fadeInLeft, $duration, $current_start)
-  img
-    transition: all .2s ease-in-out
-    &:hover
-      // transform: scale(1.1)
-      transform: translateY(-4%)
-      box-shadow: 1px 2px 10px 1px #c5c5c5
+  // img
+  //   transition: all .2s ease-in-out
+  //   &:hover
+  //     // transform: scale(1.1)
+  //     transform: translateY(-4%)
+  //     box-shadow: 1px 2px 10px 1px #c5c5c5
 
 #footer
   animate(fadeInUp, $duration, $current_start)
@@ -177,11 +177,17 @@ $current_start = $current_start + $delay
   animate(fadeInLittleLeft, 1s, $current_start)
 
 .Card
-  transition: all .3s ease-in-out
+  transition: all 0.3s 0.1s ease-in-out
 
-.Card:hover
-  transform: translateY(-3%)
-  box-shadow: 0.5px 3px 3px -0.5px rgba(170, 175, 173, 0.61)
+.Card:nth-child(even):hover
+  transform: translate3D(5px, -5px, 0)
+  box-shadow: 0px 5px 11px -5px rgba(170, 175, 173, 0.61)
+  .Card-excerpt
+    animate(fadeInLittleLeft, 0.5s, 0)
+
+.Card:nth-child(odd):hover
+  transform: translate3D(-5px, -5px, 0)
+  box-shadow: 0px 5px 11px -5px rgba(170, 175, 173, 0.61)
   .Card-excerpt
     animate(fadeInLittleLeft, 0.5s, 0)
 
