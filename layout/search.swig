@@ -7,17 +7,6 @@
 		{% endfor %}
 	</ul>
 
-	<div class='tag-cloud'>
-		{{ tagcloud({
-			min_font: 0.8,
-			max_font: 2,
-			unit: "em",
-			amount: 100,
-			color: true,
-			end_color: "#D63E0A",
-			start_color: "#488BAF"
-		}) }}
-	</div>
 	<div class="archive-cards">
 			<div class='Card-archive' style='display:none'>
 				<div class="Card-body">
@@ -52,7 +41,7 @@
 		]
 	};
 	var s = '{{ get_posts_in_json(site.posts) }}';
-	s = s.replace(/\\n/g, "\\n")  
+	s = s.replace(/\\n/g, "\\n")
                .replace(/\\'/g, "\\'")
                .replace(/\\"/g, '\\"')
                .replace(/\\&/g, "\\&")
@@ -61,7 +50,7 @@
                .replace(/\\b/g, "\\b")
                .replace(/\\f/g, "\\f")
 // remove non-printable and other non-valid JSON chars
-	s = s.replace(/[\u0000-\u0019]+/g,""); 
+	s = s.replace(/[\u0000-\u0019]+/g,"");
 	var list = JSON.parse(s);
 	var fuse = new Fuse(list, options);
 	var el = document.getElementById('search-form');
@@ -80,10 +69,24 @@
 			}else{
 				url = '/' + result[i].path;
 			}
-			
+
 			anotherBox.find('.Card-title a').text(result[i].title).attr('href', url);
 			anotherBox.find('.Card-date').text(dateStr.toDateString());
 			anotherBox.appendTo('.archive-cards');
 		}
 	}
 </script>
+
+<div class='search-container'>
+<div class='tag-cloud'>
+	{{ tagcloud({
+		min_font: 0.8,
+		max_font: 2,
+		unit: "em",
+		amount: 100,
+		color: true,
+		end_color: "#D63E0A",
+		start_color: "#488BAF"
+	}) }}
+</div>
+</div>
