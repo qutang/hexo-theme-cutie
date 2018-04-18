@@ -9,8 +9,10 @@ slogan: Bazinga, theme cutie!
 
 global:
   comment_system: valine # disqus, valine, gitment
-  scheme: Taurus
-  icon_set: blue-line
+  scheme: 
+    name: Chroma #Taurus
+    color: flower
+  icon_set: blue-shadow
   use_animation: true
 
 page_404:

@@ -1,0 +1,133 @@
+title:
+  archive: Archivio
+  category: Categoria
+  tag: Tag
+  schedule: Pianifica
+
+author: Autore
+
+date:
+  Jan: Gennaio
+  Feb: Febbraio
+  Mar: Marzo
+  Apr: Aprile
+  May: Maggio
+  Jun: Giugno
+  Jul: Luglio
+  Aug: Agosto
+  Sep: Settembre
+  Oct: Ottobre
+  Nov: Novembre
+  Dec: Dicembre
+
+
+external_link: Link esterno
+
+social:
+  wechat: Wechat
+  github: Github
+  youtube: Youtube
+  linkedin: Linkedin
+  weibo: Weibo
+
+menu:
+  home: Home
+  archives: Archivi
+  categories: Categorie
+  tags: Tag
+  about: About
+  search: Cerca
+  schedule: Pianicifica
+  sitemap: Sitemap
+  commonweal: Commonweal 404
+
+sidebar:
+  overview: Panoramica
+  toc: Sommario
+
+post:
+  share: Condividi
+  comment: Commento
+  created: Post creato
+  modified: Post modificato
+  sticky: Sticky
+  posted: Postato in
+  in: In
+  by: da
+  more: altro
+  version: Versione
+  read_more: Continua a leggere
+  untitled: Senza titolo
+  toc_empty: Questo post non ha un sommario
+  visitors: Visitatori
+  wordcount: Conteggio parole nell'articolo
+  min2read: Tempo di lettura
+  totalcount: Conteggio totale parole sito
+  no_share: Riproduzione proibita
+  attribution: Attribuzione
+  no_commercial: Non Commerciale
+  allow_commercial: Commerciale
+  no_modification: Condividi come
+  copyright:
+    author: Autore post
+    link: Link post
+    license_title: Avviso sul copyright
+    license_content: 'Tutti gli articoli in questo blog sono rilasciati sotto
+      <a href="%s" rel="external nofollow" target="_blank">%s</a> a meno che non si dichiari differentemente.'
+
+page:
+  totally: Totale
+  tags: tag
+
+footer:
+  powered: "Powered by %s"
+  theme: Tema
+  copyright: Copyright by
+  design: Designed by
+  and: e
+
+counter:
+  tag_cloud:
+    zero: Nessun tag
+    one: 1 tag in totale
+    other: "%d tag in totale"
+
+  categories:
+    zero: Nessuna categoria
+    one: 1 categoria in totale
+    other: "%d categorie in totale"
+
+  archive_posts:
+    zero: Nessun post.
+    one: 1 post.
+    other: "%d post in totale."
+
+state:
+  posts: post
+  pages: pagine
+  tags: tag
+  categories: categorie
+
+search:
+  placeholder: Ricerca...
+
+cheers:
+  um: Um..
+  ok: OK
+  nice: Bello
+  good: Buono
+  great: Grande
+  excellent: Eccellente
+
+keep_on: Continua a postare.
+
+symbol:
+  comma: ', '
+  period: '. '
+  colon: ':'
+
+reward:
+  donate: Dona
+  wechatpay: WeChat Pay
+  alipay: Alipay
+  bitcoin: Bitcoin

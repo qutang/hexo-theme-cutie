@@ -1,0 +1,148 @@
+@import 'util'
+
+top_dot_custom_color($color, $offset, $h_offset)
+  top_dot($offset, $h_offset)
+  &:after
+    background-color: $color
+
+top_dot($offset, $h_offset)
+  position: relative
+  &:after
+    position: absolute
+    height: 5px
+    background-color: #444
+    content: ""
+    display:block
+    width: 5px
+    border-radius: 50%
+    margin: 0 auto
+    top: $offset
+    left: $h_offset
+    right: 0
+
+top_dot_circle($offset, $h_offset)
+  position: relative
+  &:after
+    position: absolute
+    height: 5px
+    background-color: transparent
+    border: 2px solid $chroma[1]
+    content: ""
+    display:block
+    width: 5px
+    border-radius: 50%
+    margin: 0 auto
+    top: $offset
+    left: $h_offset
+    right: 0
+
+right_dot($offset)
+  position: relative
+  &:after
+    position: absolute
+    height: 5px
+    background-color: white
+    border: 2px solid $chroma[1]
+    content: ""
+    display:block
+    width: 5px
+    border-radius: 50%
+    margin: auto 0
+    top: 0
+    bottom: 0
+    left: $offset
+
+#nav
+  .active_dot
+    top_dot_circle(-0.8em, 0)
+    +for_breakpoint(mobile)
+      top_dot_circle(-0.8em, 0.1em)
+
+#nav
+  display: flex
+  align-items: center
+  justify-content: center
+  +for_breakpoint(mobile)
+    justify-content: space-around
+    width: 100%
+    align-content: center
+  .nav-item
+    padding: 0 1em
+    a
+      text-decoration: none
+      &:visited
+      &:active
+      &:focus
+      &:link
+        color: white
+    .nav-icon
+    .toc-button
+      text-align: center
+      vertical-align: text-top
+      width: 1.8em
+      height: 1.8em
+      padding-bottom: 0.4em
+      img
+        width: 2em
+        height: 2em
+        object-fit: cover
+      &:hover
+        top_dot_circle(-0.8em, 0)
+        +for_breakpoint(mobile)
+          top_dot_circle(-0.8em, 0.1em)
+    .nav-name:hover
+      shorter_underline_on_hover(30%, -0.5em)
+      +for_breakpoint(mobile)
+        shorter_underline_on_hover(0%, 0px)
+    .nav-name
+      font-size: 1.1em
+      +for_breakpoint(mobile)
+        &:hover
+          shorter_underline_on_hover(0%, 0px)
+  .toc
+    fixed_bl(5em, 0)
+  .nav-more-menu
+    background-color: transparent
+    position: absolute
+    right: 1em
+    text-align: left
+    padding-top: 4em
+    +for_breakpoint(tablet)
+      top: 2em
+    +for_breakpoint(half-desktop)
+      top: 2em
+    +for_breakpoint(desktop)
+      top: 2em
+    +for_breakpoint(mobile)
+      bottom: 4em
+      right: 0.5em
+      padding-top: 0
+      box-shadow: -5px 5px 10px 1px #ddd
+      border-radius: 10px
+    .nav-more-item
+      width: 100%
+      padding: 1em 2em
+      background-color: white
+      for i in (1..11)
+        .nav-name:nth-child({i})
+          a:link
+            color: transparent
+            background-clip: text
+            background-image: linear-gradient(to bottom, $chroma[i] 0%, $chroma[i+1] 100%)
+            -webkit-background-clip: text
+      .nav-name:hover
+        right_dot(-1.2em)
+    
+
+.nav-more-menu
+  display: none
+
+#nav-item-more
+  position: relative
+  display: inline-block
+
+#nav-item-more:hover .nav-more-menu
+  display: block
+
+// #nav-item-more:hover
+  // top_dot_circle(-0.8em, 10%)

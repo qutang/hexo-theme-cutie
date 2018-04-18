@@ -14,6 +14,10 @@
 {% set use_post_stats = false %}
 {% endif %}
 
+
+{% set scheme = site.data.cutie.global.scheme | default(theme.global.scheme) %}
+
+
 <div class='Card Card-hover Card-index-{{ index }}' id='{{ hashit(url_for(item.path)) }}' data-name='{{ item.title }}' data-version='{{ item.version }}'>
 	{% if item.categories && item.categories.length %}
 		{% for cat in item.categories %}
@@ -65,10 +69,17 @@
 					{{ "No content" }} 
 				{% endif %}
 				</a></p>
+				
 			</div>
+
+			{% if scheme.name == 'Chroma' %}
+			<div class='Card-tags'>{{ partial('_partial/article-tags', {item: item, limit: 4}) }}</div>
+			{% endif %}
 			
 			<div class="Card-meta">
+				{% if scheme.name == 'Taurus' %}
 				<div class='Card-tags'>{{ partial('_partial/article-tags', {item: item, limit: 4}) }}</div>
+				{% endif %}
 				<ul>
 						<li><i class='fa fa-calendar'></i> {{ meta_date }}</li>
 						{% if item.external_link %}

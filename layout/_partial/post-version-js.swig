@@ -11,10 +11,10 @@
           var postLinks = document.querySelectorAll('#{{ id }} .Card-title a, #{{ id }} .Card-excerpt a, #{{ id }} .Card-figure a');
           new Postv2('{{ id }}').showUnreadNotification('{{ hashit(trim(strip_html_and_whitespaces(post.content))) }}', function(){
             var postBadge = document.querySelector('#{{ id }} mark.Card-badge');
-            $(postBadge).show();
+            $(postBadge).fadeIn();
           }, function(){
             var postBadge = document.querySelector('#{{ id }} mark.Card-badge');
-            $(postBadge).hide();
+            $(postBadge).fadeOut();
           }); 
           // update cookie upon click the post and hide badge immediately
           for(var i = 0;i < postLinks.length; i++){
@@ -22,13 +22,13 @@
               new Postv2('{{ id }}').update('{{ hashit(trim(strip_html_and_whitespaces(post.content))) }}', function(){
                 console.log('called');
                 var postBadge = document.querySelector('#{{ id }} mark.Card-badge');
-                $(postBadge).hide();
+                $(postBadge).fadeOut();
               });
             }
           }
           {% else %}
             var postBadge = document.querySelector('#{{ id }} mark.Card-badge');
-            $(postBadge).hide();
+            $(postBadge).fadeOut();
             
           {% endif %}
         {% endfor %}
