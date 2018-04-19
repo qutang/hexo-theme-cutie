@@ -77,7 +77,7 @@
 	}
 </script>
 
-<div class='search-container'>
+<div class='tagcloud-container'>
 <div class='tag-cloud'>
 	{{ tagcloud({
 		min_font: 0.8,
