@@ -1,5 +1,5 @@
 
-{% set comment_system = site.data.cutie.global.comment_system | default(theme.global.comment_system) %}
+{% set comment_system = parse_config([site.data.cutie.global.comment_system, theme.global.comment_system]) %}
 
 
 <head>

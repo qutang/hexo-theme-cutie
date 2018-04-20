@@ -1,5 +1,5 @@
 
-{% set logo = site.data.cutie.logo | default(theme.logo) %} 
+{% set logo = parse_config([site.data.cutie.logo, theme.logo]) %} 
 
 <header id="header" class='header'>
 	<div class="header-title">

@@ -1,4 +1,4 @@
-{% set use_tencent_404 = site.data.cutie.page_404.tencent_404 | default(theme.page_404.tencent_404) %}
+{% set use_tencent_404 = parse_config([site.data.cutie.page_404.tencent_404, theme.page_404.tencent_404]) %}
 {% if use_tencent_404 %}
 <script type="text/javascript" src="//qzonestyle.gtimg.cn/qzone/hybrid/app/404/search_children.js" charset="utf-8" homePageUrl="/" homePageName="Back to home page"></script>
 {% else %}

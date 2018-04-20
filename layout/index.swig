@@ -1,5 +1,5 @@
 
-{% set slogan = site.data.cutie.slogan | default(theme.slogan) %}
+{% set slogan = parse_config([site.data.cutie.slogan, theme.slogan]) %}
 
 <div class="index-container" id='{{ url_for(page.path) }}' data-name='index' data-version='{{ theme.version }}'>
 	<div class='index-intro'>

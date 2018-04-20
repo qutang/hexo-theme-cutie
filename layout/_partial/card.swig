@@ -15,7 +15,7 @@
 {% endif %}
 
 
-{% set scheme = site.data.cutie.global.scheme | default(theme.global.scheme) %}
+{% set scheme = parse_config([site.data.cutie.global.scheme, theme.global.scheme]) %}
 
 
 <div class='Card Card-hover Card-index-{{ index }}' id='{{ hashit(url_for(item.path)) }}' data-name='{{ item.title }}' data-version='{{ item.version }}'>

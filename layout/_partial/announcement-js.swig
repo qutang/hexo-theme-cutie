@@ -1,6 +1,6 @@
 
 {% if is_home() %}
-  {% set announcement = site.data.cutie.global.announcement | default(theme.global.announcement) %}
+  {% set announcement = parse_config([site.data.cutie.global.announcement, theme.global.announcement]) %}
 {% elif is_post() %}
   {% set announcement = item.announcement %}
 {% endif %}

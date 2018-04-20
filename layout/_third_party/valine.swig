@@ -12,7 +12,7 @@
         placeholder: '{{ valine_placeholder }}',
         path:window.location.pathname, 
         avatar:'retro',
-        lang: '{{ config.language[0] | default("en") }}'
+        lang: '{{ parse_config([config.language[0], "en"]) }}'
     });
 </script>
 {% endif %}

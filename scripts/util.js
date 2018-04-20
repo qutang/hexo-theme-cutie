@@ -1,5 +1,18 @@
 var Hashes = require('../source/libs/jshashes/hashes');
 
+hexo.extend.helper.register("parse_config", function(items){
+	for(var i in items){
+		if(items[i] !== undefined && items[i] !== ""){
+			return items[i];
+		}
+	}
+	return undefined;
+});
+
+hexo.extend.helper.register("print_config", function(items){
+	return items.join(",");
+});
+
 hexo.extend.helper.register("get_posts_by_year", function(posts, year){
 	var result = posts.filter(function(post){
 		if(post.date.year() === year) return true;

@@ -1,5 +1,5 @@
 
-{% set comment_system = site.data.cutie.global.comment_system | default(theme.global.comment_system) %}
+{% set comment_system = parse_config([site.data.cutie.global.comment_system, theme.global.comment_system]) %}
 
 {% if comment_system === 'valine' %}
     {{ partial('_third_party/valine') }}
@@ -9,7 +9,7 @@
     {{ partial('_third_party/gitment') }}
 {% endif %}
 
-{% set use_lightgallery = site.data.cutie.post.use_lightgallery | default(theme.post.use_lightgallery) %}
+{% set use_lightgallery = parse_config([site.data.cutie.post.use_lightgallery, theme.post.use_lightgallery]) %}
 
 {% if use_lightgallery %}
     {{ partial('_third_party/lightgallery') }}

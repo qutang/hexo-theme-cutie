@@ -1,7 +1,7 @@
 
-{% set menu = site.data.cutie.menu | default(theme.menu) %}
+{% set menu = parse_config([site.data.cutie.menu, theme.menu]) %}
 
-{% set icon_set = site.data.cutie.global.icon_set | default(theme.global.icon_set) %}
+{% set icon_set = parse_config([site.data.cutie.global.icon_set, theme.global.icon_set]) %}
 <nav id="nav">
 	{% set count = false %}
 	{% for menu_name, menu_content in menu %}

@@ -21,16 +21,6 @@
     font-size: 1.2em
   input:focus
     border: none
-  .tag-cloud
-    margin: 0 auto
-    margin-top: 3em
-    margin-bottom: 2em
-    width:80%
-    a
-      &:link
-        text-decoration: none
-      &:hover
-        text-decoration: underline
   .cat-list
     margin: 0 auto
     margin-top: 3em
@@ -47,14 +37,19 @@
   margin-bottom: 4em
   width: 60%
   +for_breakpoint(tablet)
-  width: 90%
+    width: 90%
   +for_breakpoint(mobile)
-  width: 100%
+    width: 100%
   +for_breakpoint(half-desktop)
-  width: 70%
-  text-align: center
+    width: 70%
+    text-align: center
   .tag-cloud
-  margin: 0 auto
-  margin-top: 3em
-  margin-bottom: 2em
-  width:80%
+    margin: 0 auto
+    margin-top: 3em
+    margin-bottom: 2em
+    width:80%
+    a
+      &:link
+        text-decoration: none
+      &:hover
+        text-decoration: underline

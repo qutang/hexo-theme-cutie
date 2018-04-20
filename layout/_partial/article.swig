@@ -4,8 +4,7 @@
     }
 </style>
 
-
-{% set icon_set = site.data.cutie.global.icon_set | default(theme.global.icon_set) %}
+{% set icon_set = parse_config([site.data.cutie.global.icon_set, theme.global.icon_set]) %}
 
 {% if config.language[0] === 'zh-cn' || config.language[0] === 'zh-tw' %}
 	{% set year = item.date.format('YYYY') %}
@@ -28,12 +27,9 @@
     {% set category_name = 'uncategorized' %}
 {% endif %}
 
-{% set default_allow_share = site.data.cutie.post.allow_share | default(theme.post.allow_share) %}
-{% set default_allow_modification = site.data.cutie.post.allow_modification | default(theme.post.allow_modification) %}
-{% set default_allow_commercial = site.data.cutie.post.allow_commercial | default(theme.post.allow_commercial) %}
-{% set allow_share = item.allow_share | default(default_allow_share) %}
-{% set allow_modification = item.allow_modification | default(default_allow_modification) %}
-{% set allow_commercial = item.allow_commercial | default(default_allow_commercial) %}
+{% set allow_share = parse_config([item.allow_share, site.data.cutie.post.allow_share, theme.post.allow_share]) %}
+{% set allow_modification = parse_config([item.allow_modification, site.data.cutie.post.allow_modification, theme.post.allow_modification]) %}
+{% set allow_commercial = parse([item.allow_commercial, site.data.cutie.post.allow_commercial, theme.post.allow_commercial])  %}
 {% if allow_share == true %}
     {% set license = 'BY' %}
     {% if allow_commercial %}
@@ -189,8 +185,7 @@
     {{ item.content | default("No content") }}
     
     </div>
-    {% set allow_comment = site.data.cutie.post.allow_comment | default(theme.post.allow_comment) %}
-    {% set allow_comment = item.allow_comment | default(allow_comment) %}
+    {% set allow_comment = parse_config([item.allow_comment, site.data.cutie.post.allow_comment, theme.post.allow_comment]) %}
     {% if allow_comment %}
         <div class="article-comment" id='article-comment'>
             {{ partial('_partial/comment-html') }}
