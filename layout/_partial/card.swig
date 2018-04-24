@@ -62,12 +62,9 @@
 				{% else %}
 					<a href="{{ url_for(item.path) }}">
 				{% endif %}
-				{% set exerpt = trim(truncate(strip_html(item.content), {length: 150, separator: ' ', omission: '...'})) %}
-				{% if exerpt and exerpt !== '' %}
-					{{ exerpt }}
-				{% else %}
-					{{ "No content" }} 
-				{% endif %}
+				{% set excerpt = parse_config([item.abstract, item.excerpt, item.content, "No content"]) %}
+				{% set excerpt = trim(truncate(strip_html(excerpt), {length: 150, separator: ' ', omission: '...'})) %}
+				{{ excerpt }}
 				</a></p>
 				
 			</div>
