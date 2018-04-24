@@ -7,6 +7,8 @@
     {{ partial('_third_party/disqus') }}
 {% elseif comment_system === 'gitment' %}
     {{ partial('_third_party/gitment') }}
+{% elseif comment_system === 'livere' %}
+    {{ partial('_third_party/livere') }}
 {% endif %}
 
 {% set use_lightgallery = parse_config([site.data.cutie.post.use_lightgallery, theme.post.use_lightgallery]) %}
