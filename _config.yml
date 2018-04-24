@@ -30,10 +30,11 @@ post:
 changelog:
   v2.0.11:
     - Better support for post excerpt
+    - Support <a href='http://livere.com' target='_blank'>livere</a> comment system
   v2.0.10:
     - Import bug fix when parsing theme configuration (recommend to update)
     - Polish search page
-    - Add Italian translation (contributed by <a href='https://github.com/Fastbyte01'>@fastbyte01</a>)
+    - Add Italian translation (contributed by <a href='https://github.com/Fastbyte01' target='_blank'>@fastbyte01</a>)
   v2.0.9:
     - Change primary font to Segoe UI
     - Optimize animation
