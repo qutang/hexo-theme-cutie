@@ -1,4 +1,4 @@
-version: 2.0.11
+version: 2.0.12
 url: https://qutang.github.io/cutie/
 logo: /images/theme-icon.svg
 slogan: Bazinga, theme cutie!
@@ -28,6 +28,8 @@ post:
   enable_unread_badge: false
 
 changelog:
+  v2.0.12:
+    - Linkify meta icons on cards
   v2.0.11:
     - Better support for post excerpt
     - Support <a href='http://livere.com' target='_blank'>livere</a> comment system
@@ -138,6 +140,11 @@ libs:
     url: https://github.com/muicss/loadjs
     js_min: /libs/loadjs/dist/loadjs.min.js
     js: /libs/loadjs/dist/loadjs.js
+  animate.css:
+    name: "animate.css: A CSS framework for predefined animations"
+    url: https://github.com/daneden/animate.css
+    css_min: /libs/animate.css/animate.min.css
+    css: /libs/animate.css/animate.css 
   
   
   

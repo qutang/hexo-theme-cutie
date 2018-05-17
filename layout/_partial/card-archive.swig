@@ -19,13 +19,23 @@
 		<div class="Card-meta">
 			<div class='Card-tags'>{{ partial('_partial/article-tags', {item: item, limit: 4}) }}</div>
 			<ul>
-					<li><i class='fa fa-calendar'></i> {{ item.date.format(config.date_format) }}</li>
+					<li>
+						<a href="{{ url_for('/archives/') }}">
+							<i class='fa fa-calendar'></i> {{ item.date.format(config.date_format) }}
+						</a>
+					</li>
 					{% if item.external_link %}
 						<li>{{ __('external_link') }}</li>
 					{% else %}
 					{% if use_post_stats %}
-					<li><i class='fa fa-comments'></i> <span class='card-comment-count'>0</span></li>
-					<li><i class="fa fa-eye"></i> <span class='card-visit-count'>0</span></li>
+					<li>
+						<a href="{{ url_for(item.path + '/#article-comment') }}">
+							<i class='fa fa-comments'></i> <span class='card-comment-count'>0</span>
+						</a>
+					</li>
+					<li>
+						<i class="fa fa-eye"></i> <span class='card-visit-count'>0</span>
+					</li>
 					{% endif %}
 					{% endif %}
 			</ul>

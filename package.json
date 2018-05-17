@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "animate.css": "^3.6.1",
     "fuse.js": "^3.2.0",
     "gitment": "0.0.3",
     "headroom.js": "^0.9.4",
