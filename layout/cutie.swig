@@ -1,10 +1,23 @@
 <style>
-        body {
-            background-color: white;
-        }
-    </style>
-
-
+    body {
+        background-color: white;
+    }
+    #changelog-more {
+        display: none;
+    }
+    #changelog-more-button {
+        border-radius: 10px;
+        width: 100%;
+        border: 1px solid #aaa;
+        padding: 3px;
+        display: block;
+        text-align: center;
+    }
+    .badges{
+        text-align: center;
+        margin-top: 2em;
+    }
+</style>
 <div class='article'>
 <div class="article-header">
     <br>
@@ -13,7 +26,16 @@
     </h1>
     <br>
 </div>
+    
+<div class='badges'>
+        <a href="https://github.com/qutang/hexo-theme-cutie/" target="_blank"><img src="https://img.shields.io/github/stars/qutang/hexo-theme-cutie.svg?style=social&label=Stars" alt=""></a>
+        <a href="https://github.com/qutang/hexo-theme-cutie/" target="_blank"><img src="https://img.shields.io/github/forks/qutang/hexo-theme-cutie.svg?style=social&label=Fork" alt=""></a>
+        <a href="https://github.com/qutang/hexo-theme-cutie/releases/latest/" target="_blank"><img src="https://img.shields.io/github/release/qutang/hexo-theme-cutie.svg" alt=""></a>
+        <a href="https://github.com/qutang/hexo-theme-cutie/issues/" target="_blank"><img src="https://img.shields.io/github/issues/qutang/hexo-theme-cutie.svg" alt=""></a>
+        <a href="https://github.com/qutang/hexo-theme-cutie/blob/master/LICENSE" target="_blank"><img src="https://img.shields.io/github/license/qutang/hexo-theme-cutie.svg" alt=""></a>
+</div>
 <div class='article-content'>
+        
         <h2>Introduction</h2>
         <p>Theme cutie is a clean and responsive hexo theme that favors multiple schemes, flexible configuration and unique human interaction features.</p>
         <blockquote>
@@ -26,6 +48,7 @@
         
         <h2>Change logs</h2>
         <div class='changelog'>
+            <div id='changelog-display'>
             {% for log in theme.changelog %}
                 {% if loop.index < 6 %}
                 <h3><a href='https://github.com/qutang/hexo-theme-cutie/releases/tag/{{ loop.key }}' target='_blank'>{{ loop.key }}</a></h3>
@@ -36,6 +59,20 @@
                 </ul>
                 {% endif %}
             {% endfor %}
+            </div>
+            <div id='changelog-more'>
+            {% for log in theme.changelog %}
+                {% if loop.index >= 6 %}
+                <h3><a href='https://github.com/qutang/hexo-theme-cutie/releases/tag/{{ loop.key }}' target='_blank'>{{ loop.key }}</a></h3>
+                <ul>
+                    {% for x in log %}
+                        <li>{{ x }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            {% endfor %}
+            </div>
+            <a id='changelog-more-button' href='#changelog-more'>See more</a>
         </div>
         <h2>Tutorials</h2>
         <p><a href='/2018/02/12/hexo-theme-cutie-v2-tutorial/'>v2.x tutorial in English</a></p>
@@ -59,3 +96,19 @@
         </div>
 </div>
 </div>
+
+<script>
+    document.getElementById('changelog-more-button').onclick = function() {
+        if(this.innerText === 'See more'){
+            document.getElementById('changelog-more').style.display = 'block';
+            document.getElementById('changelog-more').classList.add('animated');
+            document.getElementById('changelog-more').classList.add('slideInLeft');
+            this.setAttribute('href', '#changelog-display');
+            this.innerText = 'Collapse changelogs';
+        }else{
+            this.setAttribute('href', '#changelog-more');
+            document.getElementById('changelog-more').style.display = 'none';
+            this.innerText = 'See more';
+        }
+    };
+</script>

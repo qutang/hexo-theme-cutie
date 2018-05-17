@@ -93,9 +93,6 @@
             <li><i class="fa fa-eye"></i> <span id='article-visit-count'>0</span></li>
             {% endif %}
             <li><i class="fa fa-user"></i> {{ item.author.name | default(config.author) }}</li>
-            {% if item.version && item.version > 0 %}
-                <li><i class="fas fa-pen-square"></i> {{ item.version }}</li>
-            {% endif %}
             <li><i class="fas fa-copyright"></i>
             {% if license !==  __('post.no_share') %}
                 {% set license_name = 'CC ' + license + ' 4.0' %}

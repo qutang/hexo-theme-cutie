@@ -140,7 +140,7 @@ libs:
     url: https://github.com/muicss/loadjs
     js_min: /libs/loadjs/dist/loadjs.min.js
     js: /libs/loadjs/dist/loadjs.js
-  animate.css:
+  animate:
     name: "animate.css: A CSS framework for predefined animations"
     url: https://github.com/daneden/animate.css
     css_min: /libs/animate.css/animate.min.css
