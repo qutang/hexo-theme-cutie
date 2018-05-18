@@ -30,6 +30,8 @@ post:
 changelog:
   v2.0.12:
     - Linkify meta icons on cards
+    - Minor appearance tweak
+    - Fix a bug in displaying unread badge
   v2.0.11:
     - Better support for post excerpt
     - Support <a href='http://livere.com' target='_blank'>livere</a> comment system
