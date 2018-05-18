@@ -23,6 +23,8 @@
 {% set use_post_stats = 0 %}
 {% endif %}
 
+{{ partial('post-version-js') }}
+
 {% if use_post_stats %}
     {{ partial('post-visit-comment-count-js') }}
 {% endif %}
@@ -80,4 +82,3 @@ changeLayoutOnTouchScreen();
 // {% endif %}
 </script>
 
-{{ partial('post-version-js') }}
