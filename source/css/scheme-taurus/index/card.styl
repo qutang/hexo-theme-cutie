@@ -1,101 +1,101 @@
 .Card
-  font-size:14px
-  text-align: left
-  width: 45%
-  +for_breakpoint(tablet)
-    width: 90%
-  +for_breakpoint(mobile)
-    width: 90%
-  display: flex
-  align-items: flex-start
+  // text-align: left
+  // display: flex
+  // flex-direction: row
+  // align-items: center
+  // justify-content: center
   background-color: white
   border-radius: 5px
   box-shadow: 0.5px 0.5px 3px -0.5px rgba(170, 175, 173, 0.61)
-  margin: 0.5em 0
-  min-height: 14em
-  padding: 0 2%
-  position: relative
-  .Card-body
-    a
-      &:link
-      &:visited
-      &:hover
-        text-decoration: none
-        color: #444
-    flex: 1
-    flex-direction: column
-    display: flex
-    align-items: flex-start
-    justify-content: flex-start
-    margin: 0 0.5em 0.5em 0.5em
-    .Card-title
-      display: block
-      margin-top: 1.5em
-      margin-bottom: 1.5em
-      flex-grow: 1
-      h2 
-        margin: 0
-        font-size: 1.4em
-        font-weight: normal
 
-    .Card-excerpt
-      display: none
-      p
-        margin: 0
-        line-height: 1.5
-        font-size: 1.1em
-      margin-top: 1.5em
-      flex-grow: 1
-      text-align: left
-      justify-content: center
-      flex: 1
-      margin-right: 1em
-    .Card-excerpt-touch
-      p
-        margin: 0
-        line-height: 1.5
-      margin-top: 0em
-      margin-bottom: 7em
-      flex-grow: 1
-      text-align: left
-      justify-content: center
-      flex: 1
-      margin-right: 1em
-	    display: block
-    .Card-meta
-      .Card-tags
-        margin-right: 0.5em
-        +for_breakpoint(mobile)
-          margin-right: 1em
-        display: block
-      position: absolute
-      bottom: 1em
-      display:block
-      font-size: 0.8em
-      color: #aaa
-      a
-        color: #aaa
-        &:hover
-          color: #444
-      ul
-        padding: 0
-        display: block
-        margin-left: 0.3em
+.swiper-container
+  height: 100%
+
+.swiper-container-horizontal > .swiper-pagination-bullets
+  padding-top: 1em
+  padding-bottom: 1em
+  bottom:0
+
+.swiper-pagination-bullet
+  background: none
+  padding-right: 0.5em
+
+.card-sparkle
+  z-index:11
+  position: absolute
+  top: 1.5em
+  right: 2.5em
+  span
+    padding: 0.2em
+    cursor: pointer
+  .popular-card
+    color: $hue12
+  .coding-card
+    color: $hue6
+  .github-card
+    color: $hue1
+
+.Card-body
+  height: 100%
+  flex-direction: row
+  display: flex
+  align-items: center
+  justify-content: center
+  .Card-figure
+    flex: 1
+    margin: 0 0 0 3em
+    img
+      width: 4em
+      height: 4em
+      object-fit: cover
+  .Card-title
+    flex: 2
+    display: block
+    margin: 0 5em 0 0
+    text-align: left
+    h2 
+      margin: 0
+      font-size: 1.4em
+      font-weight: normal
+
+  .Card-excerpt
+    display: block
+    p
+      margin: 0
+      line-height: 1.5
+      font-size: 1.2em
+    justify-content: center
+    text-align: left
+    flex: 1
+    margin: 0 4em
+
+  .Card-meta
+    display: block
+    font-size: 1.1em
+    color: #aaa
+    .Card-tags
+      text-align: center
+      margin-bottom: 0.5em
+    ul
+      width: 100%
+      padding: 0
+      margin: 0
       li
         display: inline-block
         margin: 0 1em 0 0
-
-  .Card-figure
-    margin: 1.5em 1.5em 1.5em 0.5em
-    +for_breakpoint(mobile)
-      margin-left: 1em
-    +for_breakpoint(tablet)
-      margin-left: 1em
+  .Card-pictures
+    display: block
+    height: 50%
+    margin: 0 4em
+    overflow hidden
+    border-radius: 8px
     img
-      width: 2.8em
-      height: 2.8em
+      width: 100%
+      height: auto
       object-fit: cover
- 
+
+.swiper-slide
+  border-radius: 5px
 .Card-badge
   -webkit-border-radius: 50%
   -moz-border-radius: 50%
@@ -108,8 +108,3 @@
   top:-5px
   right:-5px
 
-.Card-hover:hover 
-  .Card-title
-    display: none
-  .Card-excerpt
-    display: block

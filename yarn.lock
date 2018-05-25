@@ -6,6 +6,12 @@ animate.css@^3.6.1:
   version "3.6.1"
   resolved "https://registry.yarnpkg.com/animate.css/-/animate.css-3.6.1.tgz#4ea8a48556378bc8d7535224296c4c0dac9229de"
 
+dom7@^2.0.5:
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/dom7/-/dom7-2.0.5.tgz#d99e1f416cacd627c6d3ed7b90be47c8f3c7b258"
+  dependencies:
+    ssr-window "^1.0.0"
+
 fuse.js@^3.2.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/fuse.js/-/fuse.js-3.2.0.tgz#f0448e8069855bf2a3e683cdc1d320e7e2a07ef4"
@@ -53,6 +59,17 @@ noty@^3.2.0-beta:
 popper.js@^1.14.2:
   version "1.14.2"
   resolved "https://registry.yarnpkg.com/popper.js/-/popper.js-1.14.2.tgz#066e8e1613e65e69ba050f4b78e7bd4c8d54e443"
+
+ssr-window@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/ssr-window/-/ssr-window-1.0.0.tgz#8ed1b6beaa0a371ba7e74d6515d584c3f1cf973c"
+
+swiper@^4.2.6:
+  version "4.2.6"
+  resolved "https://registry.yarnpkg.com/swiper/-/swiper-4.2.6.tgz#9ee50527e3de7a49e2e56a58f8f6fa94a0358bf5"
+  dependencies:
+    dom7 "^2.0.5"
+    ssr-window "^1.0.0"
 
 tippy.js@^2.5.0:
   version "2.5.0"

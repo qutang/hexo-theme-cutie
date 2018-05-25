@@ -146,7 +146,14 @@ libs:
     name: "animate.css: A CSS framework for predefined animations"
     url: https://github.com/daneden/animate.css
     css_min: /libs/animate.css/animate.min.css
-    css: /libs/animate.css/animate.css 
+    css: /libs/animate.css/animate.css
+  swiper:
+    name: "Swiper: Most Modern Mobile Touch Slider"
+    url: https://idangero.us/swiper/
+    css_min: /libs/swiper/dist/css/swiper.min.css
+    css: /libs/swiper/dist/css/swiper.css
+    js_min: /libs/swiper/dist/js/swiper.min.js
+    js: /libs/swiper/dist/js/swiper.js
   
   
   

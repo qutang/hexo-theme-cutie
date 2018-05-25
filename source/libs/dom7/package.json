@@ -1,0 +1,53 @@
+{
+  "name": "dom7",
+  "version": "2.0.5",
+  "description": "Minimalistic JavaScript library for DOM manipulation, with a jQuery-compatible API",
+  "main": "dist/dom7.js",
+  "jsnext:main": "dist/dom7.module.js",
+  "module": "dist/dom7.module.js",
+  "scripts": {
+    "build-dev": "NODE_ENV=development gulp build",
+    "build-prod": "NODE_ENV=production gulp build",
+    "dev": "NODE_ENV=development gulp build && NODE_ENV=development gulp demo && gulp server",
+    "prod": "NODE_ENV=production gulp demo && NODE_ENV=production gulp server",
+    "test": "npm run build-dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nolimits4web/dom7.git"
+  },
+  "keywords": [
+    "dom",
+    "dom7",
+    "jquery",
+    "mobile",
+    "framework7"
+  ],
+  "author": "Vladimir Kharlampidi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nolimits4web/dom7/issues"
+  },
+  "homepage": "http://framework7.io/docs/dom.html",
+  "devDependencies": {
+    "eslint": "^4.9.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "gulp": "^3.9.1",
+    "gulp-connect": "^5.2.0",
+    "gulp-header": "^2.0.1",
+    "gulp-modify-file": "^1.0.1",
+    "gulp-open": "^2.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-uglify": "^3.0.0",
+    "rollup-plugin-buble": "^0.19.1",
+    "rollup-plugin-node-resolve": "^3.0.2",
+    "rollup-stream": "^1.24.1",
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-source-stream": "^2.0.0"
+  },
+  "dependencies": {
+    "ssr-window": "^1.0.0"
+  }
+}

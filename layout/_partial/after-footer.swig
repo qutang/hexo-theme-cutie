@@ -33,6 +33,8 @@
 
 {{ js('js/headroom.min.js') }}
 
+{{ partial('swiper-js.swig') }}
+
 <script data-no-instant type='text/javascript'>
 
 initHeadroom();

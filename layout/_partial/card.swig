@@ -31,72 +31,152 @@
 		{% set category_name = "uncategorized" %}
 	{% endif %}
 	<mark class='Card-badge' style='{visibility: "hidden"}'></mark>
-	<div class='Card-figure'>
-		{% if item.link || item.external_link %}
-			<a href="{{ item.link | default(item.external_link) }}" rel="noopener noreferrer" target="_blank">
-		{% else %}
-			<a href="{{ url_for(item.path) }}">
-		{% endif %}
-		{% if item.icon %}
-			<img class='grow' src="{{ item.icon }}" alt="" onerror='if(this.src != "/images/uncategorized.svg") this.src = "/images/uncategorized.svg"'>
-		{% else %}
-			<img class='grow' src="{{ '/images/' + category_name + '.svg' }}" alt="" onerror='if (this.src != "/images/uncategorized.svg") this.src = "/images/uncategorized.svg"'>
-		{% endif %}
-		</a>
-	</div>
-	<div class="Card-body">
-
-			<div class='Card-title'>
-				<h2>
-				{% if item.link || item.external_link %}
-					<a href="{{ item.link | default(item.external_link) }}" rel="noopener noreferrer" target="_blank">
-				{% else %}
-					<a href="{{ url_for(item.path) }}">
-				{% endif %}
-				{{ titlecase(item.title) | default("No title") }}</a></h2>
-			</div>
-			<div class='Card-excerpt'>
-				<p>
-				{% if item.link || item.external_link %}
-					<a href="{{ item.link | default(item.external_link) }}" rel="noopener noreferrer" target="_blank">
-				{% else %}
-					<a href="{{ url_for(item.path) }}">
-				{% endif %}
-				{% set excerpt = parse_config([item.abstract, item.excerpt, item.content, "No content"]) %}
-				{% set excerpt = trim(truncate(strip_html(excerpt), {length: 150, separator: ' ', omission: '...'})) %}
-				{{ excerpt }}
-				</a></p>
-				
-			</div>
-
-			{% if scheme.name == 'Chroma' %}
-			<div class='Card-tags'>{{ partial('_partial/article-tags', {item: item, limit: 4}) }}</div>
-			{% endif %}
-			
-			<div class="Card-meta">
-				{% if scheme.name == 'Taurus' %}
-				<div class='Card-tags'>{{ partial('_partial/article-tags', {item: item, limit: 4}) }}</div>
-				{% endif %}
-				<ul>
-						<li>
-							<a href="{{ url_for('/archives/') }}">
-								<i class='fa fa-calendar'></i> {{ meta_date }}
-							</a>
-						</li>
-						{% if item.external_link %}
-							<li>{{ __('external_link') }}</li>
+	<div class="swiper-container">
+		<div class="card-sparkle">
+			<span title='Popular' class='popular-card'><i class="fas fa-lg fa-fire"></i></span>
+			<span title='Including python' class='coding-card'><i class="fab fa-lg fa-python"></i></span>
+			<span title='Github hosted' class='github-card'><i class="fab fa-lg fa-github"></i></span>
+		</div>
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+        <!-- Slides -->
+			<div class="swiper-slide">
+				<div class="Card-body">
+					<div class='Card-figure'>
+						{% if item.link || item.external_link %}
+							<a href="{{ item.link | default(item.external_link) }}" rel="noopener noreferrer" target="_blank">
 						{% else %}
-						{% if use_post_stats %}
-						<li>
-							<a href="{{ url_for(item.path + '/#article-comment') }}">
-								<i class='fa fa-comments'></i> <span class='card-comment-count'>0</span>
-							</a>
-						</li>
-						<li><i class="fa fa-eye"></i> <span class='card-visit-count'>0</span></li>
+							<a href="{{ url_for(item.path) }}">
 						{% endif %}
+						{% if item.icon %}
+							<img class='grow' src="{{ item.icon }}" alt="" onerror='if(this.src != "/images/uncategorized.svg") this.src = "/images/uncategorized.svg"'>
+						{% else %}
+							<img class='grow' src="{{ '/images/' + category_name + '.svg' }}" alt="" onerror='if (this.src != "/images/uncategorized.svg") this.src = "/images/uncategorized.svg"'>
 						{% endif %}
-				</ul>
+						</a>
+					</div>
+					<div class='Card-title'>
+						<h2>
+						{% if item.link || item.external_link %}
+							<a href="{{ item.link | default(item.external_link) }}" rel="noopener noreferrer" target="_blank">
+						{% else %}
+							<a href="{{ url_for(item.path) }}">
+						{% endif %}
+						{{ titlecase(item.title) | default("No title") }}</a></h2>
+					</div>
+				</div>
 			</div>
-		</a>
+			<div class="swiper-slide">
+				<div class="Card-body">
+					<div class='Card-excerpt'>
+						<p>
+						{% if item.link || item.external_link %}
+							<a href="{{ item.link | default(item.external_link) }}" rel="noopener noreferrer" target="_blank">
+						{% else %}
+							<a href="{{ url_for(item.path) }}">
+						{% endif %}
+						{% set excerpt = parse_config([item.abstract, item.excerpt, item.content, "No content"]) %}
+						{% set excerpt = trim(truncate(strip_html(excerpt), {length: 150, separator: ' ', omission: '...'})) %}
+						{{ excerpt }}
+						</a></p>
+					</div>
+				</div>
+			</div>
+			<div class="swiper-slide">
+				<div class="Card-body">
+					<div class="Card-pictures">
+						<img src="http://i.dtinews.vn/stores/news_dataimages/namhang/052011/09/10/images201656_PM20110509104758.jpg" alt="">
+					</div>
+				</div>
+			</div>
+			<div class="swiper-slide">
+				<div class="Card-body">
+					<div class="Card-meta">
+						{% if scheme.name == 'Taurus' %}
+						<div class='Card-tags'>{{ partial('_partial/article-tags', {item: item, limit: 4}) }}</div>
+						{% endif %}
+						<ul>
+								<li>
+									<a href="{{ url_for('/archives/') }}">
+										<i class='fa fa-calendar'></i> {{ meta_date }}
+									</a>
+								</li>
+								{% if item.external_link %}
+									<li>{{ __('external_link') }}</li>
+								{% else %}
+								{% if use_post_stats %}
+								<li>
+									<a href="{{ url_for(item.path + '/#article-comment') }}">
+										<i class='fa fa-comments'></i> <span class='card-comment-count'>0</span>
+									</a>
+								</li>
+								<li><i class="fa fa-eye"></i> <span class='card-visit-count'>0</span></li>
+								{% endif %}
+								{% endif %}
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="swiper-slide">
+				<div class="Card-body">
+					<div class="Card-meta">
+						{% if scheme.name == 'Taurus' %}
+						<div class='Card-tags'>{{ partial('_partial/article-tags', {item: item, limit: 4}) }}</div>
+						{% endif %}
+						<ul>
+								<li>
+									<a href="{{ url_for('/archives/') }}">
+										<i class='fa fa-calendar'></i> {{ meta_date }}
+									</a>
+								</li>
+								{% if item.external_link %}
+									<li>{{ __('external_link') }}</li>
+								{% else %}
+								{% if use_post_stats %}
+								<li>
+									<a href="{{ url_for(item.path + '/#article-comment') }}">
+										<i class='fa fa-comments'></i> <span class='card-comment-count'>0</span>
+									</a>
+								</li>
+								<li><i class="fa fa-eye"></i> <span class='card-visit-count'>0</span></li>
+								{% endif %}
+								{% endif %}
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="swiper-slide">
+					<div class="Card-body">
+						<div class="Card-meta">
+							{% if scheme.name == 'Taurus' %}
+							<div class='Card-tags'>{{ partial('_partial/article-tags', {item: item, limit: 4}) }}</div>
+							{% endif %}
+							<ul>
+									<li>
+										<a href="{{ url_for('/archives/') }}">
+											<i class='fa fa-calendar'></i> {{ meta_date }}
+										</a>
+									</li>
+									{% if item.external_link %}
+										<li>{{ __('external_link') }}</li>
+									{% else %}
+									{% if use_post_stats %}
+									<li>
+										<a href="{{ url_for(item.path + '/#article-comment') }}">
+											<i class='fa fa-comments'></i> <span class='card-comment-count'>0</span>
+										</a>
+									</li>
+									<li><i class="fa fa-eye"></i> <span class='card-visit-count'>0</span></li>
+									{% endif %}
+									{% endif %}
+							</ul>
+						</div>
+					</div>
+				</div>
+		</div>
+		
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+		
 	</div>
 </div>
