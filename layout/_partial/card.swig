@@ -91,29 +91,10 @@
 			</div>
 			<div class="swiper-slide">
 				<div class="Card-body">
-					<div class="Card-meta">
-						{% if scheme.name == 'Taurus' %}
-						<div class='Card-tags'>{{ partial('_partial/article-tags', {item: item, limit: 4}) }}</div>
-						{% endif %}
-						<ul>
-								<li>
-									<a href="{{ url_for('/archives/') }}">
-										<i class='fa fa-calendar'></i> {{ meta_date }}
-									</a>
-								</li>
-								{% if item.external_link %}
-									<li>{{ __('external_link') }}</li>
-								{% else %}
-								{% if use_post_stats %}
-								<li>
-									<a href="{{ url_for(item.path + '/#article-comment') }}">
-										<i class='fa fa-comments'></i> <span class='card-comment-count'>0</span>
-									</a>
-								</li>
-								<li><i class="fa fa-eye"></i> <span class='card-visit-count'>0</span></li>
-								{% endif %}
-								{% endif %}
-						</ul>
+					<div class="Card-codes">
+							<figure class="highlight yml">
+<pre><span class="line"><span class="attr">highlight:</span></span><br><span class="line"><span class="attr">  enable:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  line_number:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  auto_detect:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">  tab_replace:</span> </span><br><span class="line"><span class="attr">markdown:</span></span><br><span class="line"><span class="attr">  render:</span></span><br><span class="line"><span class="attr">    html:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    xhtmlOut:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">    breaks:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">    linkify:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    typographer:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    quotes:</span> <span class="string">'“”‘’'</span></span><br><span class="line"><span class="attr">  plugins:</span></span><br><span class="line"><span class="bullet">    -</span> <span class="string">markdown-it-abbr</span></span><br><span class="line"><span class="bullet">    -</span> <span class="string">markdown-it-footnote</span></span><br><span class="line"><span class="bullet">    -</span> <span class="string">markdown-it-ins</span></span><br><span class="line"><span class="bullet">    -</span> <span class="string">markdown-it-sub</span></span><br><span class="line"><span class="bullet">    -</span> <span class="string">markdown-it-sup</span></span><br><span class="line"><span class="bullet">    -</span> <span class="string">markdown-it-deflist</span></span><br><span class="line"><span class="attr">  anchors:</span></span><br><span class="line"><span class="attr">    level:</span> <span class="number">1</span></span><br><span class="line"><span class="attr">    collisionSuffix:</span> <span class="string">'v'</span></span><br><span class="line"><span class="attr">    permalink:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">    permalinkClass:</span> <span class="string">header-anchor</span></span><br><span class="line"><span class="attr">    permalinkSymbol:</span> <span class="string">""</span></span><br><span class="line"><span class="attr">    permalinkBefore:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">date_format:</span> <span class="string">ll</span></span><br><span class="line"><span class="attr">archive_generator:</span></span><br><span class="line"><span class="attr">  per_page:</span> <span class="number">0</span></span><br><span class="line"><span class="attr">  yearly:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  monthly:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">  daily:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">theme:</span> <span class="string">cutie</span></span><br></pre>
+								</figure>
 					</div>
 				</div>
 			</div>
