@@ -86,14 +86,17 @@
     
     <!-- Date and Author -->
     <div class='article-meta'>
+    
     <ul>
-            <li><i class='fa fa-calendar'></i> {{ meta_date }}</li>
+            <li id='article-insight-button' class='animated tada infinite'><a href="#" title='Click to see article insight'><i class="fa-lg fas fa-magic"></i></a>
+            </li>
+            <li><a href='/archives/'><i class='fa fa-calendar'></i> {{ meta_date }}</a></li>
             {% if use_post_stats %}
-            <li><i class='fa fa-comments'></i> <a href='#article-comment'><span id='article-comment-count'>0</span></a></li>
+            <li><a href='#article-comment'><i class='fa fa-comments'></i> <span id='article-comment-count'>0</span></a></li>
             <li><i class="fa fa-eye"></i> <span id='article-visit-count'>0</span></li>
             {% endif %}
             <li><i class="fa fa-user"></i> {{ item.author.name | default(config.author) }}</li>
-            <li><i class="fas fa-copyright"></i>
+            <li>
             {% if license !==  __('post.no_share') %}
                 {% set license_name = 'CC ' + license + ' 4.0' %}
                 {% set license_url = 'https://creativecommons.org/licenses/' + license + '/4.0/' %}
@@ -105,9 +108,9 @@
                 {% if license !==  __('post.no_share') %}
                     {% set license_url = license_url + 'deed.zh' %}
                 {% endif %}
-                <a href={{license_url | lower }}>{{ license_name }}</a>
+                <a href={{license_url | lower }}><i class="fas fa-copyright"></i> {{ license_name }}</a>
             {% else %}
-                <a href={{license_url | lower }}>{{ license_name }}</a>
+                <a href={{license_url | lower }}><i class="fas fa-copyright"></i> {{ license_name }}</a>
             {% endif %}
             </li>
     </ul>

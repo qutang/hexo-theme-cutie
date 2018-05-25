@@ -1,23 +1,21 @@
 @import 'colors'
 
 .tags
-  display: flex
-  flex-direction: row
-  flex-wrap: wrap
-  justify-content: flex-start
   label
     padding: 2px
     font-size: 0.8em
     margin: 3px
     border-radius: 5px
-    display: block
-    a
-      color: #666
-
+    display: inline-block
+    font-weight: bold
+    
+  
 for i in (1..11)
-  .tag-{i}
+  label.tag-{i}
     border: 2px solid $hues[i]
     background: $hues_lighten[i]
+    a
+      color: $hues[i]
     &:hover
       background:$hues[i]
       a

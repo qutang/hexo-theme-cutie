@@ -49,9 +49,11 @@ src="https://code.jquery.com/jquery-3.3.1.min.js"
 integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
 crossorigin="anonymous"></script>
   
-{{ partial('_partial/scheme-css') }}
 
- 
+
+<!-- load swiper.js -->
+{{ js(theme.libs.swiper.js_min) }}
+{{ css(theme.libs.swiper.css_min) }}
 
   <!-- load font awesome 5 -->
   <script defer src="{{ theme.libs.fontawesome.js_cdn }}"></script>
@@ -79,6 +81,8 @@ crossorigin="anonymous"></script>
   {% elseif comment_system === 'gitment' %}
     {{ partial('_third_party/gitment_head') }}
   {% endif %}
+
+  {{ partial('_partial/scheme-css') }}
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="icon" type="image/png" href="/images/favicon.png">
