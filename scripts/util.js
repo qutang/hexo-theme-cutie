@@ -129,3 +129,8 @@ hexo.extend.generator.register('page404', function(locals){
 	  layout: ['404', 'page']
 	}
 });
+
+hexo.extend.helper.register("random_pick", function(arr){
+	var random_index = Math.round(Math.random() * (arr.length - 1));
+	return arr[random_index];
+})

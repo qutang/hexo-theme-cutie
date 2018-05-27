@@ -64,7 +64,7 @@ crossorigin="anonymous"></script>
   });
   </script>
   <!-- load mathjax -->
-  <script type="text/javascript" async src="{{ theme.libs.mathjax.js_cdn }}"></script>
+  <!-- <script type="text/javascript" async src="{{ theme.libs.mathjax.js_cdn }}"></script> -->
 
   <!-- load js-cookie -->
   <script src="{{ theme.libs.jscookie.js_cdn }}"></script>

@@ -15,6 +15,9 @@
   padding-top: 1em
   padding-bottom: 1em
   bottom:0
+  background-color: white
+  border-bottom-left-radius: 5px
+  border-bottom-right-radius: 5px
 
 .swiper-pagination-bullet
   background: none
@@ -23,17 +26,30 @@
 .card-sparkle
   z-index:11
   position: absolute
-  top: 1.5em
-  right: 2.5em
+  top: 0
+  padding-top: 1em
+  padding-bottom: 1em
+  width: 100%
+  text-align: right
+  background-color: white
+  border-top-left-radius: 5px
+  border-top-right-radius: 5px
   span
     padding: 0.2em
     cursor: pointer
+  span.placeholder
+    width: 1em
+    display: inline-block
   .popular-card
     color: $hue12
   .coding-card
     color: $hue6
   .github-card
     color: $hue1
+  .external-link-card
+    color: $hue11
+  .equation-card
+    color: $hue7
 
 .Card-body
   height: 100%
@@ -41,6 +57,8 @@
   display: flex
   align-items: center
   justify-content: center
+  border-radius: 5px
+  overflow hidden
   .Card-figure
     flex: 1
     margin: 0 0 0 3em
@@ -85,23 +103,26 @@
         margin: 0 1em 0 0
   .Card-pictures
     display: block
-    height: 50%
-    margin: 0 4em
+    flex: 1
+    justify-content: center
     overflow hidden
-    border-radius: 8px
+    // margin: 3em 4em
+    border-radius: 5px
     img
-      width: 100%
-      height: auto
       object-fit: cover
+      height: auto  
+      width: 100%
+
   .Card-codes
     margin-left: 4em
-    width: 100%
-    height: 70%
+    flex: 1
+    justify-content: center
     overflow hidden
     font-size: 0.8em
+    border-radius: 5px
     figure.highlight
       margin: 0
-      
+      margin-top: 4em
       display: block
       width: 100%
       figcaption
@@ -110,6 +131,8 @@
         display: inline-block
         width: 100%
         text-align: left
+      pre
+        overflow hidden
         
 .swiper-slide
   border-radius: 5px

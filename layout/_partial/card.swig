@@ -17,6 +17,11 @@
 
 {% set scheme = parse_config([site.data.cutie.global.scheme, theme.global.scheme]) %}
 
+{% set post_images = get_post_images(item, config.root) %}
+
+{% set post_codes = get_post_codes(item) %}
+
+{% set has_equations = has_math_equations(item) %}
 
 <div class='Card Card-hover Card-index-{{ index }}' id='{{ hashit(url_for(item.path)) }}' data-name='{{ item.title }}' data-version='{{ item.version }}'>
 	{% if item.categories && item.categories.length %}
@@ -34,13 +39,36 @@
 	<div class="swiper-container">
 		<div class="card-sparkle">
 			<span title='Popular' class='popular-card'><i class="fas fa-lg fa-fire"></i></span>
-			<span title='Including python' class='coding-card'><i class="fab fa-lg fa-python"></i></span>
-			<span title='Github hosted' class='github-card'><i class="fab fa-lg fa-github"></i></span>
+			{% if post_codes|length > 0 %}
+			{% set code = random_pick(post_codes) %}
+			{% if code.lang == 'bash' %}
+				<span title='Including {{ code.lang }}' class='coding-card'><i class="fas fa-lg fa-terminal"></i></span>
+			{% elif code.lang == 'python' %}
+				<span title='Including {{code.lang}}' class='coding-card'><i class="fab fa-lg fa-python"></i></span>
+			{% elif code.lang == 'java' %}
+				<span title='Including {{code.lang}}' class='coding-card'><i class="fab fa-lg fa-java"></i></span>
+			{% elif code.lang == 'markdown' or code.lang == 'yaml' or code.lang == 'yml' %}
+				<span title='Including {{code.lang}}' class='coding-card'><i class="fas fa-lg fa-list-alt"></i></span>
+			{% elif code.lang == 'js' or code.lang == 'javascript' %}
+				<span title='Including {{code.lang}}' class='coding-card'><i class="fab fa-lg fa-js"></i></span>
+			{% else %}
+				<span title='Including codes' class='coding-card'><i class="far fa-file-code fa-lg"></i></span>
+			{% endif %}
+			{% endif %}
+			{% if has_equations %}
+				<span title='Including equations' class='equation-card'><i class="fas fa-superscript fa-lg"></i></span>
+			{% endif %}
+			<!-- <span title='Github hosted' class='github-card'><i class="fab fa-lg fa-github"></i></span> -->
+			
+			{% if item.external_link %}
+			<span title='External link' class='external-link-card'><i class="fas fa-lg fa-external-link-square-alt"></i></span>
+			{% endif %}
+			<span class="placeholder"></span>
 		</div>
     <!-- Additional required wrapper -->
     <div class="swiper-wrapper">
         <!-- Slides -->
-			<div class="swiper-slide">
+			<div class="swiper-slide title-slide" data-icon='font'>
 				<div class="Card-body">
 					<div class='Card-figure'>
 						{% if item.link || item.external_link %}
@@ -66,7 +94,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="swiper-slide">
+			<div class="swiper-slide summary-slide" data-icon='align-justify'>
 				<div class="Card-body">
 					<div class='Card-excerpt'>
 						<p>
@@ -82,23 +110,34 @@
 					</div>
 				</div>
 			</div>
-			<div class="swiper-slide">
+			{% if post_images|length > 0 %}
+			<div class="swiper-slide picture-slide" data-icon='camera-retro'>
 				<div class="Card-body">
 					<div class="Card-pictures">
-						<img src="http://i.dtinews.vn/stores/news_dataimages/namhang/052011/09/10/images201656_PM20110509104758.jpg" alt="">
+						<img src="{{ random_pick(post_images) }}" alt="">
 					</div>
 				</div>
 			</div>
-			<div class="swiper-slide">
+			{% endif %}
+			{% set long_codes = [] %}
+			{% for code in post_codes %}
+				{% if code.lines > 3 %}
+					{% set long_codes = long_codes.concat([code]) %}
+				{% endif %}
+			{% endfor %}
+			{% if long_codes|length > 0 %}
+			<div class="swiper-slide code-slide" data-icon='code'>
 				<div class="Card-body">
 					<div class="Card-codes">
-							<figure class="highlight yml">
-<pre><span class="line"><span class="attr">highlight:</span></span><br><span class="line"><span class="attr">  enable:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  line_number:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  auto_detect:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">  tab_replace:</span> </span><br><span class="line"><span class="attr">markdown:</span></span><br><span class="line"><span class="attr">  render:</span></span><br><span class="line"><span class="attr">    html:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    xhtmlOut:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">    breaks:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">    linkify:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    typographer:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    quotes:</span> <span class="string">'“”‘’'</span></span><br><span class="line"><span class="attr">  plugins:</span></span><br><span class="line"><span class="bullet">    -</span> <span class="string">markdown-it-abbr</span></span><br><span class="line"><span class="bullet">    -</span> <span class="string">markdown-it-footnote</span></span><br><span class="line"><span class="bullet">    -</span> <span class="string">markdown-it-ins</span></span><br><span class="line"><span class="bullet">    -</span> <span class="string">markdown-it-sub</span></span><br><span class="line"><span class="bullet">    -</span> <span class="string">markdown-it-sup</span></span><br><span class="line"><span class="bullet">    -</span> <span class="string">markdown-it-deflist</span></span><br><span class="line"><span class="attr">  anchors:</span></span><br><span class="line"><span class="attr">    level:</span> <span class="number">1</span></span><br><span class="line"><span class="attr">    collisionSuffix:</span> <span class="string">'v'</span></span><br><span class="line"><span class="attr">    permalink:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">    permalinkClass:</span> <span class="string">header-anchor</span></span><br><span class="line"><span class="attr">    permalinkSymbol:</span> <span class="string">""</span></span><br><span class="line"><span class="attr">    permalinkBefore:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">date_format:</span> <span class="string">ll</span></span><br><span class="line"><span class="attr">archive_generator:</span></span><br><span class="line"><span class="attr">  per_page:</span> <span class="number">0</span></span><br><span class="line"><span class="attr">  yearly:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  monthly:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">  daily:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">theme:</span> <span class="string">cutie</span></span><br></pre>
-								</figure>
+							<figure class="highlight">
+							{% set code = random_pick(long_codes) %}
+							{{ code.content }}
+							</figure>
 					</div>
 				</div>
 			</div>
-			<div class="swiper-slide">
+			{% endif %}
+			<!-- <div class="swiper-slide insight-slide" data-icon='magic'>
 				<div class="Card-body">
 					<div class="Card-meta">
 						{% if scheme.name == 'Taurus' %}
@@ -125,8 +164,8 @@
 						</ul>
 					</div>
 				</div>
-			</div>
-			<div class="swiper-slide">
+			</div> -->
+			<div class="swiper-slide meta-slide" data-icon='info'>
 					<div class="Card-body">
 						<div class="Card-meta">
 							{% if scheme.name == 'Taurus' %}
