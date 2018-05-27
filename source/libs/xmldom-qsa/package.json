@@ -1,0 +1,23 @@
+{
+  "name": "xmldom-qsa",
+  "version": "1.0.3",
+  "description": "A W3C Standard XML DOM(Level2 CORE) implementation and parser(DOMParser/XMLSerializer).",
+  "keywords": ["w3c","dom","xml","parser","javascript","DOMParser","XMLSerializer"],
+  "author": "Zelig <zeligzhou@gmail.com> (https://github.com/zeligzhou)",
+  "homepage": "https://github.com/zeligzhou/xmldom-qsa",
+  "repository": {"type": "git","url": "git@github.com:zeligzhou/xmldom-qsa.git"},
+  "main": "./dom-parser.js",
+  "scripts" : { "test": "proof platform win32 && proof test */*/*.t.js || t/test" },
+  "engines": {"node": ">=4.0"},
+  "dependencies": {"nwmatcher": "^1.4.1"},
+  "devDependencies": { "proof": "0.0.28" },
+  "maintainers": [{"name" : "Zelig Zhou","email" : "zeligzhou@gmail.com","web" : "https://github.com/zeligzhou"}],
+  "contributors": [
+    {"name" : "Yaron Naveh","email" : "yaronn01@gmail.com","web" : "http://webservices20.blogspot.com/"},
+    {"name" : "Harutyun Amirjanyan","email" : "amirjanyan@gmail.com","web" : "https://github.com/nightwing"},
+    {"name" : "Alan Gutierrez","email" : "alan@prettyrobots.com","web" : "http://www.prettyrobots.com/"},
+    {"name" : "jindw","email" : "jindw@xidea.org","web" : "http://www.xidea.org/"}
+  ],
+  "bugs": {"email": "zeligzhou@gmail.com","url": "https://github.com/zeligzhou/xmldom-qsa/issues"},
+  "license": "(LGPL-2.0 or MIT)"
+}

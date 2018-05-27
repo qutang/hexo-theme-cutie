@@ -1,10 +1,13 @@
 {% if is_home() %}
   <script>
-  
-
   var cards = document.getElementsByClassName('Card');
   [].forEach.call(cards, function(el){
     var el_swiper = el.querySelector('.swiper-container');
+    var slides = el_swiper.querySelectorAll('.swiper-slide');
+    var icons = [];
+    [].forEach.call(slides, function(slide){
+      icons.push(slide.dataset.icon);
+    });
     var mySwiper = new Swiper (el_swiper, {
       // Optional parameters
       direction: 'horizontal',
@@ -30,7 +33,6 @@
         el: '.swiper-pagination',
         clickable: true,
         renderBullet: function (index, className) {
-          icons = ['font', 'align-justify', 'camera-retro', 'code', 'magic', 'info']
           return '<span class="' + className + '"><i class="fas fa-' + icons[index] + '"></i>' + '</span>';
         }
       }

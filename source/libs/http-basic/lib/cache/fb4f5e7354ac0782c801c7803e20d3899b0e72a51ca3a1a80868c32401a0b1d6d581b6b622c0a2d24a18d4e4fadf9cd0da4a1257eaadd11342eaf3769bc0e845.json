@@ -1,0 +1,13 @@
+{
+  "statusCode": 200,
+  "headers": {
+    "accept-ranges": "bytes",
+    "etag": "W/\"45b-161f71935c0\"",
+    "content-type": "application/javascript; charset=UTF-8",
+    "content-length": "1115",
+    "date": "Mon, 05 Mar 2018 16:58:26 GMT",
+    "connection": "close"
+  },
+  "requestHeaders": {},
+  "requestTimestamp": 1520269106158
+}
