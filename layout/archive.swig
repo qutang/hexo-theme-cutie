@@ -12,7 +12,7 @@
 			{% if num_year_posts > 16 %}
 				{% set months = get_months(year_posts) %}
 				{% for month in months %}
-					{% set month_name = get_month_name(month) %}
+					{% set month_name = get_month_name(month + 1) %}
 					{% set year_month_posts = get_posts_by_year_and_month(year_posts, year, month) %}
 					{{ partial("_partial/archive", {path: "archives/" + year + "/" + month + "/", title: __('date.' + month_name), items: year_month_posts}) }}
 				{% endfor %}
