@@ -29,7 +29,7 @@ post:
 
 changelog:
   v2.0.13:
-    - Bug fix when displaying month name in the archive page [#66](https://github.com/qutang/hexo-theme-cutie/issues/66). Thanks to [@imjdl](https://github.com/imjdl)
+    - Bug fix when displaying month name in the archive page <a href='https://github.com/qutang/hexo-theme-cutie/issues/66' target='_blank'>#66</a>. Thanks to <a href='https://github.com/imjdl' target='_blank'>@imjdl</a>.
   v2.0.12:
     - Linkify meta icons on cards
     - Minor appearance tweak
