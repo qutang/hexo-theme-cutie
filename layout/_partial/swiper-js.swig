@@ -46,6 +46,7 @@
       if(!mySwiper.autoplay.running){
         mySwiper.params.autoplay.delay = 1500;
         mySwiper.params.autoplay.reverseDirection = false;
+        mySwiper.params.autoplay.disableOnInteraction = false;
         mySwiper.autoplay.start();
       }
     });

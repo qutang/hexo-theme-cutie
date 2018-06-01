@@ -101,6 +101,13 @@
       li
         display: inline-block
         margin: 0 1em 0 0
+        a
+          &:link
+          &:visited
+            color:#aaa
+          &:hover
+            color:#444
+  
   .Card-pictures
     display: block
     flex: 1
@@ -112,6 +119,18 @@
       object-fit: cover
       height: auto  
       width: 100%
+  .Card-videos
+    position: relative
+    height: 0
+    overflow hidden
+    padding-bottom:12em
+    width: 100%
+    iframe
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
 
   .Card-codes
     margin-left: 4em

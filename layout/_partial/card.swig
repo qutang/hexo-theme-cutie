@@ -19,6 +19,8 @@
 
 {% set post_images = get_post_images(item, config.root) %}
 
+{% set post_videos = get_post_videos(item, config.root) %}
+
 {% set post_codes = get_post_codes(item) %}
 
 {% set has_equations = has_math_equations(item) %}
@@ -115,6 +117,18 @@
 				<div class="Card-body">
 					<div class="Card-pictures">
 						<img src="{{ random_pick(post_images) }}" alt="">
+					</div>
+				</div>
+			</div>
+			{% endif %}
+			{% if post_videos|length > 0 %}
+			<div class="swiper-slide video-slide" data-icon='video'>
+				<div class="Card-body">
+					<div class="Card-videos">
+						{% set video = random_pick(post_videos) %}
+						{% if video.type == 'youtube' || video.type == 'bilibili' %}
+							<iframe class="center-block" src="{{ video.url }}" scrolling="no" framespacing="0" frameborder="0" allowfullscreen="true" align="center"></iframe>
+						{% endif %}
 					</div>
 				</div>
 			</div>
