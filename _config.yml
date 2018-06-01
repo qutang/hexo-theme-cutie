@@ -1,4 +1,4 @@
-version: 2.0.12
+version: 2.0.13
 url: https://qutang.github.io/cutie/
 logo: /images/theme-icon.svg
 slogan: Bazinga, theme cutie!
@@ -28,6 +28,8 @@ post:
   enable_unread_badge: false
 
 changelog:
+  v2.0.13:
+    - Bug fix when displaying month name in the archive page [#66](https://github.com/qutang/hexo-theme-cutie/issues/66). Thanks to [@imjdl](https://github.com/imjdl)
   v2.0.12:
     - Linkify meta icons on cards
     - Minor appearance tweak
