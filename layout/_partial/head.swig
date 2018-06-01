@@ -49,7 +49,13 @@ src="https://code.jquery.com/jquery-3.3.1.min.js"
 integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
 crossorigin="anonymous"></script>
   
-
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-2840557666807289",
+    enable_page_level_ads: true
+  });
+</script>
 
 <!-- load swiper.js -->
 {{ js(theme.libs.swiper.js_min) }}

@@ -21,6 +21,17 @@ hexo.extend.helper.register("get_post_images", function(post, root_path){
   return images;
 });
 
+hexo.extend.helper.register("get_post_videos", function(post, root_path){
+  var videos = []
+  console.log('extract video from post content');
+  var content = post.content;
+  var content_youtubes = get_youtube_from_html_string(content);
+  var content_bilibili = get_bilibili_from_html_string(content);
+  videos = videos.concat(content_youtubes).concat(content_bilibili);
+  console.log('found ' + videos.length + ' videos');
+  return videos;
+});
+
 hexo.extend.helper.register("get_post_codes", function(post){
   console.log('extract codes from post content');
   var codes = get_codes_from_html_string(post.content);
@@ -38,6 +49,34 @@ var has_equations_in_html = function(content){
   console.log(content.match(eq_pattern));
   // console.log(content);
   return content.match(eq_pattern) != null
+}
+
+var get_youtube_from_html_string = function(content){
+  var youtube_pattern = /src=['"]([-_:/\.a-zA-z0-9]+\.youtube\.com\/embed\/[0-9a-zA-z]+)['"]/gmiu
+  var matches;
+  var youtubes = [];
+  while( (matches = youtube_pattern.exec(content)) != null) {
+    var path = matches[1];
+    youtubes.push({
+      url: path,
+      type: 'youtube'
+    });
+  }
+  return youtubes;
+}
+
+var get_bilibili_from_html_string = function(content){
+  var bilibili_pattern = /src=['"]([-_:/\.a-zA-z0-9]+\.bilibili\.com\/player\.html\?aid=[0-9]+)['"]/gmiu
+  var matches;
+  var bilibili = [];
+  while( (matches = bilibili_pattern.exec(content)) != null) {
+    var path = matches[1];
+    bilibili.push({
+      url: path,
+      type: 'bilibili'
+    });
+  }
+  return bilibili;
 }
 
 var get_images_from_html_string = function(content){
