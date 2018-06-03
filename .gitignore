@@ -2,3 +2,5 @@
 node_modules
 tmp
 .vscode/
+vim*
+yarn-error*
