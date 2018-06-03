@@ -1,7 +1,7 @@
 {
-  "systemParams": "darwin-x64-59",
+  "nodeVersion": "v9.2.0",
   "modulesFolders": [
-    "source/libs"
+    "source\\libs"
   ],
   "flags": [],
   "linkedModules": [],
