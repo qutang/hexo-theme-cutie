@@ -54,6 +54,10 @@ popper.js@^1.14.2:
   version "1.14.2"
   resolved "https://registry.yarnpkg.com/popper.js/-/popper.js-1.14.2.tgz#066e8e1613e65e69ba050f4b78e7bd4c8d54e443"
 
+striptags@^3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/striptags/-/striptags-3.1.1.tgz#c8c3e7fdd6fb4bb3a32a3b752e5b5e3e38093ebd"
+
 tippy.js@^2.5.0:
   version "2.5.0"
   resolved "https://registry.yarnpkg.com/tippy.js/-/tippy.js-2.5.0.tgz#393826b42aa1750268e0d2a4d6f047abe4c96d50"

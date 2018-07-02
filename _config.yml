@@ -1,4 +1,4 @@
-version: 2.0.13
+version: 2.0.14
 url: https://qutang.github.io/cutie/
 logo: /images/theme-icon.svg
 slogan: Bazinga, theme cutie!
@@ -28,6 +28,8 @@ post:
   enable_unread_badge: false
 
 changelog:
+  v2.0.14:
+    - Bug fix during indexing search content. Refer to <a href='https://github.com/qutang/hexo-theme-cutie/issues/84' target='_blank'>#84</a>.
   v2.0.13:
     - Bug fix when displaying month name in the archive page <a href='https://github.com/qutang/hexo-theme-cutie/issues/66' target='_blank'>#66</a>. Thanks to <a href='https://github.com/imjdl' target='_blank'>@imjdl</a>.
   v2.0.12:
@@ -148,7 +150,11 @@ libs:
     name: "animate.css: A CSS framework for predefined animations"
     url: https://github.com/daneden/animate.css
     css_min: /libs/animate.css/animate.min.css
-    css: /libs/animate.css/animate.css 
+    css: /libs/animate.css/animate.css
+  striptags:
+    name: "striptags: A node js library to strip html tags"
+    url: https://www.npmjs.com/package/striptags
+    js: /libs/striptags/src/striptags.js
   
   
   
