@@ -37,7 +37,7 @@ hexo.extend.helper.register("get_posts_in_json", function(posts){
 		post_list.push({
 			"title": posts.data[i].title.replace(/["']/g, ''),
 			"date": posts.data[i].date,
-			"content": striptags(posts.data[i].content).replace(/["']/g, ''),
+			"content": striptags(posts.data[i].content).replace(/["']/g, '').replace(/\//g, '').replace(/\\/g, ''),
 			"author": posts.data[i].author,
 			"tags": tag_names,
 			"path": posts.data[i].path,
