@@ -3,24 +3,20 @@
   margin-top: 11em
   text-align: center
   margin-bottom: 5em
+  padding: 0 0.5em
 
 .index-cards
   margin: 0 auto
-  margin-right: 20%
   margin-top: 3em
-  width: 50%
+  max-width: 960px
   +for_breakpoint(tablet)
     width: 90vw
     justify-content: center
     padding: 0
-    margin: 0 auto
-    margin-top: 3em
   +for_breakpoint(mobile)
     width: 90vw
     justify-content: center
     padding: 0
-    margin: 0 auto
-    margin-top: 3em
   display: flex
   align-items: stretch
   justify-content: space-between
@@ -29,8 +25,9 @@
   flex-grow: 0
 
 .Card
-  margin: 1.5em 0
-  width: 100%
+  margin: 1em 0
+  width: 48.5%
+  height: 18em
   +for_breakpoint(tablet)
     width: 90%
   +for_breakpoint(mobile)

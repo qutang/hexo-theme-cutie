@@ -99,7 +99,7 @@
 			<div class="swiper-slide summary-slide" data-icon='align-justify'>
 				<div class="Card-body">
 					<div class='Card-excerpt'>
-						<p>
+						<!-- <p>
 						{% if item.link || item.external_link %}
 							<a href="{{ item.link | default(item.external_link) }}" rel="noopener noreferrer" target="_blank">
 						{% else %}
@@ -108,7 +108,10 @@
 						{% set excerpt = parse_config([item.abstract, item.excerpt, item.content, "No content"]) %}
 						{% set excerpt = trim(truncate(strip_html(excerpt), {length: 150, separator: ' ', omission: '...'})) %}
 						{{ excerpt }}
-						</a></p>
+						</a></p> -->
+						<div class='excerpt-display'>
+							{{ markdown(get_excerpt_display(item)) }}
+						</div>
 					</div>
 				</div>
 			</div>
@@ -191,9 +194,6 @@
 											<i class='fa fa-calendar'></i> {{ meta_date }}
 										</a>
 									</li>
-									{% if item.external_link %}
-										<li>{{ __('external_link') }}</li>
-									{% else %}
 									{% if use_post_stats %}
 									<li>
 										<a href="{{ url_for(item.path + '/#article-comment') }}">
@@ -201,7 +201,6 @@
 										</a>
 									</li>
 									<li><i class="fa fa-eye"></i> <span class='card-visit-count'>0</span></li>
-									{% endif %}
 									{% endif %}
 							</ul>
 						</div>

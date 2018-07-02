@@ -51,6 +51,23 @@ var has_equations_in_html = function(content){
   return content.match(eq_pattern) != null
 }
 
+hexo.extend.helper.register("get_excerpt_display", function(post){
+  tokens = post.raw.split('\n', 100)
+  var start_fm = -1
+  var stop_fm = -1
+  selected_tokens = []
+  for(var i=0; i < tokens.length; i++){
+    if(tokens[i] == '---' && start_fm == -1){
+      start_fm = i
+    }else if(tokens[i] == '---' && start_fm != -1 && stop_fm == -1){
+      stop_fm = i
+    }else if(start_fm != -1 && stop_fm != -1){
+      selected_tokens.push(tokens[i])
+    }
+  }
+  return selected_tokens.join('\n')
+})
+
 var get_youtube_from_html_string = function(content){
   var youtube_pattern = /src=['"]([-_:/\.a-zA-z0-9]+\.youtube\.com\/embed\/[0-9a-zA-z]+)['"]/gmiu
   var matches;

@@ -82,10 +82,17 @@
       margin: 0
       line-height: 1.5
       font-size: 1.2em
-    justify-content: center
     text-align: left
-    flex: 1
+    // flex: 1
+    // margin: 0 4em
+    width: 100%
+    overflow hidden
+    z-index -1
+    height: 12em
+    font-size: 0.8em
     margin: 0 4em
+    // padding-top: 1em
+    // padding-bottom:12em
 
   .Card-meta
     display: block
@@ -167,3 +174,238 @@
   top:-5px
   right:-5px
 
+.excerpt-display
+  width: 100%
+  color: #333
+  line-height: 1.5
+  font-size:10px
+  height: 100%
+  overflow hidden
+  +for_breakpoint(mobile)
+    text-align: justify
+  hr
+    border: 0
+    height: 1px
+    background-image: -webkit-linear-gradient(left,  #f0f0f0, #8c8b8b, #f0f0f0)
+    background-image: -moz-linear-gradient(left,  #f0f0f0, #8c8b8b, #f0f0f0)
+    background-image: -ms-linear-gradient(left,  #f0f0f0, #8c8b8b, #f0f0f0)
+    background-image: -o-linear-gradient(left,  #f0f0f0, #8c8b8b, #f0f0f0)      
+  h1, h2, h3, h4, h5, h6
+    color: #333
+    // anchor offset
+    &:target:before
+      content:""
+      display:block
+      height:8em /* fixed header height*/
+      margin:-8em 0 0 /* negative fixed header height */
+  h1
+    position: relative
+    margin:0.1em 0
+  a
+    color: $primary_color
+    &:visited
+      color:$primary_color_grayout
+  img
+    max-height: 300px
+    max-width: 95%
+    height: auto
+    box-shadow: 3px 3px 12px 3px #eee
+    border-radius: 5px
+    padding: 2.5%
+    margin: 0.5em
+    cursor: pointer
+  code
+    color: $secondary_color
+    code_font()
+    font-size: 0.7em
+    font-weight: 600
+    vertical-align: middle
+    border: 1px solid #999
+    background-color: #efefef
+    padding: 2px 4px
+    margin: 0 2px
+    border-radius: 0.4em
+  pre
+    code_font()
+    padding: 12px 15px
+    margin: 0
+    border: 1px solid #ccc
+    border-radius: 8px
+    code
+      border: none
+      background: none
+      font-size: 0.8em
+      color: #222
+      font-weight: normal
+  figure.highlight
+    margin: 2em 0
+    border: 1px solid #ccc
+    padding: 0.8em
+    border-radius: 8px
+    font-size: 0.8em
+    code_font()
+    table
+    tbody
+    tr
+      display: block
+      width: 100%
+    td.code
+      width: 100%
+    td.gutter
+      padding-right: 1em
+      color: #aaa
+    figcaption 
+      font-size: 0.9em
+      color:#aaa
+      margin-bottom: 1em
+      a
+        float: right
+    th
+    td
+      padding: 0px
+      text-align: left
+      border-bottom: none
+      .line
+        display: inline-block
+        width: 100%
+      .marked
+        background-color: #f0fff4
+  .gist
+    td
+      padding: 0
+      border-bottom: none
+  table
+    max-width: 100%
+    overflow: auto
+    display: block
+    th
+    td
+      padding: 12px 15px
+      text-align: left
+      border-bottom: 1px solid #E1E1E1
+      pre
+        border: none
+        padding: 0.5em 0
+    th:first-child
+    td:first-child
+      padding-left: 0
+    th:last-child
+    td:last-child
+      padding-right: 0
+  blockquote
+    position: relative
+    padding-left: 2rem
+    margin-top: 2rem
+    color: #888
+    font-size: 0.9em
+    &:before
+      display: block
+      content: "\201C"
+      font-size: 5em
+      margin: 0
+      padding: 0
+      left:0
+      top:-2rem
+      position: absolute
+    footer
+      color:#222
+      &:before
+        content:"\2014 \2009"
+      *
+        margin-right: 0.5rem
+      overflow: auto
+  blockquote.pullquote
+    display: block
+    width: 20%
+    font-size: 1.1em
+    padding: 1em 1em 0 1em
+    margin: 0
+  blockquote.pullquote.left
+    float: left
+    &:before
+      display: block
+      content: "\201C"
+      font-size: 5em
+      margin: 0
+      padding: 0
+      left:0
+      top:-1rem
+      position: absolute
+  blockquote.pullquote.right
+    float: right
+    &:before
+      display: block
+      content: "\201D"
+      font-size: 5em
+      margin: 0
+      padding: 0
+      left: 75%
+      top:-1rem
+      position: absolute
+  dt
+    display: block
+    width: 100%
+    text-decoration: underline
+    margin: 0.5em 0
+  dd
+    color:#666
+    margin-top: 0.5em
+    pre
+      code
+        border: 0
+        background: 0
+        color: #666
+  dl
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    align-items: flex-start
+    dt
+      display: block
+      width: 20%
+      +for_breakpoint(mobile)
+        width: 100%
+      text-align: center
+      color: white
+      text-decoration: none
+      // margin: 0.5em 0
+      // float: left
+      // clear: left
+      line-height: 1.2
+      padding: 0.5em
+      border-radius: 5px
+      &:nth-of-type(1)
+        background-color: $hue5
+      &:nth-of-type(2)
+        background-color: $hue2
+      &:nth-of-type(3)
+        background-color: $hue3
+      &:nth-of-type(4)
+        background-color: $hue4
+      &:nth-of-type(5)
+        background-color: $hue6
+      &:nth-of-type(6)
+        background-color: $hue7
+    dd
+      margin-left: 2em
+      width: 70%
+      +for_breakpoint(mobile)
+        width: 100%
+        margin-left: 0
+      ol
+      ul
+        padding-left: 1em
+      *
+        margin-top: 0
+        margin-left: 0
+      color:#666
+      // padding-top: 0.5em
+      // margin-left: 12em
+      figure
+      figure.highlight
+        margin: 0
+      pre
+        code
+          border: 0
+          background: 0
+          color: #666
