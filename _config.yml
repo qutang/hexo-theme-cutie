@@ -28,6 +28,8 @@ post:
   enable_unread_badge: false
 
 changelog:
+  v2.0.15:
+    - Bug fix of searching result links. Refer to <a href='https://github.com/qutang/hexo-theme-cutie/issues/85' target='_blank'>#85</a>.
   v2.0.14:
     - Bug fix during indexing search content. Refer to <a href='https://github.com/qutang/hexo-theme-cutie/issues/84' target='_blank'>#84</a>.
   v2.0.13:
