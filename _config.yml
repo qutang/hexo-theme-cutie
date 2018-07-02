@@ -152,7 +152,7 @@ libs:
     css_min: /libs/animate.css/animate.min.css
     css: /libs/animate.css/animate.css
   striptags:
-    name: "striptags: A node js library to strip html tags"
+    name: striptags
     url: https://www.npmjs.com/package/striptags
     js: /libs/striptags/src/striptags.js
   

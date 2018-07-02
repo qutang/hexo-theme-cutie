@@ -169,4 +169,6 @@ hexo.extend.helper.register('check_new_version', function(current_version){
 	}).on("error", (err) => {
 	console.log("Error: " + err.message);
 	});
+
+	return ""
 });
