@@ -1,6 +1,43 @@
-var Hashes = require('../source/libs/jshashes/hashes');
-var striptags = require('../source/libs/striptags/src/striptags')
+var Hashes = require('jshashes');
+var striptags = require('striptags')
 var https = require('https');
+var jdenticon = require("jdenticon")
+var fs = require("fs")
+var path = require('path')
+
+
+jdenticon.config = {
+	lightness: {
+			color: [0.55, 0.55],
+			grayscale: [0.55, 0.55]
+	},
+	saturation: {
+			color: 0.50,
+			grayscale: 0.50
+	},
+	backColor: "#ffffffb3"
+};
+
+hexo.extend.helper.register("generate_post_icon", function(title){
+  var id = new Hashes.SHA256().hex(title);
+	var icon_name = id + '.png';
+	var icon_path = './source/images/jdenticon/';
+	var render_path = '/images/jdenticon/';
+	if(!fs.existsSync(path.dirname(icon_path))){
+		fs.mkdirSync(path.dirname(icon_path))
+	}
+	if(!fs.existsSync(icon_path)){
+		fs.mkdirSync(icon_path)
+	}
+  var icon_path = path.join(icon_path, icon_name);
+  var size = 200;
+  if(!fs.existsSync(icon_path)){
+		console.log('generating random post icon');
+		png = jdenticon.toPng(title, size);
+    fs.writeFileSync(icon_path, png);
+  }
+  return render_path + icon_name;
+});
 
 hexo.extend.helper.register("parse_config", function(items){
 	for(var i in items){

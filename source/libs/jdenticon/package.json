@@ -1,0 +1,44 @@
+{
+  "name": "jdenticon",
+  "version": "2.1.0",
+  "description": "Javascript identicon generator",
+  "main": "index.js",
+  "browser": "dist/jdenticon.min.js",
+  "dependencies": {
+    "canvas-renderer": "~2.0.1"
+  },
+  "devDependencies": {
+    "del": "^1.2.1",
+    "google-closure-compiler-js": "^20180402.0.0",
+    "gulp": "^3.9.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.5.3",
+    "gulp-replace-with-sourcemaps": "^0.7.1",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-wrap": "^0.11.0",
+    "gulp-zip": "^3.0.2",
+    "module-deps": "^4.1.1",
+    "strip-bom": "^3.0.0",
+    "tap": "^10.7.0",
+    "through2": "^2.0.3"
+  },
+  "scripts": {
+    "test": "tap test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dmester/jdenticon"
+  },
+  "bugs": {
+    "url": "https://github.com/dmester/jdenticon/issues"
+  },
+  "keywords": [
+    "javascript",
+    "identicon",
+    "jdenticon",
+    "avatar"
+  ],
+  "author": "Daniel Mester Pirttijärvi",
+  "license": "MIT",
+  "homepage": "https://github.com/dmester/jdenticon"
+}

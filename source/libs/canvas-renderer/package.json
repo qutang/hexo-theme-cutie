@@ -1,0 +1,33 @@
+{
+  "name": "canvas-renderer",
+  "version": "2.0.1",
+  "description": "HTML5 inspired canvas that can be rendered to PNG with no native dependencies.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dmester/canvas-renderer"
+  },
+  "devDependencies": {
+    "tap": "^10.7.0"
+  },
+  "scripts": {
+    "test": "tap tests/*.js"
+  },
+  "bugs": {
+    "url": "https://github.com/dmester/canvas-renderer/issues"
+  },
+  "keywords": [
+    "javascript",
+    "canvas",
+    "rasterize",
+    "rasterizer",
+    "renderer",
+    "png",
+    "polygon"
+  ],
+  "main": "index.js",
+  "author": {
+    "name": "Daniel Mester Pirttijärvi"
+  },
+  "dependencies": {}
+}

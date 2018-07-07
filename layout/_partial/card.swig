@@ -28,7 +28,7 @@
 		{% endfor %}
 	{% else %}
 		{% set category_link = url_for(item.path) %}
-		{% set category_name = "uncategorized" %}
+		{% set category_name = "{{ url_for(generate_post_icon(item.title)) }}" %}
 	{% endif %}
 	<mark class='Card-badge' style='{visibility: "hidden"}'></mark>
 	<div class='Card-figure'>
@@ -37,10 +37,11 @@
 		{% else %}
 			<a href="{{ url_for(item.path) }}">
 		{% endif %}
+
 		{% if item.icon %}
-			<img class='grow' src="{{ item.icon }}" alt="" onerror='if(this.src != "/images/uncategorized.svg") this.src = "/images/uncategorized.svg"'>
-		{% else %}
-			<img class='grow' src="{{ '/images/' + category_name + '.svg' }}" alt="" onerror='if (this.src != "/images/uncategorized.svg") this.src = "/images/uncategorized.svg"'>
+			<img class='grow' src="{{ item.icon }}" alt="" onerror='this.src = "{{ generate_post_icon(item.title) }}"'> 
+	  {% else %} 
+			<img class='grow' src="{{ category_name }}" alt="" onerror='this.src = "{{ generate_post_icon(item.title) }}"'> 
 		{% endif %}
 		</a>
 	</div>
