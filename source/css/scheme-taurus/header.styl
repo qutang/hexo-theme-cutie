@@ -52,14 +52,17 @@ shorter_underline($width, $offset)
   // layout
   fixed_tl(0, 0)
   width: 100%
-  height: 7em
+  height: 5.5em
+  +for_breakpoint(mobile)
+    height: 4em
+    box-shadow: none
   z-index: 101
   // appearance
-  banner-shadow()
+  // banner-shadow()
   background-color: white
   // content
   display: flex
-  justify-content: space-between
+  justify-content: space-around
   align-items: center
   color: #222
   // header links global setting
@@ -104,30 +107,36 @@ shorter_underline($width, $offset)
         text-decoration: underline
     .header-logo
       text-align: center
-      margin-right: 1em
-      margin-top: 3em
+      // margin-right: 1em
+      // margin-top: 3em
+      +for_breakpoint(mobile)
+        display none
       img
         background-color: white
-        width: 7em
+        width: 4.2em
         border-radius: 50%
-        box-shadow: 1px 1px 10px 3px #e5e5e5
+        // box-shadow: 1px 1px 10px 3px #e5e5e5
     .header-text
       text-align: left
-      margin-top: 2.5em
+      margin-left: 1em
+      // margin-top: 2.5em
       serif()
       +for_breakpoint(mobile)
-        display: none
+        margin-top: 0em
       h1
         display: inline
-        font-size: 2em
+        font-size: 1.6em
         margin: 0
         letter-spacing: -1px
         +for_breakpoint(tablet)
+          font-size: 1.5em
+        +for_breakpoint(mobile)
           font-size: 1.5em
       subtitle
         display: inline
         font-weight: 100
         font-size: 1em
+        padding-left:0.5em
         +for_breakpoint(tablet)
           display: none
         +for_breakpoint(mobile)

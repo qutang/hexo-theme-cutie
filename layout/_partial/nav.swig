@@ -62,6 +62,7 @@
 				</a>
 		</div>
 		<div class="nav-more-menu">
+				<i class="far fa-times-circle" id='nav-more-menu-close' onclick='onClickNavMenuClose(event);' ontouchstart='onClickNavMenuClose(event);'></i>
 		{% for menu_name, menu_content in menu %}
 			{% set use_item = true %}
 			{% for cat in site.categories %}

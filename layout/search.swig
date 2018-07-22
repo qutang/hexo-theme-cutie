@@ -1,3 +1,8 @@
+<style>
+    body {
+        background-color: white;
+    }
+</style>
 <div class='search-container'>
 	<input type="text" id='search-form'>
 

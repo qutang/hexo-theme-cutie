@@ -1,4 +1,4 @@
-version: 2.0.16
+version: 2.0.17
 url: https://qutang.github.io/cutie/
 logo: /images/theme-icon.svg
 slogan: Bazinga, theme cutie!
@@ -28,6 +28,11 @@ post:
   enable_unread_badge: false
 
 changelog:
+  v2.0.17:
+    - Remove unused scheme (Close <a href='https://github.com/qutang/hexo-theme-cutie/issues/81' target='_blank'>#81</a>)
+    - Remove check new version functionality (not reliable)
+    - Adjust header appearance
+    - Adjust mobile view Refer to <a href='https://github.com/qutang/hexo-theme-cutie/issues/61' target='_blank'>#61</a>.
   v2.0.16:
     - Use jdenticon when post icon is unavailable.
   v2.0.15:

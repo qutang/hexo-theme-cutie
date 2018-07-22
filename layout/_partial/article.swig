@@ -176,6 +176,7 @@
     <!-- Content -->
     <!-- TODO: support table of content -->
     <div class="article-toc" id='article-toc'>
+    
         {{ partial('_partial/toc', {item: item}) }}
     </div>
     <div class='article-content'>

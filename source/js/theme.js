@@ -21,10 +21,23 @@ function onClickMenuIcon(event) {
 		}
 }
 
+function onClickNavMenuClose(event) {
+	if('ontouchstart' in document.documentElement){
+		event.preventDefault();
+		event.stopPropagation();
+		var elems = document.getElementsByClassName('nav-more-menu');
+		console.log(elems.length);
+		[].forEach.call(elems, function(el) {
+			el.style.display = 'none';
+		});
+	}
+}
+
+
 function toggleTOC(event) {
 	event.preventDefault();
 	event.stopPropagation();
-	var elems = document.querySelectorAll('#footer-nav .toc');
+	var elems = document.querySelectorAll('#footer-nav .toc-container');
 	console.log(elems.length);
 	[].forEach.call(elems, function(el) {
 		console.log(el.style.display);
@@ -32,6 +45,17 @@ function toggleTOC(event) {
 			el.style.display = "block";
 		else
 			el.style.display = 'none';
+	});
+}
+
+function closeTOC(event) {
+	event.preventDefault();
+	event.stopPropagation();
+	var elems = document.querySelectorAll('#footer-nav .toc-container');
+	console.log(elems.length);
+	[].forEach.call(elems, function(el) {
+		console.log(el.style.display);
+		el.style.display = 'none';
 	});
 }
 

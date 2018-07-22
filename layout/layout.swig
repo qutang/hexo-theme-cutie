@@ -21,7 +21,6 @@
 	</div>
 
   {{ partial("_partial/after-footer") }}
-  {{ check_new_version(theme.version) }}
 <!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 </body>

@@ -2,15 +2,16 @@
 .article
 .page
   max-width: 800px
+  margin: 0 auto
   +for_breakpoint(tablet)
     width: 800px
   +for_breakpoint(mobile)
-    width: 85vw
-  margin: 0 auto
+    width: 80%
+    margin: 0 0 0 6%
   padding: 0
   margin-top: 10em
   +for_breakpoint(mobile)
-    margin-top: 12em
+    margin-top: 7em
   .article-title
     display: inline-block
     margin: 0
@@ -79,11 +80,13 @@
     flex-direction: row
     flex-wrap: wrap
   .article-toc
-    fixed_tr(10em, 4em)
+    fixed_tl(10em, 25vw)
+    background-color: white
     z-index: 100
     +for_breakpoint(mobile)
       display: none
     .toc-button
+      z-index: 0
       img
         width: 2em
         height: auto
@@ -95,28 +98,42 @@
     p
       margin: 0
 
-#article-toc:hover .toc
+#article-toc:hover .toc-container
   display: block
 
 #article-toc:hover .toc-button
   display: none
 
-.toc
-  display: none
-  padding: 1em
-  margin-left: 0.75em
+.toc-container
+  position: relative
   +for_breakpoint(mobile)
-    width: 80%
-  box-shadow: 0px 0px 10px 5px #ddd
-  background-color: white
-  border-radius: 10px
+    fixed_tr(30vh, 0)
+
+.toc-container
+  display: none
+  margin-top: 0
   margin-bottom: 0
-  max-height: 50vh
-  overflow: auto
+  width: 100%
+  +for_breakpoint(mobile)
+    // background-color: white
+    width: 100%
+    box-shadow: 0px 0px 10px 3px #ddd
+  .toc
+    overflow: auto
+    padding-top: 0.5em
+    padding-bottom: 0.5em
+    max-height: 60vh
+    padding-left: 0.5em
+    padding-right: 0.5em
+    +for_breakpoint(mobile)
+      max-height: 15em
   ol
-    background-color: white
+    // background-color: white
+    padding-left: 1em
   li
     list-style-type: none
     line-height: 1.5
-    background-color: white
+    // background-color: white
     padding: 0
+    +for_breakpoint(mobile)
+      padding-left: 0.5em
