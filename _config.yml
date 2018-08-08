@@ -1,11 +1,7 @@
-version: 2.0.17
+version: 2.1.0
 url: https://qutang.github.io/cutie/
 logo: /images/theme-icon.svg
 slogan: Bazinga, theme cutie!
-# Configure navigation menu, provide a relative link and a path to icon (icon should better be square)
-
-# As long as the name matches the font awesome icon name, you can add even more social links
-# As the tip: the social link can be a QRCODE link
 
 global:
   comment_system: valine # disqus, valine, gitment
@@ -28,6 +24,8 @@ post:
   enable_unread_badge: false
 
 changelog:
+  v2.1.0:
+    - Add Thumb Up functionality. Refer to <a href='https://github.com/qutang/hexo-theme-cutie/issues/89' target='_blank'>#89</a>.
   v2.0.17:
     - Remove unused scheme (Close <a href='https://github.com/qutang/hexo-theme-cutie/issues/81' target='_blank'>#81</a>)
     - Remove check new version functionality (not reliable)
@@ -140,6 +138,7 @@ libs:
     name: fontawesome
     url: https://fontawesome.com/
     js_cdn: https://use.fontawesome.com/releases/v5.0.6/js/all.js
+    css: https://use.fontawesome.com/releases/v5.2.0/css/all.css
   fuse:
     name: "fuse.js: A javascript fuzzy search library"
     url: http://fusejs.io/

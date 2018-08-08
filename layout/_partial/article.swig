@@ -89,8 +89,9 @@
     <ul>
             <li><i class='fa fa-calendar'></i> {{ meta_date }}</li>
             {% if use_post_stats %}
-            <li><i class='fa fa-comments'></i> <a href='#article-comment'><span id='article-comment-count'>0</span></a></li>
+            <li class='comment-button'><a href='#article-comment'><i class='fa fa-comments'></i> <span id='article-comment-count'>0</span></a></li>
             <li><i class="fa fa-eye"></i> <span id='article-visit-count'>0</span></li>
+            <li class='thumb-up-button' id='thumb-up-button'><i class="far fa-thumbs-up fa-lg" id='thumb-up-icon'></i> <span id='article-thumbup-count'>0</span></li>
             {% endif %}
             <li><i class="fa fa-user"></i> {{ item.author.name | default(config.author) }}</li>
             <li><i class="fas fa-copyright"></i>

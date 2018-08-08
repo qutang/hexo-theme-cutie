@@ -94,6 +94,7 @@
 							</a>
 						</li>
 						<li><i class="fa fa-eye"></i> <span class='card-visit-count'>0</span></li>
+						<li class='card-thumbup-container'><i class="far fa-thumbs-up"></i> <span class='card-thumbup-count'>0</span></li>
 						{% endif %}
 						{% endif %}
 				</ul>
