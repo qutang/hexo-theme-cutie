@@ -25,7 +25,7 @@ post:
 
 changelog:
   v2.1.1:
-    - Close 页面显示issue <a href='https://github.com/qutang/hexo-theme-cutie/issues/89' target='_blank'>#92</a>.
+    - Close 页面显示issue <a href='https://github.com/qutang/hexo-theme-cutie/issues/92' target='_blank'>#92</a>.
     - Replace IP detector library.
   v2.1.0:
     - Add Thumb Up functionality. Refer to <a href='https://github.com/qutang/hexo-theme-cutie/issues/89' target='_blank'>#89</a>.
