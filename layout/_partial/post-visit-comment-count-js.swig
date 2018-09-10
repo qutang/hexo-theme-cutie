@@ -1,7 +1,8 @@
-<script type="text/javascript" src="https://l2.io/ip.js?var=user_ip"></script>
+
 <script type='text/javascript'>
   {% if is_home() || is_archive() || is_tag() || is_category() %}
-    loadjs(['{{ theme.libs.jshashes.js_min }}', '{{ theme.libs.jscookie.js }}', '/js/leancloud.js'], 'post-visit-comment-count');
+    function getIP(json) {
+      loadjs(['{{ theme.libs.jshashes.js_min }}', '{{ theme.libs.jscookie.js }}', '/js/leancloud.js'], 'post-visit-comment-count');
     loadjs.ready('post-visit-comment-count', {
       success: function(){
           LeanCloud.init('{{ site.data.cutie.valine.appId }}', '{{ site.data.cutie.valine.appKey }}');
@@ -10,7 +11,7 @@
           {% set url = url_for(post.path) %}
           {% set id = hashit(url_for(post.path)) %}
           // start caching post visit and comment counts
-          leanCloud.fetchIsThumbUp('{{ url }}', user_ip);
+          leanCloud.fetchIsThumbUp('{{ url }}', json.ip);
           leanCloud.fetchCommentCount('{{ url }}');
           leanCloud.fetchVisitCount('{{ url }}');
           leanCloud.fetchThumbUpCount('{{ url }}');
@@ -39,24 +40,26 @@
         {% endfor %}
       }
     })
+    }
   {% elif is_post() %}
   // update cookie if this page is opened (directly)
+  function getIP(json) {
   loadjs(['{{ theme.libs.jshashes.js_min }}', '{{ theme.libs.jscookie.js }}', '/js/leancloud.js'], 'post-visit-comment-count');
   loadjs.ready('post-visit-comment-count', function(){
     {% set url = url_for(page.path) %}
     {% set id = hashit(url_for(post.path)) %}
     LeanCloud.init('{{ site.data.cutie.valine.appId }}', '{{ site.data.cutie.valine.appKey }}');
     var leanCloud = LeanCloud.getInstance();
-    leanCloud.fetchIsThumbUp('{{ url }}', user_ip);
+    leanCloud.fetchIsThumbUp('{{ url }}', json.ip);
     document.getElementById('thumb-up-button').addEventListener('click', function(e){
       leanCloud.isThumbUp('{{ url }}', function(isThumbUp){
         console.log('is thumb up:' + isThumbUp);
         if(isThumbUp){
-          leanCloud.removeThumbUpRecord('{{ url }}', user_ip);
+          leanCloud.removeThumbUpRecord('{{ url }}', json.ip);
           document.getElementById('thumb-up-icon').className = "far fa-thumbs-up fa-lg";
           
         }else{
-          leanCloud.addThumbUpRecord('{{ url }}', user_ip);
+          leanCloud.addThumbUpRecord('{{ url }}', json.ip);
           document.getElementById('thumb-up-icon').className = "fas fa-thumbs-up fa-lg";
         }
         leanCloud.getThumbUpCount('{{ url }}', function(count){
@@ -66,7 +69,7 @@
         });
       });
     });
-    leanCloud.addVisitRecord('{{ url }}', user_ip);
+    leanCloud.addVisitRecord('{{ url }}', json.ip);
     leanCloud.fetchCommentCount('{{ url }}');
     leanCloud.fetchVisitCount('{{ url }}');
     leanCloud.fetchThumbUpCount('{{ url }}');
@@ -91,5 +94,8 @@
         }
     });
   });
+  }
   {% endif %}
 </script>
+
+<script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
