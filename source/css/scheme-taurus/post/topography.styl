@@ -12,11 +12,7 @@ Topography of post for scheme taurus
     font-size: 0.9em
   a
     text-decoration: none
-    &:link
-    &:visited
-      color: #444
   .article-content
-    color: #333
     line-height: 1.5
     font-size:14px
     +for_breakpoint(mobile)
@@ -43,10 +39,6 @@ Topography of post for scheme taurus
         display:block
         height:5em /* fixed header height*/
         margin:-5em 0 0 /* negative fixed header height */
-    a
-      color: $primary_color
-      &:visited
-        color:$primary_color_grayout
     img
       max-height: 300px
       max-width: 95%
@@ -57,16 +49,13 @@ Topography of post for scheme taurus
       margin: 0.5em
       cursor: pointer
     code
-      color: $secondary_color
       code_font()
-      font-size: 0.7em
-      font-weight: 600
+      font-weight: 400
       vertical-align: middle
-      border: 1px solid #999
-      background-color: #efefef
-      padding: 2px 4px
+      padding: 1px 5px
       margin: 0 2px
-      border-radius: 0.4em
+      font-size: 0.9em
+      background: #f6f6f6
     pre
       code_font()
       padding: 12px 15px
@@ -280,11 +269,3 @@ Topography of post for scheme taurus
           max-width: 70vw
           width: 70vw
           height: 160px
-      
-.page
-  .page-meta
-    a
-      &:link
-        color: $primary_color
-      &:visited
-        color: $primary_color_grayout

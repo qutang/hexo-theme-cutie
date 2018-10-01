@@ -1,5 +1,8 @@
 @import 'util'
 
+.nav-name a
+  text-decoration: none
+
 top_dot_custom_color($color, $offset, $h_offset)
   top_dot($offset, $h_offset)
   &:after
@@ -53,12 +56,6 @@ right_dot($offset)
     left: $offset
 
 #nav
-  .active_dot
-    top_dot_circle(-0.8em, 0)
-    +for_breakpoint(mobile)
-      top_dot_circle(-0.8em, 0.1em)
-
-#nav
   display: flex
   align-items: center
   justify-content: center
@@ -71,13 +68,6 @@ right_dot($offset)
     padding: 1em 1em
     +for_breakpoint(mobile)
       padding: 0.5em 0.5em
-    a
-      text-decoration: none
-      &:visited
-      &:active
-      &:focus
-      &:link
-        color: #222
     .nav-icon
     .toc-button
       text-align: center
@@ -89,19 +79,9 @@ right_dot($offset)
         width: 2em
         height: 2em
         object-fit: cover
-      &:hover
-        top_dot_circle(-0.8em, 0)
-        +for_breakpoint(mobile)
-          top_dot_circle(-0.8em, 0.1em)
-    .nav-name:hover
-      shorter_underline_on_hover(30%, -0.5em)
-      +for_breakpoint(mobile)
-        shorter_underline_on_hover(0%, 0px)
     .nav-name
       font-size: 1.1em
-      +for_breakpoint(mobile)
-        &:hover
-          shorter_underline_on_hover(0%, 0px)
+  
   .nav-more-menu
     background-color: transparent
     position: absolute
@@ -135,12 +115,20 @@ right_dot($offset)
         right_dot(-1.2em)
     
 #nav-more-menu-close
-#toc-close
   display: none
   +for_breakpoint(mobile)
-    display: block
     float:right
     padding: 0.5em
+    font-size: 1.2em
+#toc-close
+  display: block
+  cursor: pointer
+  padding: 1em
+  +for_breakpoint(desktop)
+    float:left
+    font-size: 1.4em
+  +for_breakpoint(mobile)
+    float:right
     font-size: 1.2em
 
 .nav-more-menu

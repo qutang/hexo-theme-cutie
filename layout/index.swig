@@ -1,18 +1,18 @@
 
 {% set slogan = parse_config([site.data.cutie.slogan, theme.slogan]) %}
+{% set home_url = url_for(page.path) %}
+{% set scheme_name = parse_config([site.data.cutie.global.scheme.name, theme.global.scheme.name]) %}
 
-<div class="index-container" id='{{ url_for(page.path) }}' data-name='index' data-version='{{ theme.version }}'>
-	<div class='index-intro'>
-		{{ slogan }}
-	</div>
-	{% block primary %}
-		<div class="grid-2_md-1 grid-equalHeight index-cards">
+<div class="home-container" id='{{ home_url }}' data-name='home' data-version='{{ theme.version }}'>
+	{% block home %}
+		<div class='home-slogan'>
+			{{ slogan }}
+		</div>
+		<div class="home-cards">
 		{% for post in page.posts %}
-			{{ partial('_partial/card', {index:true, item: post, index:loop.index}) }}
+			{{ partial('_scheme_switcher/_card', {item: post, card_index: loop.index, scheme_name: scheme_name}) }}
 		{% endfor %}
 		</div>
 	{% endblock %}
-	<br>
-	
-	{{ partial('_partial/pagination') }}
+	{{ partial('_pagination/layout', {page: page}) }}
 </div>

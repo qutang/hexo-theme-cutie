@@ -1,5 +1,5 @@
 /*!
- * Fuse.js v3.2.0 - Lightweight fuzzy-search (http://fusejs.io)
+ * Fuse.js v3.2.1 - Lightweight fuzzy-search (http://fusejs.io)
  * 
  * Copyright (c) 2012-2017 Kirollos Risk (http://kiro.me)
  * All Rights Reserved. Apache Software License 2.0
@@ -92,7 +92,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 module.exports = function (obj) {
-  return Object.prototype.toString.call(obj) === '[object Array]';
+  return !Array.isArray ? Object.prototype.toString.call(obj) === '[object Array]' : Array.isArray(obj);
 };
 
 /***/ }),
@@ -522,12 +522,16 @@ module.exports = function (text, pattern, patternAlphabet, _ref) {
       distance: distance
     });
 
+    // console.log('score', score, finalScore)
+
     if (_score2 > currentThreshold) {
       break;
     }
 
     lastBitArr = bitArr;
   }
+
+  // console.log('FINAL SCORE', finalScore)
 
   // Count exact matches (those with a score of 0) to be "almost" exact
   return {
@@ -880,7 +884,7 @@ var Fuse = function () {
         var output = results[i].output;
         var scoreLen = output.length;
 
-        var totalScore = 0;
+        var currScore = 1;
         var bestScore = 1;
 
         for (var j = 0; j < scoreLen; j += 1) {
@@ -892,11 +896,11 @@ var Fuse = function () {
             bestScore = Math.min(bestScore, nScore);
           } else {
             output[j].nScore = nScore;
-            totalScore += nScore;
+            currScore *= nScore;
           }
         }
 
-        results[i].score = bestScore === 1 ? totalScore / scoreLen : bestScore;
+        results[i].score = bestScore === 1 ? currScore : bestScore;
 
         this._log(results[i]);
       }
@@ -912,7 +916,9 @@ var Fuse = function () {
     value: function _format(results) {
       var finalOutput = [];
 
-      this._log('\n\nOutput:\n\n', JSON.stringify(results));
+      if (this.options.verbose) {
+        this._log('\n\nOutput:\n\n', JSON.stringify(results));
+      }
 
       var transformers = [];
 

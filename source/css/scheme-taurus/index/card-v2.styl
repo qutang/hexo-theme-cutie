@@ -1,0 +1,92 @@
+.Card
+  flex-direction: column
+  padding: 0
+  width: 30%
+  +for_breakpoint(tablet)
+    width: 90%
+  +for_breakpoint(mobile)
+    width: 90%
+    font-size: 11px
+
+.Card-footer
+  width: 95%
+  height: 5em
+  .swiper-container
+    width: 95%
+
+.swiper-button-next
+  width: 10px
+
+.Card-next
+  position absolute
+  bottom: 0
+  right: 0
+  margin-right: 0.5em
+  margin-bottom: 0.5em
+  cursor pointer
+
+.Card-tags
+  position absolute
+  bottom: 0
+  left: 0
+  margin-left: 0.5em
+  margin-bottom: 0.5em
+  .tags
+    display: block
+    label 
+      display: block
+.Card 
+  .Card-body
+    .Card-excerpt
+      margin: 0 1em
+
+.Card
+  overflow hidden
+  .Card-body
+    margin: 0
+    width: 100%
+    display: flex
+    align-items: stretch
+    flex-direction: column
+    overflow hidden
+  .Card-figure
+    margin: 0
+    display: flex
+    align-items: center
+    margin-right: 0.5em
+
+.Card-background
+  flex: 1
+  overflow hidden
+  position relative
+  display: flex
+  align-items: center
+
+.Card-footer
+  display: flex
+  margin-left: 0.5em
+
+.title-time-info
+  display: flex
+  justify-content: space-around
+  align-items: center
+  height: 100%
+  a
+    text-decoration: none
+  *
+    margin: 0
+  h4
+    width: 12em
+
+.insight-info
+  height: 100%
+  a
+    text-decoration: none
+  ul
+    display: flex
+    list-style-type none
+    justify-content: space-around
+    align-items: center
+    height: 100%
+    margin: 0
+    padding: 0

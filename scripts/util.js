@@ -39,6 +39,14 @@ hexo.extend.helper.register("generate_post_icon", function(title){
   return render_path + icon_name;
 });
 
+hexo.extend.helper.register("as_object", function(names, items){
+	var obj = {}
+	for(var i = 0; i < names.length; i++){
+		obj[names[i]] = items[i]
+	}
+	return JSON.stringify(obj)
+});
+
 hexo.extend.helper.register("parse_config", function(items){
 	for(var i in items){
 		if(items[i] !== undefined && items[i] !== ""){
@@ -167,4 +175,20 @@ hexo.extend.generator.register('page404', function(locals){
 	  data: locals,
 	  layout: ['404', 'page']
 	}
+});
+
+hexo.extend.helper.register("logger", function(level, message){
+	var ts = Date();
+	if(level == 'info'){
+		console.info('INFO' + '  [Cutie]' + message);
+	}else if(level == 'debug'){
+		console.debug('DEBUG' + '  [Cutie]' + message);
+	}else if(level == 'warn'){
+		console.warn('WARN' + '  [Cutie]' + message);
+	}else if(level == 'error'){
+		console.warn('ERROR  [Cutie]' + message);
+	}else{
+		console.log('LOG' + '  [Cutie]' + message);
+	}
+	return ""
 });

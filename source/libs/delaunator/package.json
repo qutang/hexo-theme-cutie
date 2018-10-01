@@ -1,0 +1,42 @@
+{
+  "name": "delaunator",
+  "version": "1.0.5",
+  "description": "A really fast JavaScript library for Delaunay triangulation of 2D points",
+  "main": "index.js",
+  "jsdelivr": "delaunator.js",
+  "unpkg": "delaunator.js",
+  "dependencies": {},
+  "devDependencies": {
+    "browserify": "^14.5.0",
+    "eslint": "^4.0.0",
+    "eslint-config-mourner": "^2.0.1",
+    "tape": "^4.6.3",
+    "uglify-js": "^3.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mapbox/delaunator.git"
+  },
+  "scripts": {
+    "lint": "eslint index.js test.js bench.js",
+    "pretest": "npm run lint",
+    "test": "tape test.js",
+    "build": "browserify index.js -s delaunator -o delaunator.js",
+    "build-min": "browserify index.js -s delaunator | uglifyjs -c -m > delaunator.min.js",
+    "prepare": "npm run build && npm run build-min"
+  },
+  "files": [
+    "delaunator.js",
+    "delaunator.min.js"
+  ],
+  "eslintConfig": {
+    "extends": "mourner"
+  },
+  "keywords": [
+    "delaunay triangulation",
+    "computational geometry",
+    "algorithms"
+  ],
+  "author": "Vladimir Agafonkin",
+  "license": "ISC"
+}

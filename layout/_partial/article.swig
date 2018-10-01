@@ -87,14 +87,14 @@
     <!-- Date and Author -->
     <div class='article-meta'>
     <ul>
-            <li><i class='fa fa-calendar'></i> {{ meta_date }}</li>
+            <li><i class='fa fa-calendar fa-lg'></i> {{ meta_date }}</li>
             {% if use_post_stats %}
-            <li class='comment-button'><a href='#article-comment'><i class='fa fa-comments'></i> <span id='article-comment-count'>0</span></a></li>
-            <li><i class="fa fa-eye"></i> <span id='article-visit-count'>0</span></li>
-            <li class='thumb-up-button' id='thumb-up-button'><i class="far fa-thumbs-up fa-lg" id='thumb-up-icon'></i> <span id='article-thumbup-count'>0</span></li>
+            <li class='comment-button'><a href='#article-comment'><i class='fa fa-comments fa-lg'></i> <span id='article-comment-count'>0</span></a></li>
+            <li><i class="fa fa-users fa-lg"></i> <span id='article-visit-count'>0</span></li>
+            <li class='thumb-up-button' id='thumb-up-button'><i class="fa fa-heart-o fa-lg" id='thumb-up-icon'></i> <span id='article-thumbup-count'>0</span></li>
             {% endif %}
-            <li><i class="fa fa-user"></i> {{ item.author.name | default(config.author) }}</li>
-            <li><i class="fas fa-copyright"></i>
+            <li><i class="fa fa-pencil fa-lg"></i> {{ item.author.name | default(config.author) }}</li>
+            <li><i class="fa fa-copyright fa-lg"></i>
             {% if license !==  __('post.no_share') %}
                 {% set license_name = 'CC ' + license + ' 4.0' %}
                 {% set license_url = 'https://creativecommons.org/licenses/' + license + '/4.0/' %}
@@ -111,6 +111,7 @@
                 <a href={{license_url | lower }}>{{ license_name }}</a>
             {% endif %}
             </li>
+            <li id='toc-button' onclick='toggleTOC(event);'><i class="fa fa-list-ul fa-lg"></i></li>
     </ul>
     {{ partial("_partial/article-tags", {item: item}) }}
     </div>
@@ -175,9 +176,7 @@
     {% endif %}
 
     <!-- Content -->
-    <!-- TODO: support table of content -->
     <div class="article-toc" id='article-toc'>
-    
         {{ partial('_partial/toc', {item: item}) }}
     </div>
     <div class='article-content'>
@@ -187,7 +186,7 @@
     {% set allow_comment = parse_config([item.allow_comment, site.data.cutie.post.allow_comment, theme.post.allow_comment]) %}
     {% if allow_comment %}
         <div class="article-comment" id='article-comment'>
-            {{ partial('_partial/comment-html') }}
+            {{ partial('_comment/layout', {url: url_for(item.path), path: item.path}) }}
         </div>
     {% endif %}    
 </article>

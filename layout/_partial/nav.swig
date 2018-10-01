@@ -28,6 +28,12 @@
 			</div>
 		{% endif %}
 	{% endfor %}
+	<div class='nav-item' id='nav-item-insight'>
+		<div class='nav-name'>
+			<a title='Coming soon...' href='#'><i class="fa fa-bar-chart-o fa-2x"></i></a>
+		</div>
+	</div>
+	
 	{% if is_post() %}
 	<div class='nav-item' id='nav-item-toc'>
 		{{ partial('_partial/toc') }}
@@ -35,30 +41,34 @@
 	{% endif %}
 	<div class='nav-item' id='nav-item-archive'>
 		{% if url.indexOf('/archives/') !== -1 %}
-				<div class='nav-icon active_dot'>
+				<div class='nav-name active_dot'>
 				{% else %}
-				<div class='nav-icon'>
+				<div class='nav-name'>
 				{% endif %}
 			<a href="/archives/" title='{{ __("menu.archives") }}'>
-			<img src="{{ '/images/icons/' + icon_set + '/archive.svg' }}" alt="">
+			<!-- <img src="{{ '/images/icons/' + icon_set + '/archive.svg' }}" alt=""> -->
+			<i class="fa fa-archive fa-2x"></i>
 			</a>
 		</div>
 	</div>
 	<div class='nav-item' id='nav-item-search'>
 		{% if url.indexOf('/search/') !== -1 %}
-		<div class='nav-icon active_dot'>
+		<div class='nav-name active_dot'>
 		{% else %}
-		<div class='nav-icon'>
+		<div class='nav-name'>
 		{% endif %}
 			<a href="/search/" title='{{ __("menu.search") }}'>
-			<img src="{{ '/images/icons/' + icon_set + '/search.svg' }}" alt="">
+			<!-- <img src="{{ '/images/icons/' + icon_set + '/search.svg' }}" alt=""> -->
+			<!-- </a> -->
+			<i class="fa fa-search fa-2x"></i>
 			</a>
 		</div>
 	</div>
 	<div class="nav-item" id='nav-item-more'>
-		<div class="nav-icon">
+		<div class="nav-name">
 				<a href='#' onclick='onClickMenuIcon(event);' ontouchstart='onClickMenuIcon(event);'>
-				<img src="{{ '/images/icons/' + icon_set + '/menu.svg' }}" alt="">
+				<!-- <img src="{{ '/images/icons/' + icon_set + '/menu.svg' }}" alt=""> -->
+				<i class="fa fa-navicon fa-2x"></i>
 				</a>
 		</div>
 		<div class="nav-more-menu">

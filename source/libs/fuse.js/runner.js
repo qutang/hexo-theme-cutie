@@ -13,17 +13,23 @@ const Fuse = require('./src')
 // var result = fuse.search('test')
 // console.log(util.inspect(result, false, null))
 
-const needle = "Ildaf Samiev";
-const haystack = [
-  { name: "Ildaf Rafi Samier" },
-  { name: "Ildaf Rafi Saitor" }
-];
+const needle = "of war for the planet of the apes";
+const items = [
+  // { title: "War for the Planet of the Apes" },
+  { title: "Storks" }
+]
 
-var fuse = new Fuse(haystack, {
-  includeScore: true,
-  // tokenize: true,
-  keys: ["name"],
+const fuse = new Fuse(items, {
+  shouldSort: true,
+  threshold: 0.6,
+  location: 0,
+  distance: 100,
+  maxPatternLength: 64,
+  minMatchCharLength: 1,
+  keys: [
+    "title",
+  ],
   verbose: true
-});
+})
 
 const result = fuse.search(needle);

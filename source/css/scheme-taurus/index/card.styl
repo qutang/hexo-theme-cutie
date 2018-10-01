@@ -12,7 +12,7 @@
   border-radius: 5px
   box-shadow: 0.5px 0.5px 3px -0.5px rgba(170, 175, 173, 0.61)
   margin: 0.5em 0
-  min-height: 16em
+  min-height: 20em
   padding: 0 2%
   position: relative
   .Card-body
@@ -21,7 +21,6 @@
       &:visited
       &:hover
         text-decoration: none
-        color: #444
     flex: 1
     flex-direction: column
     display: flex
@@ -31,6 +30,7 @@
     .Card-title
       display: block
       margin-top: 1.5em
+      margin-right: 6em
       margin-bottom: 1.5em
       flex-grow: 1
       h2 
@@ -45,11 +45,11 @@
         line-height: 1.5
         font-size: 1.1em
       margin-top: 1.5em
+      margin-right: 6em
       flex-grow: 1
       text-align: left
       justify-content: center
       flex: 1
-      margin-right: 1em
     .Card-excerpt-touch
       p
         margin: 0
@@ -68,19 +68,16 @@
         +for_breakpoint(mobile)
           margin-right: 1em
         display: block
+        margin-bottom: 1em
       position: absolute
       bottom: 1em
       display:block
-      font-size: 0.8em
-      color: #aaa
-      a
-        color: #aaa
-        &:hover
-          color: #444
+      font-size: 0.9em
       ul
         padding: 0
         display: block
-        margin-left: 0.3em
+        margin: 0
+        margin-bottom: 0.25em
       li
         display: inline-block
         margin: 0 1em 0 0
@@ -95,6 +92,12 @@
       width: 2.8em
       height: 2.8em
       object-fit: cover
+  .Card-navs
+      display: flex
+      flex-direction: column
+      justify-content: space-around
+      padding: 4em 0
+      height: 8em
  
 .Card-badge
   -webkit-border-radius: 50%
@@ -107,9 +110,3 @@
   position:absolute
   top:-5px
   right:-5px
-
-.Card-hover:hover 
-  .Card-title
-    display: none
-  .Card-excerpt
-    display: block

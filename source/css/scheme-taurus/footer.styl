@@ -36,9 +36,6 @@
   a:link
   a:visited
     text-decoration: none
-    color: #222
-  a:hover
-    color: $primary_color
   +for_breakpoint(mobile)
     flex-flow: column-reverse wrap
     .footer-social
@@ -54,8 +51,6 @@
       margin: 0.5em 0
     a
       shorter_underline_on_hover(95%, -2px)
-      &:hover
-        color: #222
   .footer-social
     flex: 1
     display: flex

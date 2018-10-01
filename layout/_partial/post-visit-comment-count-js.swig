@@ -30,9 +30,9 @@
               var el = document.querySelector('#{{ id }} .card-thumbup-container i');
               if(el){
                 if(isThumbUp){
-                  el.className = 'fas fa-thumbs-up';
+                  el.className = 'fa fa-heart';
                 }else{
-                  el.className = 'far fa-thumbs-up';
+                  el.className = 'fa fa-heart-o';
                 }
               }
           });
@@ -53,11 +53,11 @@
         console.log('is thumb up:' + isThumbUp);
         if(isThumbUp){
           leanCloud.removeThumbUpRecord('{{ url }}', user_ip);
-          document.getElementById('thumb-up-icon').className = "far fa-thumbs-up fa-lg";
+          document.getElementById('thumb-up-icon').className = "fa fa-heart-o fa-lg";
           
         }else{
           leanCloud.addThumbUpRecord('{{ url }}', user_ip);
-          document.getElementById('thumb-up-icon').className = "fas fa-thumbs-up fa-lg";
+          document.getElementById('thumb-up-icon').className = "fa fa-heart fa-lg";
         }
         leanCloud.getThumbUpCount('{{ url }}', function(count){
             console.log('thumb up count: ' + count)
@@ -85,9 +85,9 @@
     leanCloud.isThumbUp('{{ url }}', function(isThumbUp){
         console.log('init thumb up:' + isThumbUp);
         if(isThumbUp){
-          document.getElementById('thumb-up-icon').className = "fas fa-thumbs-up fa-lg";
+          document.getElementById('thumb-up-icon').className = "fa fa-heart fa-lg";
         }else{
-          document.getElementById('thumb-up-icon').className = "far fa-thumbs-up fa-lg";
+          document.getElementById('thumb-up-icon').className = "fa fa-heart-o fa-lg";
         }
     });
   });

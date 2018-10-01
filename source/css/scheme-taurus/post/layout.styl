@@ -52,6 +52,7 @@
     font-size: 0.8em
     width: 100%
     .thumb-up-button
+    #toc-button
       cursor pointer
     .comment-button
       a:link
@@ -64,6 +65,7 @@
         display: inline-block
         list-style-type: none
         margin-right: 1em
+        margin-top:0.5em
     .tags
         clear: both
         justify-content: center
@@ -88,8 +90,6 @@
     fixed_tl(10em, 25vw)
     background-color: white
     z-index: 101
-    +for_breakpoint(mobile)
-      display: none
     .toc-button
       z-index: 0
       img
@@ -103,14 +103,9 @@
     p
       margin: 0
 
-#article-toc:hover .toc-container
-  display: block
-
-#article-toc:hover .toc-button
-  display: none
-
 .toc-container
   position: relative
+  fixed_tr(20vh, 0)
   +for_breakpoint(mobile)
     fixed_tr(30vh, 0)
 
@@ -118,10 +113,13 @@
   display: none
   margin-top: 0
   margin-bottom: 0
-  width: 100%
+  max-width: 350px
+  background-color: white
+  box-shadow: 0px 0px 10px 3px #ddd
+  font-size:0.9em
   +for_breakpoint(mobile)
-    background-color: white
     width: 100%
+    max-width: 100%
     box-shadow: 0px 0px 10px 3px #ddd
   .toc
     overflow: auto
@@ -143,3 +141,8 @@
     padding: 0
     +for_breakpoint(mobile)
       padding-left: 0.5em
+
+.toc-item
+  font-weight: normal;
+.toc-level-1
+  font-weight: bold;

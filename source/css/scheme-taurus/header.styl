@@ -10,7 +10,6 @@ shorter_underline($width, $offset)
   &:after
     position: absolute
     height: 2px
-    background-color: #444
     content: ""
     display:block
     width: $width
@@ -20,9 +19,9 @@ shorter_underline($width, $offset)
     right: 0
 
 // Add a short underline if nav item is the active page
-#header-nav
-  .active_page
-    shorter_underline(30%, -0.5em)
+// #header-nav
+//   .active_page
+//     // shorter_underline(30%, -0.5em)
 
 // hide or show header nav menu under different displays
 #header-nav
@@ -64,13 +63,7 @@ shorter_underline($width, $offset)
   display: flex
   justify-content: space-around
   align-items: center
-  color: #222
   // header links global setting
-  a:visited
-  a:active
-  a:focus
-  a:link
-    color: #222
   a
     text-decoration: none
   +for_breakpoint(mobile)

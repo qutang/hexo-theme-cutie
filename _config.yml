@@ -7,7 +7,7 @@ global:
   comment_system: valine # disqus, valine, gitment
   scheme: 
     name: Taurus #Taurus
-    color: flower
+    color: lime
   icon_set: blue-shadow
   use_animation: true
 
@@ -77,63 +77,47 @@ changelog:
     - Support light gallery for all images in a post
     - Group posts by month adaptively in archive page
 
+required_libs:
+  js: https://cdn.jsdelivr.net/combine/npm/headroom.js@0.9.4,npm/jquery@3.3.1,npm/js-cookie@2.2.0,npm/jshashes@1.0.7/hashes.min.js,npm/loadjs@3.5.4/dist/loadjs.min.js,npm/swiper@4.3.5
+  css: https://cdn.jsdelivr.net/combine/npm/animate.css@3.7.0,npm/swiper@4.3.5/dist/css/swiper.min.css
+
 libs:
+  anime:
+    name: anime.js javascript animation library
+    url: http://animejs.com/
+    js: https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js
   noty:
     name: noty.js notification library
     url: https://ned.im/noty/
-    css: /libs/noty/lib/noty.css
-    js_min: /libs/noty/lib/noty.min.js
-    js: /libs/noty/lib/noty.js
-  tippy:
-    name: tippy.js tooltip library
-    url: https://atomiks.github.io/tippyjs/
-    js: /libs/tippy.js/dist/tippy.all.js
-    js_min: /libs/tippy.js/dist/tippy.all.min.js
+    js: https://cdn.jsdelivr.net/npm/noty@3.2.0-beta/lib/noty.min.js
+    css: https://cdn.jsdelivr.net/npm/noty@3.2.0-beta/lib/noty.min.css
   headroom:
     name: headroom.js
     url: http://wicky.nillia.ms/headroom.js/
-    js: /libs/headroom.js/dist/headroom.js
-    js_min: /libs/headroom.js/dist/headroom.min.js
   lightgallery:
     name: lightgallery.js
     url: https://sachinchoolur.github.io/lightgallery.js/
-    js: /libs/lightgallery.js/dist/js/lightgallery.js
-    js_min: /libs/lightgallery.js/dist/js/lightgallery.min.js
-    css: /libs/lightgallery.js/dist/css/lightgallery.css
-    css_min: /libs/lightgallery.js/dist/css/lightgallery.min.css
-  lgzoom:
-    name: lightgallery.js zoom plugin
-    url: https://sachinchoolur.github.io/lightgallery.js/
-    js: /libs/lg-zoom/dist/lg-zoom.js
-    js_min: /libs/lg-zoom/dist/lg-zoom.min.js
   jquery:
     name: jQuery library
     url: https://jquery.com/
-    js: /libs/jquery/dist/jquery.js
-    js_min: /libs/jquery/dist/jquery.min.js
   gitment:
     name: gitment comment system
     url: https://github.com/imsun/gitment
-    js: /libs/gitment/dist/gitment.browser.js
-    js_min: /libs/gitment/dist/gitment.browser.js
-    css: /libs/gitment/style/default.css
   valine:
     name: valine comment system
     url: https://valine.js.org/
-    js_cdn: //unpkg.com/valine/dist/Valine.min.js
+    js: //unpkg.com/valine/dist/Valine.min.js
   leancloud:
     name: leancloud BAAS
     url: https://leancloud.cn/
-    js_cdn: //cdn1.lncld.net/static/js/3.6.4/av-min.js
+    js: //cdn1.lncld.net/static/js/3.6.4/av-min.js
   mathjax:
     name: mathjax library
     url: https://www.mathjax.org/
-    js_cdn: https://cdnjs.cloudflare.com/ajax//libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML
   jscookie:
     name: "js-cookie.js: A javascript cookie manipulation library"
     url: https://github.com/js-cookie/js-cookie
-    js_cdn: https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js
-    js: /libs/js-cookie/src/js.cookie.js
+    js: https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.2.0/js.cookie.min.js
   fontawesome:
     name: fontawesome
     url: https://fontawesome.com/
@@ -142,23 +126,17 @@ libs:
   fuse:
     name: "fuse.js: A javascript fuzzy search library"
     url: http://fusejs.io/
-    js_min: /libs/fuse.js/dist/fuse.min.js
-    js: /libs/fuse.js/dist/fuse.js
   jshashes:
     name: "hashes.js: A javascript hashing library"
     url: https://github.com/h2non/jshashes
-    js_min: /libs/jshashes/hashes.min.js
-    js: /libs/jshashes/hashes.js
+    js: https://cdnjs.cloudflare.com/ajax/libs/jshashes/1.0.7/hashes.min.js
   loadjs:
     name: "loadjs.js: A javascript dependency management library"
     url: https://github.com/muicss/loadjs
-    js_min: /libs/loadjs/dist/loadjs.min.js
-    js: /libs/loadjs/dist/loadjs.js
-  animate:
+    js: https://cdnjs.cloudflare.com/ajax/libs/loadjs/3.5.4/loadjs.min.js
+  animate.css:
     name: "animate.css: A CSS framework for predefined animations"
     url: https://github.com/daneden/animate.css
-    css_min: /libs/animate.css/animate.min.css
-    css: /libs/animate.css/animate.css
   striptags:
     name: striptags
     url: https://www.npmjs.com/package/striptags

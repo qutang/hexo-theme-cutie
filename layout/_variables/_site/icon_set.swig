@@ -1,0 +1,1 @@
+{{ parse_config([site.data.cutie.global.icon_set, theme.global.icon_set]) }}

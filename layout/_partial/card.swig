@@ -30,20 +30,22 @@
 		{% set category_link = url_for(item.path) %}
 		{% set category_name = "{{ url_for(generate_post_icon(item.title)) }}" %}
 	{% endif %}
-	<mark class='Card-badge' style='{visibility: "hidden"}'></mark>
-	<div class='Card-figure'>
-		{% if item.link || item.external_link %}
-			<a href="{{ item.link | default(item.external_link) }}" rel="noopener noreferrer" target="_blank">
-		{% else %}
-			<a href="{{ url_for(item.path) }}">
-		{% endif %}
+	<mark class='Card-badge' style ='{visibility: "hidden"}'></mark>
+	<div class='Card-sidebar'>
+		<div class='Card-figure'>
+			{% if item.link || item.external_link %}
+				<a href="{{ item.link | default(item.external_link) }}" rel="noopener noreferrer" target="_blank">
+			{% else %}
+				<a href="{{ url_for(item.path) }}">
+			{% endif %}
 
-		{% if item.icon %}
-			<img class='grow' src="{{ item.icon }}" alt="" onerror='this.src = "{{ generate_post_icon(item.title) }}"'> 
-	  {% else %} 
-			<img class='grow' src="{{ category_name }}" alt="" onerror='this.src = "{{ generate_post_icon(item.title) }}"'> 
-		{% endif %}
-		</a>
+			{% if item.icon %}
+				<img class='grow' src="{{ item.icon }}" alt="" onerror='this.src = "{{ generate_post_icon(item.title) }}"'> 
+		{% else %} 
+				<img class='grow' src="{{ category_name }}" alt="" onerror='this.src = "{{ generate_post_icon(item.title) }}"'> 
+			{% endif %}
+			</a>
+		</div>
 	</div>
 	<div class="Card-body">
 
@@ -75,13 +77,11 @@
 			{% endif %}
 			
 			<div class="Card-meta">
-				{% if scheme.name == 'Taurus' %}
-				<div class='Card-tags'>{{ partial('_partial/article-tags', {item: item, limit: 4}) }}</div>
-				{% endif %}
+				
 				<ul>
 						<li>
 							<a href="{{ url_for('/archives/') }}">
-								<i class='fa fa-calendar'></i> {{ meta_date }}
+								<i class='fa fa-calendar fa-lg'></i> {{ meta_date }}
 							</a>
 						</li>
 						{% if item.external_link %}
@@ -90,14 +90,18 @@
 						{% if use_post_stats %}
 						<li>
 							<a href="{{ url_for(item.path + '/#article-comment') }}">
-								<i class='fa fa-comments'></i> <span class='card-comment-count'>0</span>
+								<i class='fa fa-comments fa-lg'></i> <span class='card-comment-count'>0</span>
 							</a>
 						</li>
-						<li><i class="fa fa-eye"></i> <span class='card-visit-count'>0</span></li>
-						<li class='card-thumbup-container'><i class="far fa-thumbs-up"></i> <span class='card-thumbup-count'>0</span></li>
+						<li><i class="fa fa-users fa-lg"></i> <span class='card-visit-count'>0</span></li>
+						<li class='card-thumbup-container'><i class="fa fa-heart-o fa-lg"></i> <span class='card-thumbup-count'>0</span></li>
 						{% endif %}
 						{% endif %}
 				</ul>
+				{% if scheme.name == 'Taurus' %}
+				<div class='Card-tags'>{{ partial('_partial/article-tags', {item: item, limit: 4}) }}</div>
+				{% endif %}
+				
 			</div>
 		</a>
 	</div>

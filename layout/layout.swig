@@ -1,27 +1,22 @@
+{% set scheme_name = parse_config([site.data.cutie.global.scheme.name, theme.global.scheme.name]) %}
+
 <!DOCTYPE html>
 <html lang="en">
-{{ partial("_partial/head") }}
-<body style="display: flex; flex-direction: column; min-height: 100vh;">
-{{ partial("_partial/header") }}
+  {{ partial("_head/layout") }}
+  <body>
 
- {{ partial("_partial/announcement-js", {item: page}) }}
+    {{ partial("_scheme_switcher/_header", {scheme_name: scheme_name}) }}
 
-  <!-- Primary Page Layout
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <div style="flex: 1;">
-      {{ body }}
-  </div>
+    <div class="body-content">
+        {{ body }}
+    </div>
 
-  {{ partial("_partial/footer") }}
+    {{ partial("_scheme_switcher/_footer", {scheme_name: scheme_name}) }}
 
-  <br>
+    {{ partial("_scheme_switcher/_js", {scheme_name: scheme_name}) }}
 
-  <div id="footer-nav" class='footer-nav'>
-		{{ partial('_partial/nav', {position: 'footer'}) }}
-	</div>
-
-  {{ partial("_partial/after-footer") }}
-<!-- End Document
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-</body>
+    {{ partial("_announcement/layout", {page: page}) }}
+    
+    {{ partial("_tracker/layout") }}
+  </body>
 </html>

@@ -1,5 +1,6 @@
 {% if item.tags && item.tags.length %}
 <div class="tags">
+	<i class="fa fa-tags fa-lg"></i>
 	{% for tag in item.tags.sort("name") %}
 		{% if limit %}
 			{% if loop.index <= limit %}
