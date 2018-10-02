@@ -51,7 +51,7 @@ crossorigin="anonymous"></script>
   
 {{ partial('_partial/scheme-css') }}
 
- 
+{{ css(page.css) }}
 
   <!-- load font awesome 5 -->
   <link rel="stylesheet" href="{{ theme.libs.fontawesome.css }}" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
