@@ -39,7 +39,6 @@
   <!-- load loadjs.js -->
   {{ js(theme.libs.loadjs.js_min) }}
 
-
 {{ css(theme.libs.animate.css_min) }}
   <!-- load lightgallery -->
 {{ css('css/lightgallery.css') }}

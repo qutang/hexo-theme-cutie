@@ -1,4 +1,4 @@
-version: 2.1.1
+version: 2.1.2
 url: https://qutang.github.io/cutie/
 logo: /images/theme-icon.svg
 slogan: Bazinga, theme cutie!
@@ -24,6 +24,8 @@ post:
   enable_unread_badge: false
 
 changelog:
+  v2.1.2:
+    - Minor adjust the colors of meta icons.
   v2.1.1:
     - Close 页面显示issue <a href='https://github.com/qutang/hexo-theme-cutie/issues/92' target='_blank'>#92</a>.
     - Replace IP detector library.

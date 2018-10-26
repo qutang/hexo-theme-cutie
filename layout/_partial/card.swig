@@ -79,7 +79,7 @@
 				<div class='Card-tags'>{{ partial('_partial/article-tags', {item: item, limit: 4}) }}</div>
 				{% endif %}
 				<ul>
-						<li>
+						<li class='card-calendar'>
 							<a href="{{ url_for('/archives/') }}">
 								<i class='fa fa-calendar'></i> {{ meta_date }}
 							</a>
@@ -88,12 +88,12 @@
 							<li>{{ __('external_link') }}</li>
 						{% else %}
 						{% if use_post_stats %}
-						<li>
+						<li class='card-comment'>
 							<a href="{{ url_for(item.path + '/#article-comment') }}">
 								<i class='fa fa-comments'></i> <span class='card-comment-count'>0</span>
 							</a>
 						</li>
-						<li><i class="fa fa-eye"></i> <span class='card-visit-count'>0</span></li>
+						<li class='card-visitor'><i class="fa fa-eye"></i> <span class='card-visit-count'>0</span></li>
 						<li class='card-thumbup-container'><i class="far fa-thumbs-up"></i> <span class='card-thumbup-count'>0</span></li>
 						{% endif %}
 						{% endif %}

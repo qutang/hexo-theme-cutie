@@ -17,11 +17,8 @@
   position: relative
   .Card-body
     a
-      &:link
-      &:visited
-      &:hover
-        text-decoration: none
-        color: #444
+      text-decoration: none
+      color: #444
     flex: 1
     flex-direction: column
     display: flex
@@ -62,29 +59,7 @@
       flex: 1
       margin-right: 1em
 	    display: block
-    .Card-meta
-      .Card-tags
-        margin-right: 0.5em
-        +for_breakpoint(mobile)
-          margin-right: 1em
-        display: block
-      position: absolute
-      bottom: 1em
-      display:block
-      font-size: 0.8em
-      color: #aaa
-      a
-        color: #aaa
-        &:hover
-          color: #444
-      ul
-        padding: 0
-        display: block
-        margin-left: 0.3em
-      li
-        display: inline-block
-        margin: 0 1em 0 0
-
+    
   .Card-figure
     margin: 1.5em 1.5em 1.5em 0.5em
     +for_breakpoint(mobile)
@@ -113,3 +88,41 @@
     display: none
   .Card-excerpt
     display: block
+
+.Card-meta
+  .Card-tags
+    margin-right: 0.5em
+    +for_breakpoint(mobile)
+      margin-right: 1em
+    display: block
+  position: absolute
+  bottom: 1em
+  display:block
+  font-size: 0.8em
+  color: #aaa
+  .card-calendar
+    a
+      &:link
+        color: #759792
+      &:hover
+      &:visited
+        color: lighten(#759792, 20%)
+  .card-comment
+    a
+      &:link
+        color: #aaa
+      &:hover
+      &:visited
+        color: lighten(#f8a800, 20%)
+  .card-visitor
+    color: #aaa
+  .card-thumbup-container
+    color: #aaa
+  ul
+    padding: 0
+    display: block
+    margin-left: 0.3em
+    font-size: 1.1em
+  li
+    display: inline-block
+    margin: 0 1em 0 0
