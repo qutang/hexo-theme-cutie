@@ -59,6 +59,17 @@
       flex: 1
       margin-right: 1em
 	    display: block
+    .Card-meta
+      .Card-tags
+        margin-right: 0.5em
+        +for_breakpoint(mobile)
+          margin-right: 1em
+        display: block
+      position: absolute
+      bottom: 1em
+      display:block
+      font-size: 0.8em
+      color: #aaa
     
   .Card-figure
     margin: 1.5em 1.5em 1.5em 0.5em
@@ -70,6 +81,7 @@
       width: 2.8em
       height: 2.8em
       object-fit: cover
+  
  
 .Card-badge
   -webkit-border-radius: 50%
@@ -90,16 +102,6 @@
     display: block
 
 .Card-meta
-  .Card-tags
-    margin-right: 0.5em
-    +for_breakpoint(mobile)
-      margin-right: 1em
-    display: block
-  position: absolute
-  bottom: 1em
-  display:block
-  font-size: 0.8em
-  color: #aaa
   .card-calendar
     a
       &:link

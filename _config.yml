@@ -1,4 +1,4 @@
-version: 2.1.2
+version: 2.1.3
 url: https://qutang.github.io/cutie/
 logo: /images/theme-icon.svg
 slogan: Bazinga, theme cutie!
@@ -24,6 +24,9 @@ post:
   enable_unread_badge: false
 
 changelog:
+  v2.1.3:
+    - Fix <a href='https://github.com/qutang/hexo-theme-cutie/issues/95' target='_blank'>#95</a>.
+    - Minor adjust the appearance of archive pages.
   v2.1.2:
     - Minor adjust the colors of meta icons.
   v2.1.1:
