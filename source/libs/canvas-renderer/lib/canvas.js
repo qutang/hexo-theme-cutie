@@ -118,4 +118,18 @@ Canvas.prototype.toPng = function Canvas_toPng(keywords) {
     return png.getBuffer();
 };
 
+/**
+ * Renders the canvas as a data URI. Only type 'image/png' is supported.
+ * @returns {string}
+ * @public
+ */
+Canvas.prototype.toDataURL = function Canvas_toDataURL() {
+    if (this.width <= 0 || this.height <= 0) {
+        return "data:,";
+    }
+    
+    var png = this.toPng();
+    return "data:image/png;base64," + png.toString("base64");
+};
+
 module.exports = Canvas;

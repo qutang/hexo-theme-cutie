@@ -42,8 +42,7 @@ module.exports = {
     FORCE_TRANSPARENT: Infinity,
 
     /**
-     * Creates a color on the format 0xRRGGBBAA from the specified
-     * color components.
+     * Creates a signed 32-bit RGBA color value from the specified color components.
      * @returns {number}
      */
     from: colorUtils_from,
@@ -562,6 +561,11 @@ function parseHexColor(color) {
     }
 
     var numeric = parseInt(hexColor, 16);
+    
+    // numeric is now parsed as a 32-bit unsigned integer.
+    // All return paths below must perform a bitwise operator
+    // on numeric before returning it to ensure it is converted to a 
+    // 32-bit signed integer.
 
     switch (hexColor.length) {
         case 3:
@@ -587,7 +591,8 @@ function parseHexColor(color) {
         case 6:
             return numeric << 8 | 0xff;
         case 8:
-            return numeric;
+            // The bitwise operation enforces the value to a 32-bit signed integer
+            return numeric & 0xffffffff;
     }
 }
 
@@ -624,7 +629,8 @@ function colorUtils_parse(color) {
     
     // Named colors
     if (color in NAMED_COLORS) {
-        return NAMED_COLORS[color];
+        // bitwise operator is used to enforce a signed integer
+        return NAMED_COLORS[color] & 0xffffffff;
     }
     
     // rgb[a](red, green, blue[, alpha])

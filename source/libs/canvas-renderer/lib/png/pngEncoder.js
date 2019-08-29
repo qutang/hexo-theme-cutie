@@ -73,10 +73,12 @@ PngEncoder.prototype.writeTrueColorWithAlpha = function PngEncoder_writeTrueColo
 
         for (var x = 0; x < width; canvasCursor++) {
             var count = colorRanges[canvasCursor * 2 + 0];
-            var color = colorRanges[canvasCursor * 2 + 1];
+
+            // Use a bitwise operator to ensure the color is expressed as a signed 32-bit integer
+            var color = colorRanges[canvasCursor * 2 + 1] & 0xffffffff;
 
             for (var i = 0; i < count; i++) {
-                buffer.writeUInt32BE(color, outputCursor, true);
+                buffer.writeInt32BE(color, outputCursor);
                 outputCursor += 4;
             }
 

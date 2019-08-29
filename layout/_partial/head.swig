@@ -80,5 +80,7 @@ crossorigin="anonymous"></script>
   {% endif %}
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="icon" type="image/png" href="/images/favicon.png">
+
+  {% set favicon = parse_config([site.data.global.favicon, '/images/logo.png']) %}
+  <link rel="icon" href="{{ favicon }}">
 </head>

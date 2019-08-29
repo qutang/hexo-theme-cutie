@@ -1,6 +1,6 @@
 {
   "name": "canvas-renderer",
-  "version": "2.0.1",
+  "version": "2.1.1",
   "description": "HTML5 inspired canvas that can be rendered to PNG with no native dependencies.",
   "license": "MIT",
   "repository": {
@@ -8,10 +8,11 @@
     "url": "https://github.com/dmester/canvas-renderer"
   },
   "devDependencies": {
-    "tap": "^10.7.0"
+    "tap": "^12.1.1",
+    "pngjs": "^3.3.3"
   },
   "scripts": {
-    "test": "tap tests/*.js"
+    "test": "tap tests/*Tests.js"
   },
   "bugs": {
     "url": "https://github.com/dmester/canvas-renderer/issues"
@@ -27,7 +28,7 @@
   ],
   "main": "index.js",
   "author": {
-    "name": "Daniel Mester Pirttijärvi"
+    "name": "Daniel Mester PirttijÃ¤rvi"
   },
   "dependencies": {}
 }

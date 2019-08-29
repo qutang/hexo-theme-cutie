@@ -1,6 +1,6 @@
-version: 2.1.3
-url: https://qutang.github.io/cutie/
-logo: /images/theme-icon.svg
+version: 2.1.4
+url: https://hexo-theme-cutie.qutang.dev
+logo: /images/logo.svg
 slogan: Bazinga, theme cutie!
 
 global:
@@ -24,6 +24,10 @@ post:
   enable_unread_badge: false
 
 changelog:
+  v2.1.4:
+    - New logo
+    - Fix favicon configuration bug
+    - Use local file for leancloud SDK
   v2.1.3:
     - Fix <a href='https://github.com/qutang/hexo-theme-cutie/issues/95' target='_blank'>#95</a>.
     - Minor adjust the appearance of archive pages.
@@ -132,7 +136,7 @@ libs:
   leancloud:
     name: leancloud BAAS
     url: https://leancloud.cn/
-    js_cdn: //cdn1.lncld.net/static/js/3.6.4/av-min.js
+    js_cdn: /js/av-min.js
   mathjax:
     name: mathjax library
     url: https://www.mathjax.org/
