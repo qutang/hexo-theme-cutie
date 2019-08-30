@@ -1,1 +1,1 @@
-See [User Guide](https://qutang.github.io/2018/02/12/hexo-theme-cutie-v2-tutorial/) for installation and usage.
+See [User Guide](https://hexo-theme-cutie.qutang.dev) for installation and usage.
