@@ -106,10 +106,10 @@ graceful-fs@~3.0.2:
   dependencies:
     natives "^1.1.3"
 
-headroom.js@^0.9.4:
-  version "0.9.4"
-  resolved "https://registry.yarnpkg.com/headroom.js/-/headroom.js-0.9.4.tgz#0c4e6b4563bb69df55aecdefaba3227566f2df5a"
-  integrity sha1-DE5rRWO7ad9Vrs3vq6MidWby31o=
+headroom.js@^0.10.0:
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/headroom.js/-/headroom.js-0.10.0.tgz#8b1543bae0ccdcca1d7b38df8286788c03a2786a"
+  integrity sha512-CqcESzx9iprChWvSafTwYhNSaFEREk735HxpwlkJD6PkFTzXVbxHgDSsFx7HFurqCpAsLkXdhTpuz09lUha7YA==
 
 inflight@^1.0.4:
   version "1.0.6"
