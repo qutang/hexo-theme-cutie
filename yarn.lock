@@ -159,10 +159,10 @@ lg-zoom@^1.1.0:
   dependencies:
     jquery ">=1.7.0"
 
-loadjs@^3.5.4:
-  version "3.6.1"
-  resolved "https://registry.yarnpkg.com/loadjs/-/loadjs-3.6.1.tgz#1e756ccd4f4c5ed4988085b330e1b4ad9b6a8340"
-  integrity sha512-AZEBw2GWdJk2IzBgQ+Wohoao5j+t0rajqK8dJu8jQqgYxDTxhmCt0ayMo/vCa0ZAMvZxnJcam6uLICfnVd8KAw==
+loadjs@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/loadjs/-/loadjs-4.0.1.tgz#e1f53432bd8cdc7397cc6c81b568996805646fda"
+  integrity sha512-ArFeJEd5TFXjcO1YqT5uSgSMBq+NHWdoew7o6sLqb1KZBg06UIyk/PMT8ftN9T5vT20q3QbzsKdp2N8XhdYysQ==
 
 "match-stream@>= 0.0.2 < 1":
   version "0.0.2"
