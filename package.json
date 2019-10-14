@@ -11,7 +11,7 @@
     "loadjs": "^4.0.1",
     "noty": "^3.2.0-beta",
     "striptags": "^3.1.1",
-    "tippy.js": "^5.0.2",
+    "tippy.js": "^5.0.3",
     "unzip": "^0.1.11"
   }
 }
