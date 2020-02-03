@@ -223,10 +223,10 @@ path-is-absolute@^1.0.0:
   resolved "https://registry.yarnpkg.com/path-is-absolute/-/path-is-absolute-1.0.1.tgz#174b9268735534ffbc7ace6bf53a5a9e1b5c5f5f"
   integrity sha1-F0uSaHNVNP+8es5r9TpanhtcX18=
 
-popper.js@^1.15.0:
-  version "1.15.0"
-  resolved "https://registry.yarnpkg.com/popper.js/-/popper.js-1.15.0.tgz#5560b99bbad7647e9faa475c6b8056621f5a4ff2"
-  integrity sha512-w010cY1oCUmI+9KwwlWki+r5jxKfTFDVoadl7MSrIujHU5MJ5OR6HTDj6Xo8aoR/QsA56x8jKjA59qGH4ELtrA==
+popper.js@^1.16.0:
+  version "1.16.1"
+  resolved "https://registry.yarnpkg.com/popper.js/-/popper.js-1.16.1.tgz#2a223cb3dc7b6213d740e40372be40de43e65b1b"
+  integrity sha512-Wb4p1J4zyFTbM+u6WuO4XstYx4Ky9Cewe4DWrel7B0w6VVICvPwdOpotjzcf6eD8TsckVnIMNONQyPIUFOUbCQ==
 
 "pullstream@>= 0.4.1 < 1":
   version "0.4.1"
@@ -277,12 +277,12 @@ striptags@^3.1.1:
   resolved "https://registry.yarnpkg.com/striptags/-/striptags-3.1.1.tgz#c8c3e7fdd6fb4bb3a32a3b752e5b5e3e38093ebd"
   integrity sha1-yMPn/db7S7OjKjt1LltePjgJPr0=
 
-tippy.js@^5.0.2:
-  version "5.0.2"
-  resolved "https://registry.yarnpkg.com/tippy.js/-/tippy.js-5.0.2.tgz#83cdfdceb14e7e4c5afab6ae3ffb0b10f9310c23"
-  integrity sha512-Zj7ihX2/uImDudNkfxw9jgcbtg9sUKT3QRmuH9WJtKkX6M96SwMG8FPdiObholc4SJP6wlnqk0nqByjXb8QZSA==
+tippy.js@^5.2.0:
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/tippy.js/-/tippy.js-5.2.0.tgz#5e5a13a196ad2e39c7ee6cac5bfdb0513e797501"
+  integrity sha512-bmZu+TP1Fs6+1cq0GI1lfS9R0QxXDthP45zNGSLLMY5p2uC8sODNL4TiUOhEG25q5upk5LUrTnCkc+Q3H2aZJQ==
   dependencies:
-    popper.js "^1.15.0"
+    popper.js "^1.16.0"
 
 "traverse@>=0.3.0 <0.4":
   version "0.3.9"
